@@ -26,12 +26,12 @@ namespace MrItemRemover2
 
     public partial class MrItemRemover2 : HBPlugin
     {
-        const string _name = "Mr.ItemRemover2";
+        const string _name = "Mr.ItemRemover2DEV";
 
         //Normal Stuff.
         public override string Name { get { return _name; } }
         public override string Author { get { return "CnG & Bambam922"; } }
-        public override Version Version { get { return new Version(1, 5); } }
+        public override Version Version { get { return new Version(1, 5, 0); } }
         public override bool WantButton { get { return true; } }
         public override string ButtonText { get { return _name; } }
 
