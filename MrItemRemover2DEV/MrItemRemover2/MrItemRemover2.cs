@@ -180,7 +180,7 @@ namespace MrItemRemover2
         private string SellListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
                                            string.Format(@"Plugins/MrItemRemover2/ItemNameSellList.txt"));
         private string KeepListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                                           string.Format(@"Plugins/MrItemRemover2/ItemNameKeepListV2.txt"));
+                                           string.Format(@"Plugins/MrItemRemover2/ItemNameKeepList.txt"));
         private string OpnListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
                                            string.Format(@"Plugins/MrItemRemover2/ItemNameOpnList.txt"));
 
