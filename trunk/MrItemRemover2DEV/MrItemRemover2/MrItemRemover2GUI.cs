@@ -48,6 +48,7 @@ namespace MrItemRemover2.GUI
             SellWhite.Checked = MrItemRemover2Settings.Instance.SellWhite;
             SellGreen.Checked = MrItemRemover2Settings.Instance.SellGreen;
             SellBlue.Checked = MrItemRemover2Settings.Instance.SellBlue;
+            SellSoulbound.Checked = MrItemRemover2Settings.Instance.SellSoulbound;
             EnableRemove.Checked = MrItemRemover2Settings.Instance.EnableRemove;
             EnableOpen.Checked = MrItemRemover2Settings.Instance.EnableOpen;
             EnableSell.Checked = MrItemRemover2Settings.Instance.EnableSell;
@@ -307,6 +308,11 @@ namespace MrItemRemover2.GUI
 
         private void label5_Click(object sender, EventArgs e)
         {
+        }
+
+        private void SellSoulbound_CheckedChanged(object sender, EventArgs e)
+        {
+            MrItemRemover2Settings.Instance.SellSoulbound = SellSoulbound.Checked;
         }
     }
 }
