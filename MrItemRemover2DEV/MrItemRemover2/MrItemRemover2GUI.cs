@@ -207,11 +207,6 @@ namespace MrItemRemover2.GUI
             MrItemRemover2Settings.Instance.SellGreen = SellGreen.Checked;
         }
 
-        private void SellBlue_CheckedChanged(object sender, EventArgs e)
-        {
-            MrItemRemover2Settings.Instance.SellBlue = SellBlue.Checked;
-        }
-
         private void SellWhite_CheckedChanged(object sender, EventArgs e)
         {
             MrItemRemover2Settings.Instance.SellWhite = SellWhite.Checked;
@@ -307,6 +302,7 @@ namespace MrItemRemover2.GUI
 
         private void SellBlue_CheckedChanged_1(object sender, EventArgs e)
         {
+            MrItemRemover2Settings.Instance.SellBlue = SellBlue.Checked;
         }
 
         private void label5_Click(object sender, EventArgs e)
