@@ -42,7 +42,7 @@ namespace MrItemRemover2
                         }
                     }
 
-                    if (item.Quality == WoWItemQuality.Rare && MrItemRemover2Settings.Instance.SellBlue && !_KeepList.Contains(item.Name))
+                    if (item.IsSoulbound && item.Quality == WoWItemQuality.Rare && MrItemRemover2Settings.Instance.SellBlue && !_KeepList.Contains(item.Name))
                     {
                         slog("Selling Blue Item {0}", item.Name);
                         item.UseContainerItem();
