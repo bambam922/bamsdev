@@ -37,22 +37,23 @@ namespace MrItemRemover2
                                 slog("Selling Green Item {0}", item.Name);
                                 item.UseContainerItem();
                             }
-                            if (_ItemNameSell.Contains(item.Name))
-                            {
-                                slog("Item Matched List Selling {0}", item.Name);
-                                item.UseContainerItem();
-                            }
                             if (item.Quality == WoWItemQuality.Rare && MrItemRemover2Settings.Instance.SellBlue)
                             {
                                 slog("Selling Blue Item {0}", item.Name);
                                 item.UseContainerItem();
                             }
+                            if (_ItemNameSell.Contains(item.Name))
+                            {
+                                slog("Item Matched List Selling {0}", item.Name);
+                                item.UseContainerItem();
+                            }
+                            
                         }
                     }
 
                     if (MrItemRemover2Settings.Instance.SellSoulbound)
                     {
-                        if (item.IsSoulbound && !_KeepList.Contains(item.Name))
+                        if (!_KeepList.Contains(item.Name))
                         {
                             if (item.Quality == WoWItemQuality.Poor && MrItemRemover2Settings.Instance.SellGray)
                             {
@@ -69,16 +70,17 @@ namespace MrItemRemover2
                                 slog("Selling Green Item {0}", item.Name);
                                 item.UseContainerItem();
                             }
-                            if (_ItemNameSell.Contains(item.Name))
-                            {
-                                slog("Item Matched List Selling {0}", item.Name);
-                                item.UseContainerItem();
-                            }
                             if (item.Quality == WoWItemQuality.Rare && MrItemRemover2Settings.Instance.SellBlue)
                             {
                                 slog("Selling Blue Item {0}", item.Name);
                                 item.UseContainerItem();
                             }
+                            if (_ItemNameSell.Contains(item.Name))
+                            {
+                                slog("Item Matched List Selling {0}", item.Name);
+                                item.UseContainerItem();
+                            }
+                            
                         }
                     }
                 }
