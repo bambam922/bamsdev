@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using Styx;
+using Styx.Common;
 using Styx.CommonBot.Frames;
 using Styx.Helpers;
 using Styx.WoWInternals;
@@ -145,9 +146,9 @@ namespace MrItemRemover2
 
                 bool isQuestItem = IsQuestItem(item);
 
-                /* Uncomment this to have quest items printed to log. DIAGNOSTIC.
-                Logging.Write("{0} is quest item: {1}", item.Name, isQuestItem);
-                */
+                // Uncomment this to have quest items printed to log. DIAGNOSTIC.
+                slog("{0} Item and quality: {1}", item.Name, item.Quality);
+                
 
                 //if item name Matches whats in the text file / the internal list (after load)
                 if (_ItemName.Contains(item.Name) && !_KeepList.Contains(item.Name))
