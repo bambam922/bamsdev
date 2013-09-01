@@ -147,7 +147,7 @@ namespace MrItemRemover2
                 bool isQuestItem = IsQuestItem(item);
 
                 // Uncomment this to have quest items printed to log. DIAGNOSTIC.
-                slog("{0} Item and quality: {1}", item.Name, item.Quality);
+                slog("{0} quality: {1}", item.Name, item.Quality);
                 
 
                 //if item name Matches whats in the text file / the internal list (after load)
