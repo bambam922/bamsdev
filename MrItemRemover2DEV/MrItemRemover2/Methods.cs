@@ -177,7 +177,7 @@ namespace MrItemRemover2
                     string Gold = MrItemRemover2Settings.Instance.GoldGrays.ToString() +
                                   MrItemRemover2Settings.Instance.SilverGrays.ToString() +
                                   MrItemRemover2Settings.Instance.CopperGrays.ToString();
-                    if (item.BagSlot != -1 && item.ItemInfo.SellPrice <= Gold.ToInt32())
+                    if (item.BagSlot != -1 /*&& item.ItemInfo.SellPrice <= Gold.ToInt32()*/ && !isQuestItem)
                     {
                         slog("{0}'s Item Quality was Poor. Removing:", item.Name);
                         Lua.DoString("ClearCursor()");
