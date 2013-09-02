@@ -147,7 +147,7 @@ namespace MrItemRemover2
                 bool isQuestItem = IsQuestItem(item);
 
                 // Uncomment this to have quest items printed to log. DIAGNOSTIC.
-                slog("{0} quality: {1}", item.Name, item.Quality);
+                slog("{0} quality: {1} - copper total {2}", item.Name, item.Quality, item.ItemInfo.SellPrice);
                 
 
                 //if item name Matches whats in the text file / the internal list (after load)
@@ -174,7 +174,7 @@ namespace MrItemRemover2
                 if (MrItemRemover2Settings.Instance.DeleteAllGray && item.Quality == WoWItemQuality.Poor && !_KeepList.Contains(item.Name))
                 {
                     //Gold Format, goes in GXX SXX CXX 
-                    string gold = string.Format("{0}{1}{2}", MrItemRemover2Settings.Instance.GoldGrays, MrItemRemover2Settings.Instance.SilverGrays, MrItemRemover2Settings.Instance.CopperGrays);
+                    string gold = MrItemRemover2Settings.Instance.GoldGrays.ToString() + MrItemRemover2Settings.Instance.SilverGrays + MrItemRemover2Settings.Instance.CopperGrays.ToString();
                     if (item.BagSlot != -1 && !isQuestItem && item.ItemInfo.SellPrice <= gold.ToInt32())
                     {
                         slog("{0}'s Item Quality was Poor. Removing:", item.Name);
