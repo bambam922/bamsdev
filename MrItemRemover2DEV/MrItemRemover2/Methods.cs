@@ -170,13 +170,25 @@ namespace MrItemRemover2
                     Lua.DoString("DeleteCursorItem()");
                 }
 
+                
+
+
+
+
                 //Process all Gray Items if enabled. 
                 if (MrItemRemover2Settings.Instance.DeleteAllGray && item.Quality == WoWItemQuality.Poor && !_KeepList.Contains(item.Name))
                 {
                     //Gold Format, goes in GXX SXX CXX 
-                    string gold = MrItemRemover2Settings.Instance.GoldGrays.ToString() + MrItemRemover2Settings.Instance.SilverGrays + MrItemRemover2Settings.Instance.CopperGrays.ToString();
-                    slog("Value of gold string - " + gold);
-                    if (item.BagSlot != -1 && !isQuestItem && item.ItemInfo.SellPrice <= gold.ToInt32())
+                    string goldString = MrItemRemover2Settings.Instance.GoldGrays.ToString();
+                    int goldValue = goldString.ToInt32() * 1000;
+                    string silverString = MrItemRemover2Settings.Instance.SilverGrays.ToString();
+                    int silverValue = silverString.ToInt32() * 100;
+                    string copperString = MrItemRemover2Settings.Instance.CopperGrays.ToString();
+                    int copperValue = copperString.ToInt32();
+
+                    slog("Value of input sell string - " + (goldValue + silverValue + copperValue));
+
+                    if (item.BagSlot != -1 && !isQuestItem && item.ItemInfo.SellPrice <= (goldValue + silverValue + copperValue))
                     {
                         slog("{0}'s Item Quality was Poor. Removing:", item.Name);
                         Lua.DoString("ClearCursor()");
