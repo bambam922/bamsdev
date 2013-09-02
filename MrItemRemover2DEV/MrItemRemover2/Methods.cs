@@ -175,6 +175,7 @@ namespace MrItemRemover2
                 {
                     //Gold Format, goes in GXX SXX CXX 
                     string gold = MrItemRemover2Settings.Instance.GoldGrays.ToString() + MrItemRemover2Settings.Instance.SilverGrays + MrItemRemover2Settings.Instance.CopperGrays.ToString();
+                    slog("Value of gold string - " + gold);
                     if (item.BagSlot != -1 && !isQuestItem && item.ItemInfo.SellPrice <= gold.ToInt32())
                     {
                         slog("{0}'s Item Quality was Poor. Removing:", item.Name);
