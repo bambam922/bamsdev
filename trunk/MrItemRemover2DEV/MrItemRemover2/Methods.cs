@@ -180,7 +180,7 @@ namespace MrItemRemover2
                 {
                     //Gold Format, goes in GXX SXX CXX 
                     string goldString = MrItemRemover2Settings.Instance.GoldGrays.ToString();
-                    int goldValue = goldString.ToInt32() * 1000;
+                    int goldValue = goldString.ToInt32() * 10000;
                     string silverString = MrItemRemover2Settings.Instance.SilverGrays.ToString();
                     int silverValue = silverString.ToInt32() * 100;
                     string copperString = MrItemRemover2Settings.Instance.CopperGrays.ToString();
