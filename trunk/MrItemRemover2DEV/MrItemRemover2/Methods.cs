@@ -147,7 +147,7 @@ namespace MrItemRemover2
                 bool isQuestItem = IsQuestItem(item);
 
                 // Uncomment this to have quest items printed to log. DIAGNOSTIC.
-                slog("{0} quality: {1} - copper total {2}", item.Name, item.Quality, item.ItemInfo.SellPrice);
+                slog("{0} - is this a bag? {1}", item.Name, item.ItemInfo.InventoryType);
                 
 
                 //if item name Matches whats in the text file / the internal list (after load)
@@ -170,11 +170,6 @@ namespace MrItemRemover2
                     Lua.DoString("DeleteCursorItem()");
                 }
 
-                
-
-
-
-
                 //Process all Gray Items if enabled. 
                 if (MrItemRemover2Settings.Instance.DeleteAllGray && item.Quality == WoWItemQuality.Poor && !_KeepList.Contains(item.Name))
                 {
@@ -186,11 +181,11 @@ namespace MrItemRemover2
                     string copperString = MrItemRemover2Settings.Instance.CopperGrays.ToString();
                     int copperValue = copperString.ToInt32();
 
-                    slog("Value of input sell string - " + (goldValue + silverValue + copperValue));
+                    //slog("Value of input sell string - " + (goldValue + silverValue + copperValue));
 
                     if (item.BagSlot != -1 && !isQuestItem && item.ItemInfo.SellPrice <= (goldValue + silverValue + copperValue))
                     {
-                        slog("{0}'s Item Quality was Poor. Removing:", item.Name);
+                        slog("{0}'s Item Quality was Poor. Removing.", item.Name);
                         Lua.DoString("ClearCursor()");
                         item.PickUp();
                         Lua.DoString("DeleteCursorItem()");
