@@ -139,6 +139,9 @@ namespace MrItemRemover2
             List<WoWItem> itemsToVisit = Me.BagItems.ToList();
             foreach (WoWItem item in itemsToVisit)
             {
+
+                // Uncomment this to have quest items printed to log. DIAGNOSTIC.
+                Logging.Write("{0} - is this a bag? {1}", item.Name, item.ItemInfo.InventoryType);
                 if ((item == null) || !item.IsValid)
                 {
                     continue;
@@ -146,8 +149,7 @@ namespace MrItemRemover2
 
                 bool isQuestItem = IsQuestItem(item);
 
-                // Uncomment this to have quest items printed to log. DIAGNOSTIC.
-                slog("{0} - is this a bag? {1}", item.Name, item.ItemInfo.InventoryType);
+                
                 
 
                 //if item name Matches whats in the text file / the internal list (after load)
