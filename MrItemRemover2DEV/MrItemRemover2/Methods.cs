@@ -151,6 +151,8 @@ namespace MrItemRemover2
 
                 bool isQuestItem = IsQuestItem(item);
 
+                dlog("Is it a bag?         = {0}", InventoryType.Bag);
+                 
                 
                 
 
