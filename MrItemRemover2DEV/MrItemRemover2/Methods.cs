@@ -151,7 +151,7 @@ namespace MrItemRemover2
 
                 bool isQuestItem = IsQuestItem(item);
 
-                dlog("Is it a bag?         = {0}", InventoryType.Bag);
+                
                  
                 
                 
@@ -262,6 +262,8 @@ namespace MrItemRemover2
             {
                 return false;
             }
+
+            dlog("Is it a bag?         = {0}", InventoryType.Bag);
 
             string luaCommand = string.Format("return GetContainerItemQuestInfo({0},{1});", item.BagIndex + 1,
                                               item.BagSlot + 1);
