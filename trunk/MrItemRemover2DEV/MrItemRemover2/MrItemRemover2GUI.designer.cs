@@ -613,12 +613,6 @@ namespace MrItemRemover2.GUI
 
         }
 
-        private void MGBConfig_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            MrItemRemover2.save();
-            MrItemRemover2.slog("MrItemRemover2 Config is Closing, Saving Settings");
-        }
-
         #endregion
 
         private System.Windows.Forms.NumericUpDown Time;

@@ -162,6 +162,11 @@ namespace MrItemRemover2.GUI
             }
         }
 
+        private void settingsDebug()
+        {
+            slog("Enable Remove = {0}", EnableRemove);
+        }
+
         private void Save_Click(object sender, EventArgs e)
         {
             Controller.MIRSave();
