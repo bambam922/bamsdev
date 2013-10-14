@@ -33,33 +33,24 @@ namespace MrItemRemover2
         private readonly string _bagListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
                                                             string.Format(
                                                                 @"Plugins/MrItemRemover2DEV/MrItemRemover2/ItemNameBagList.txt"));
-
         private readonly string _keepListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
                                                              string.Format(
-                                                                 @"Plugins/MrItemRemover2DEV/MrItemRemover2/ItemNameKeepList.txt"));
-
+                                                                @"Plugins/MrItemRemover2DEV/MrItemRemover2/ItemNameKeepList.txt"));
         private readonly string _opnListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
                                                             string.Format(
                                                                 @"Plugins/MrItemRemover2DEV/MrItemRemover2/ItemNameOpnList.txt"));
-
         private readonly string _removeListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
                                                                string.Format(
-                                                                   @"Plugins/MrItemRemover2DEV/MrItemRemover2/ItemNameRemoveList.txt"));
-
+                                                                @"Plugins/MrItemRemover2DEV/MrItemRemover2/ItemNameRemoveList.txt"));
         private readonly string _sellListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
                                                              string.Format(
-                                                                 @"Plugins/MrItemRemover2DEV/MrItemRemover2/ItemNameSellList.txt"));
+                                                                @"Plugins/MrItemRemover2DEV/MrItemRemover2/ItemNameSellList.txt"));
 
         public List<string> BagList = new List<string>();
-
         public List<string> InventoryList = new List<string>();
-
         public List<string> ItemNameSell = new List<string>();
-
         public List<string> KeepList = new List<string>();
-
         public List<string> OpnList = new List<string>();
-
         public List<string> ItemName = new List<string>();
 
         //Normal Stuff.
@@ -96,8 +87,7 @@ namespace MrItemRemover2
         {
             get { return StyxWoW.Me; }
         }
-
-
+        
         public override void OnButtonPress()
         {
             if (!IsInitialized)
@@ -116,28 +106,24 @@ namespace MrItemRemover2
         {
             slog(Colors.SkyBlue, format, args);
         }
-
 // ReSharper disable InconsistentNaming
         public static void slog(Color color, string format, params object[] args)
 // ReSharper restore InconsistentNaming
         {
             Logging.Write(color, "[" + _name + "]: " + format, args);
         }
-
 // ReSharper disable InconsistentNaming
         public static void dlog(string format, params object[] args)
 // ReSharper restore InconsistentNaming
         {
             dlog(Colors.Yellow, format, args);
         }
-
 // ReSharper disable InconsistentNaming
         public static void dlog(Color color, string format, params object[] args)
 // ReSharper restore InconsistentNaming
         {
             Logging.WriteDiagnostic(color, "[" + _debug + "]: " + format, args);
         }
-
 
         //My Crappy Initalise.
         public override void Initialize()
@@ -263,11 +249,8 @@ namespace MrItemRemover2
             slog("Saving All Lists.");
 
             WriteList(ItemName, _removeListPath);
-
             WriteList(ItemNameSell, _sellListPath);
-
             WriteList(KeepList, _keepListPath);
-
             WriteList(OpnList, _opnListPath);
         }
 
