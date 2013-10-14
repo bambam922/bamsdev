@@ -128,7 +128,7 @@ namespace MrItemRemover2
         public void CheckForItems()
         {
 
-            slog("{0} - is this a bag? {1}", item.Name, item.ItemInfo.InventoryType);
+           // slog("{0} - is this a bag? {1}", item.Name, item.ItemInfo.InventoryType);
             //Reload item lists
             MIRSave();
             MIRLoad();
