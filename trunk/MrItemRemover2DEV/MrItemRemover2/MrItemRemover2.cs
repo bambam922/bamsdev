@@ -176,13 +176,13 @@ namespace MrItemRemover2
 
         //file Path for Saving and Loading. 
         private string RemoveListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                                              string.Format(@"Plugins/MrItemRemover2/ItemNameRemoveList.txt"));
+                                              string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/ItemNameRemoveList.txt"));
         private string SellListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                                           string.Format(@"Plugins/MrItemRemover2/ItemNameSellList.txt"));
+                                           string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/ItemNameSellList.txt"));
         private string KeepListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                                           string.Format(@"Plugins/MrItemRemover2/ItemNameKeepList.txt"));
+                                           string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/ItemNameKeepList.txt"));
         private string OpnListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                                           string.Format(@"Plugins/MrItemRemover2/ItemNameOpnList.txt"));
+                                           string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/ItemNameOpnList.txt"));
 
         public void initialMIRLoad()
         {
