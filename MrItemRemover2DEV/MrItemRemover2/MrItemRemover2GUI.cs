@@ -10,10 +10,10 @@ namespace MrItemRemover2.GUI
     public partial class MrItemRemover2GUI : Form
     {
         private readonly string GoldImangePathName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                                                                  string.Format(@"Plugins/MrItemRemover2/Gold2.bmp"));
+                                                                  string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/Gold2.bmp"));
 
         private readonly string refreshImangePathName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                                                                     string.Format(@"Plugins/MrItemRemover2/ref.bmp"));
+                                                                     string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/ref.bmp"));
 
         public MrItemRemover2GUI(MrItemRemover2 controller)
         {
