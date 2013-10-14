@@ -51,7 +51,7 @@ namespace MrItemRemover2
     
         public static void slog(string format, params object[] args)
         {
-            slog(Colors.Lime, format, args);
+            slog(Colors.SkyBlue, format, args);
         }
 
         public static void slog(Color color, string format, params object[] args)
@@ -61,7 +61,7 @@ namespace MrItemRemover2
 
         public static void dlog(string format, params object[] args)
         {
-            dlog(Colors.Lime, format, args);
+            dlog(Colors.Yellow, format, args);
         }
 
         public static void dlog(Color color, string format, params object[] args)
