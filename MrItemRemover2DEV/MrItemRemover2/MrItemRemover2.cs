@@ -101,6 +101,7 @@ namespace MrItemRemover2
                 CheckTimer.Reset();
 
                 slog("Checking Bags Manually & Reloading Item Lists.");
+                CheckForItems();
             } 
             
             else if (!MrItemRemover2Settings.Instance.LootEnable)
