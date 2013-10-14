@@ -151,7 +151,8 @@ namespace MrItemRemover2
 
                 bool isQuestItem = IsQuestItem(item);
 
-                Logging.Write("{0}", ItemInfo.FromId(82446).Name);
+                //Logging.Write("{0}", ItemInfo.FromId(82446).Name);
+                Logging.Write("Hello World");
                 
 
                 //if item name Matches whats in the text file / the internal list (after load)
