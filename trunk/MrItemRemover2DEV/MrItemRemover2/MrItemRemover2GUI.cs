@@ -164,7 +164,7 @@ namespace MrItemRemover2.GUI
 
         private void SettingsDebug()
         {
-            slog("Enable Remove = {0}", EnableRemove);
+            slog("Enable Remove = {0}", EnableRemove.Checked);
         }
 
         private void Save_Click(object sender, EventArgs e)
