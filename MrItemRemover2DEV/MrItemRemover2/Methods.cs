@@ -21,7 +21,7 @@ namespace MrItemRemover2
                 {
                     if (!MrItemRemover2Settings.Instance.SellSoulbound)
                     {
-                        if (!item.IsSoulbound && !_KeepList.Contains(item.Name))
+                        if (!item.IsSoulbound && !KeepList.Contains(item.Name))
                         {
                             if (item.Quality == WoWItemQuality.Poor && MrItemRemover2Settings.Instance.SellGray)
                             {
@@ -43,7 +43,7 @@ namespace MrItemRemover2
                                 slog("Selling Blue Item {0}", item.Name);
                                 item.UseContainerItem();
                             }
-                            if (_ItemNameSell.Contains(item.Name))
+                            if (ItemNameSell.Contains(item.Name))
                             {
                                 slog("Item Matched List Selling {0}", item.Name);
                                 item.UseContainerItem();
@@ -54,7 +54,7 @@ namespace MrItemRemover2
 
                     if (MrItemRemover2Settings.Instance.SellSoulbound)
                     {
-                        if (!_KeepList.Contains(item.Name))
+                        if (!KeepList.Contains(item.Name))
                         {
                             if (item.Quality == WoWItemQuality.Poor && MrItemRemover2Settings.Instance.SellGray)
                             {
@@ -76,7 +76,7 @@ namespace MrItemRemover2
                                 slog("Selling Blue Item {0}", item.Name);
                                 item.UseContainerItem();
                             }
-                            if (_ItemNameSell.Contains(item.Name))
+                            if (ItemNameSell.Contains(item.Name))
                             {
                                 slog("Item Matched List Selling {0}", item.Name);
                                 item.UseContainerItem();
@@ -103,7 +103,7 @@ namespace MrItemRemover2
         {
             MIRSave();
             MIRLoad();
-            LoadList(_OpnList, _opnListPath);
+            LoadList(OpnList, _opnListPath);
 
             // NB: Since we will be modifying the Me.BagItems list indirectly through WoWclient directives,
             // we can't use it as our iterator--we must make a copy, instead.
@@ -115,7 +115,7 @@ namespace MrItemRemover2
                     continue;
                 }
 
-                if (_OpnList.Contains(item.Name))
+                if (OpnList.Contains(item.Name))
                 {
                     //probally not needed, but still user could be messing with thier inventory.
                     slog("{0} Found Open Item", item.Name);
@@ -152,7 +152,7 @@ namespace MrItemRemover2
                 bool isQuestItem = IsQuestItem(item);
 
                 //if item name Matches whats in the text file / the internal list (after load)
-                if (_ItemName.Contains(item.Name) && !_KeepList.Contains(item.Name))
+                if (_ItemName.Contains(item.Name) && !KeepList.Contains(item.Name))
                 {
                     //probally not needed, but still user could be messing with thier inventory.
                     //Printing to the log, and Deleting the Item.
@@ -164,7 +164,7 @@ namespace MrItemRemover2
                 }
 
                 if (MrItemRemover2Settings.Instance.DeleteQuestItems && item.ItemInfo.BeginQuestId != 0 &&
-                    !_KeepList.Contains(item.Name))
+                    !KeepList.Contains(item.Name))
                 {
                     slog("{0}'s Began a Quest. Removing", item.Name);
                     item.PickUp();
@@ -172,7 +172,7 @@ namespace MrItemRemover2
                 }
 
                 //Process all Gray Items if enabled. 
-                if (MrItemRemover2Settings.Instance.DeleteAllGray && item.Quality == WoWItemQuality.Poor && !_KeepList.Contains(item.Name) && !_BagList.Contains(item.Name))
+                if (MrItemRemover2Settings.Instance.DeleteAllGray && item.Quality == WoWItemQuality.Poor && !KeepList.Contains(item.Name) && !BagList.Contains(item.Name))
                 {
                     //Gold Format, goes in GXX SXX CXX 
                     string goldString = MrItemRemover2Settings.Instance.GoldGrays.ToString();
@@ -195,7 +195,7 @@ namespace MrItemRemover2
                 }
 
                 //Process all White Items if enabled.
-                if (MrItemRemover2Settings.Instance.DeleteAllWhite && item.Quality == WoWItemQuality.Common && !_KeepList.Contains(item.Name) && !_BagList.Contains(item.Name))
+                if (MrItemRemover2Settings.Instance.DeleteAllWhite && item.Quality == WoWItemQuality.Common && !KeepList.Contains(item.Name) && !BagList.Contains(item.Name))
                 {
                     if (item.BagSlot != -1 && !isQuestItem)
                     {
@@ -208,7 +208,7 @@ namespace MrItemRemover2
                 }
 
                 //Process all Green Items if enabled.
-                if (MrItemRemover2Settings.Instance.DeleteAllGreen && item.Quality == WoWItemQuality.Uncommon && !_KeepList.Contains(item.Name) && !_BagList.Contains(item.Name))
+                if (MrItemRemover2Settings.Instance.DeleteAllGreen && item.Quality == WoWItemQuality.Uncommon && !KeepList.Contains(item.Name) && !BagList.Contains(item.Name))
                 {
                     if (item.BagSlot != -1 && !isQuestItem)
                     {
@@ -221,7 +221,7 @@ namespace MrItemRemover2
                 }
 
                 //Process all Blue Items if enabled.
-                if (MrItemRemover2Settings.Instance.DeleteAllBlue && item.Quality == WoWItemQuality.Rare && !_KeepList.Contains(item.Name) && !_BagList.Contains(item.Name))
+                if (MrItemRemover2Settings.Instance.DeleteAllBlue && item.Quality == WoWItemQuality.Rare && !KeepList.Contains(item.Name) && !BagList.Contains(item.Name))
                 {
                     if (item.BagSlot != -1 && !isQuestItem)
                     {

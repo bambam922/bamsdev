@@ -156,27 +156,27 @@ namespace MrItemRemover2
         };
 
         //Specific items from the TXT Doc are loaded here.
-        public List<string> _ItemNameSell = new List<string>
+        public List<string> ItemNameSell = new List<string>
         {
 
         };
 
-        public List<string> _InventoryList = new List<string>
+        public List<string> InventoryList = new List<string>
         {
 
         };
 
-        public List<string> _KeepList = new List<string>
+        public List<string> KeepList = new List<string>
         {
 
         };
 
-        public List<string> _OpnList = new List<string>
+        public List<string> OpnList = new List<string>
         {
 
         };
 
-        public List<string> _BagList = new List<string>
+        public List<string> BagList = new List<string>
         {
 
         };
@@ -197,23 +197,23 @@ namespace MrItemRemover2
             slog("Initial Loading of Items to Remove List.");
             LoadList(_ItemName, _removeListPath);
             slog("Initial Loading of Items to Sell List.");
-            LoadList(_ItemNameSell, _sellListPath);
+            LoadList(ItemNameSell, _sellListPath);
             slog("Initial Loading of Items to Keep List.");
-            LoadList(_KeepList, _keepListPath);
+            LoadList(KeepList, _keepListPath);
             slog("Initial Loading of Items to Open List.");
-            LoadList(_OpnList, _opnListPath);
+            LoadList(OpnList, _opnListPath);
             slog("Initial Loading of Items to Bag List.");
-            LoadList(_BagList, _bagListPath);
+            LoadList(BagList, _bagListPath);
             slog("Initial Loading Complete!");
         }
 
         public void MIRLoad()
         {
             LoadList(_ItemName, _removeListPath);
-            LoadList(_ItemNameSell, _sellListPath);
-            LoadList(_KeepList, _keepListPath);
-            LoadList(_OpnList, _opnListPath);
-            LoadList(_BagList, _bagListPath); 
+            LoadList(ItemNameSell, _sellListPath);
+            LoadList(KeepList, _keepListPath);
+            LoadList(OpnList, _opnListPath);
+            LoadList(BagList, _bagListPath); 
         }
 
         public void LoadList(List<string> ListToLoad, string FilePath)
@@ -242,11 +242,11 @@ namespace MrItemRemover2
 
             writeList(_ItemName, _removeListPath);
 
-            writeList(_ItemNameSell, _sellListPath);
+            writeList(ItemNameSell, _sellListPath);
 
-            writeList(_KeepList, _keepListPath);
+            writeList(KeepList, _keepListPath);
 
-            writeList(_OpnList, _opnListPath);
+            writeList(OpnList, _opnListPath);
         }
 
 

@@ -66,15 +66,15 @@ namespace MrItemRemover2.GUI
             {
                 RemoveList.Items.Add(itm);
             }
-            foreach (string itm in Controller._ItemNameSell)
+            foreach (string itm in Controller.ItemNameSell)
             {
                 SellList.Items.Add(itm);
             }
-            foreach (string itm in Controller._KeepList)
+            foreach (string itm in Controller.KeepList)
             {
                 ProtectedList.Items.Add(itm);
             }
-            foreach (string itm in Controller._OpnList)
+            foreach (string itm in Controller.OpnList)
             {
                 OpnList.Items.Add(itm);
             }
@@ -114,7 +114,7 @@ namespace MrItemRemover2.GUI
             if (MyBag.SelectedItems[0] != null)
             {
                 SellList.Items.Add(MyBag.SelectedItem);
-                Controller._ItemNameSell.Add(MyBag.SelectedItem.ToString());
+                Controller.ItemNameSell.Add(MyBag.SelectedItem.ToString());
             }
         }
 
@@ -132,7 +132,7 @@ namespace MrItemRemover2.GUI
             if (MyBag.SelectedItems[0] != null)
             {
                 ProtectedList.Items.Add(MyBag.SelectedItem);
-                Controller._KeepList.Add(MyBag.SelectedItem.ToString());
+                Controller.KeepList.Add(MyBag.SelectedItem.ToString());
             }
         }
 
@@ -141,7 +141,7 @@ namespace MrItemRemover2.GUI
             if (SellList.SelectedItem != null)
             {
                 slog("{0} Removed", SellList.SelectedItem.ToString());
-                Controller._ItemNameSell.Remove(SellList.SelectedItem.ToString());
+                Controller.ItemNameSell.Remove(SellList.SelectedItem.ToString());
                 SellList.Items.Remove(SellList.SelectedItem);
             }
         }
@@ -161,7 +161,7 @@ namespace MrItemRemover2.GUI
             if (ProtectedList.SelectedItem != null)
             {
                 slog("{0} Removed", ProtectedList.SelectedItem.ToString());
-                Controller._KeepList.Remove(ProtectedList.SelectedItem.ToString());
+                Controller.KeepList.Remove(ProtectedList.SelectedItem.ToString());
                 ProtectedList.Items.Remove(ProtectedList.SelectedItem);
             }
         }
@@ -177,7 +177,7 @@ namespace MrItemRemover2.GUI
             dlog("Sell Grays              = {0}", SellGray.Checked);
             dlog("Sell Whites            = {0}", SellWhite.Checked);
             dlog("Sell Greens            = {0}", SellGreen.Checked);
-            dlog("Sell Blues             = {0}", SellBlue.Checked);
+            dlog("Sell Blues              = {0}", SellBlue.Checked);
             dlog("Sell Soulbound     = {0}", SellSoulbound.Checked);
             dlog("Enable Opening    = {0}", EnableOpen.Checked);
             dlog("Check After Loot   = {0}", LootEnable.Checked);
@@ -274,7 +274,7 @@ namespace MrItemRemover2.GUI
             if (OpnList.SelectedItem != null)
             {
                 slog("{0} Removed", OpnList.SelectedItem.ToString());
-                Controller._OpnList.Remove(OpnList.SelectedItem.ToString());
+                Controller.OpnList.Remove(OpnList.SelectedItem.ToString());
                 OpnList.Items.Remove(OpnList.SelectedItem);
             }
         }
@@ -301,7 +301,7 @@ namespace MrItemRemover2.GUI
             if (MyBag.SelectedItems[0] != null)
             {
                 OpnList.Items.Add(MyBag.SelectedItem);
-                Controller._OpnList.Add(MyBag.SelectedItem.ToString());
+                Controller.OpnList.Add(MyBag.SelectedItem.ToString());
             }
         }
 
