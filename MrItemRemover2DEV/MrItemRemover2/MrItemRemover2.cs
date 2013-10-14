@@ -175,34 +175,34 @@ namespace MrItemRemover2
         };
 
         //file Path for Saving and Loading. 
-        private string RemoveListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                                              string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/ItemNameRemoveList.txt"));
-        private string SellListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
+        private readonly string _removeListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
+                                           string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/ItemNameRemoveList.txt"));
+        private readonly string _sellListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
                                            string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/ItemNameSellList.txt"));
-        private string KeepListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
+        private readonly string _keepListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
                                            string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/ItemNameKeepList.txt"));
-        private string OpnListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
+        private readonly string _opnListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
                                            string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/ItemNameOpnList.txt"));
 
         public void initialMIRLoad()
         {
             slog("Initial Loading of Items to Remove List.");
-            LoadList(_ItemName, RemoveListPath);
+            LoadList(_ItemName, _removeListPath);
             slog("Initial Loading of Items to Sell List.");
-            LoadList(_ItemNameSell, SellListPath);
+            LoadList(_ItemNameSell, _sellListPath);
             slog("Initial Loading of Items to Keep List.");
-            LoadList(_KeepList, KeepListPath);
+            LoadList(_KeepList, _keepListPath);
             slog("Initial Loading of Items to Open List.");
-            LoadList(_OpnList, OpnListPath);
+            LoadList(_OpnList, _opnListPath);
             slog("Initial Loading Complete!");
         }
 
         public void MIRLoad()
         {
-            LoadList(_ItemName, RemoveListPath);
-            LoadList(_ItemNameSell, SellListPath);
-            LoadList(_KeepList, KeepListPath);
-            LoadList(_OpnList, OpnListPath); 
+            LoadList(_ItemName, _removeListPath);
+            LoadList(_ItemNameSell, _sellListPath);
+            LoadList(_KeepList, _keepListPath);
+            LoadList(_OpnList, _opnListPath); 
         }
 
         public void LoadList(List<string> ListToLoad, string FilePath)
@@ -229,13 +229,13 @@ namespace MrItemRemover2
         {
             slog("Saving All Lists.");
 
-            writeList(_ItemName, RemoveListPath);
+            writeList(_ItemName, _removeListPath);
 
-            writeList(_ItemNameSell, SellListPath);
+            writeList(_ItemNameSell, _sellListPath);
 
-            writeList(_KeepList, KeepListPath);
+            writeList(_KeepList, _keepListPath);
 
-            writeList(_OpnList, OpnListPath);
+            writeList(_OpnList, _opnListPath);
         }
 
         public void writeList(List<string> ListName, string filePath)

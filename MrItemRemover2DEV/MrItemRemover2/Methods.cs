@@ -103,7 +103,7 @@ namespace MrItemRemover2
         {
             MIRSave();
             MIRLoad();
-            LoadList(_OpnList, OpnListPath);
+            LoadList(_OpnList, _opnListPath);
 
             // NB: Since we will be modifying the Me.BagItems list indirectly through WoWclient directives,
             // we can't use it as our iterator--we must make a copy, instead.
@@ -134,7 +134,7 @@ namespace MrItemRemover2
             MIRLoad();
 
             //Added to Make sure our list matches what we are looking for. 
-            LoadList(_ItemName, RemoveListPath);
+            LoadList(_ItemName, _removeListPath);
 
             // NB: Since we will be modifying the Me.BagItems list indirectly through WoWclient directives,
             // we can't use it as our iterator--we must make a copy, instead.
