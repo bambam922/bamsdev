@@ -184,6 +184,16 @@ namespace MrItemRemover2
         private readonly string _opnListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
                                            string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/ItemNameOpnList.txt"));
 
+        public static void save()
+        {
+            SaveSettings();
+        }
+
+        private static void SaveSettings()
+        {
+
+        }
+
         public void initialMIRLoad()
         {
             slog("Initial Loading of Items to Remove List.");
