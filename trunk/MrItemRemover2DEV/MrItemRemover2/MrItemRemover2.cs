@@ -122,7 +122,7 @@ namespace MrItemRemover2
     
             if (!Me.Combat && !Me.IsCasting && !Me.IsDead && !Me.IsGhost && EnableCheck)
             {
-                dlog("EnableCheck was Passed!");
+                slog("EnableCheck was Passed!");
                 if (MrItemRemover2Settings.Instance.EnableOpen)
                 {
                     OpenBagItems();
@@ -132,7 +132,7 @@ namespace MrItemRemover2
                     CheckForItems();
                 }
                 EnableCheck = false;
-                dlog("Turning off Check Since Done!");
+                slog("Turning off Check Since Done!");
             }            
         }
 
@@ -143,7 +143,7 @@ namespace MrItemRemover2
                 if (EnableCheck == false)
                 {
                     EnableCheck = true;
-                    dlog("Enabling Check because Loot Ended");
+                    slog("Enabling Check because Loot Ended");
                 }
             }
         }
