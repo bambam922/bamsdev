@@ -27,6 +27,10 @@ namespace MrItemRemover2.GUI
         {
             MrItemRemover2.slog(format, args);
         }
+        public static void dlog(string format, params object[] args)
+        {
+            MrItemRemover2.dlog(format, args);
+        }
 
         private void MrItemRemover2GUI_Load(object sender, EventArgs e)
         {
@@ -164,7 +168,22 @@ namespace MrItemRemover2.GUI
 
         private void SettingsDebug()
         {
-            slog("Enable Remove = {0}", EnableRemove.Checked);
+            dlog("Enable Removing  = {0}", EnableRemove.Checked);
+            dlog("Remove Grays     = {0}", GrayItems.Checked);
+            dlog("Remove Whites    = {0}", WhiteItems.Checked);
+            dlog("Remove Greens    = {0}", GreenItems.Checked);
+            dlog("Remove Blues     = {0}", BlueItems.Checked);
+            dlog("Enasble Selling  = {0}", EnableSell.Checked);
+            dlog("Sell Grays       = {0}", SellGray.Checked);
+            dlog("Sell Whites      = {0}", SellWhite.Checked);
+            dlog("Sell Greens      = {0}", SellGreen.Checked);
+            dlog("Sell Blues       = {0}", SellBlue.Checked);
+            dlog("Sell Soulbound   = {0}", SellSoulbound.Checked);
+            dlog("Enable Opening   = {0}", EnableOpen.Checked);
+            dlog("Check After Loot = {0}", LootEnable.Checked);
+            dlog("Gold Value       = {0}", GoldGrays.Text);
+            dlog("Silver Value     = {0}", SilverGrays.Text);
+            dlog("Copper Value     = {0}", CopperGrays.Text);
         }
 
         private void Save_Click(object sender, EventArgs e)
