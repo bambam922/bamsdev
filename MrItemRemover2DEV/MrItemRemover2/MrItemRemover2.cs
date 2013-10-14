@@ -183,17 +183,6 @@ namespace MrItemRemover2
                                            string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/ItemNameKeepList.txt"));
         private readonly string _opnListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
                                            string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/ItemNameOpnList.txt"));
-
-        public static void save()
-        {
-            SaveSettings();
-        }
-
-        private static void SaveSettings()
-        {
-
-        }
-
         public void initialMIRLoad()
         {
             slog("Initial Loading of Items to Remove List.");
@@ -247,6 +236,9 @@ namespace MrItemRemover2
 
             writeList(_OpnList, _opnListPath);
         }
+
+
+
 
         public void writeList(List<string> ListName, string filePath)
         {
