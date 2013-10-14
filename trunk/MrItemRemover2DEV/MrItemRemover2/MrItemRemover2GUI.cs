@@ -166,6 +166,7 @@ namespace MrItemRemover2.GUI
         {
             Controller.MIRSave();
             MrItemRemover2Settings.Instance.Save();
+            Close();
         }
 
         private void GrayItems_CheckedChanged(object sender, EventArgs e)

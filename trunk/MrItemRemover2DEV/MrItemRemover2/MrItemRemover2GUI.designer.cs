@@ -1,4 +1,6 @@
-﻿namespace MrItemRemover2.GUI
+﻿using System.Windows.Forms;
+
+namespace MrItemRemover2.GUI
 {
     partial class MrItemRemover2GUI
     {
@@ -390,6 +392,28 @@
             this.GrayItems.UseVisualStyleBackColor = true;
             this.GrayItems.CheckedChanged += new System.EventHandler(this.GrayItems_CheckedChanged);
             // 
+            // SellSoulbound
+            // 
+            this.SellSoulbound.AutoSize = true;
+            this.SellSoulbound.Location = new System.Drawing.Point(201, 327);
+            this.SellSoulbound.Name = "SellSoulbound";
+            this.SellSoulbound.Size = new System.Drawing.Size(106, 17);
+            this.SellSoulbound.TabIndex = 44;
+            this.SellSoulbound.Text = "   Sell Soulbound";
+            this.SellSoulbound.UseVisualStyleBackColor = true;
+            this.SellSoulbound.CheckedChanged += new System.EventHandler(this.SellSoulbound_CheckedChanged);
+            // 
+            // SellBlue
+            // 
+            this.SellBlue.AutoSize = true;
+            this.SellBlue.Location = new System.Drawing.Point(201, 310);
+            this.SellBlue.Name = "SellBlue";
+            this.SellBlue.Size = new System.Drawing.Size(104, 17);
+            this.SellBlue.TabIndex = 39;
+            this.SellBlue.Text = "   Sell Blue Items";
+            this.SellBlue.UseVisualStyleBackColor = true;
+            this.SellBlue.CheckedChanged += new System.EventHandler(this.SellBlue_CheckedChanged_1);
+            // 
             // RemoveQItems
             // 
             this.RemoveQItems.AutoSize = true;
@@ -407,7 +431,7 @@
             this.Save.Name = "Save";
             this.Save.Size = new System.Drawing.Size(94, 26);
             this.Save.TabIndex = 32;
-            this.Save.Text = "Save Settings";
+            this.Save.Text = "Save and Close";
             this.Save.UseVisualStyleBackColor = true;
             this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
@@ -495,17 +519,6 @@
             this.LootEnable.UseVisualStyleBackColor = true;
             this.LootEnable.CheckedChanged += new System.EventHandler(this.LootEnable_CheckedChanged);
             // 
-            // SellBlue
-            // 
-            this.SellBlue.AutoSize = true;
-            this.SellBlue.Location = new System.Drawing.Point(201, 310);
-            this.SellBlue.Name = "SellBlue";
-            this.SellBlue.Size = new System.Drawing.Size(104, 17);
-            this.SellBlue.TabIndex = 39;
-            this.SellBlue.Text = "   Sell Blue Items";
-            this.SellBlue.UseVisualStyleBackColor = true;
-            this.SellBlue.CheckedChanged += new System.EventHandler(this.SellBlue_CheckedChanged_1);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -547,17 +560,6 @@
             this.GreenItems.Text = "   Remove Green Items";
             this.GreenItems.UseVisualStyleBackColor = true;
             this.GreenItems.CheckedChanged += new System.EventHandler(this.GreenItems_CheckedChanged);
-            // 
-            // SellSoulbound
-            // 
-            this.SellSoulbound.AutoSize = true;
-            this.SellSoulbound.Location = new System.Drawing.Point(201, 327);
-            this.SellSoulbound.Name = "SellSoulbound";
-            this.SellSoulbound.Size = new System.Drawing.Size(106, 17);
-            this.SellSoulbound.TabIndex = 44;
-            this.SellSoulbound.Text = "   Sell Soulbound";
-            this.SellSoulbound.UseVisualStyleBackColor = true;
-            this.SellSoulbound.CheckedChanged += new System.EventHandler(this.SellSoulbound_CheckedChanged);
             // 
             // MrItemRemover2GUI
             // 
@@ -609,6 +611,12 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void MGBConfig_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            MrItemRemover2.save();
+            MrItemRemover2.Dlog("MrGearBuyer Config is Closing, Saving Settings");
         }
 
         #endregion
