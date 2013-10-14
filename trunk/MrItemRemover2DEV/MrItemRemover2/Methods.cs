@@ -127,6 +127,8 @@ namespace MrItemRemover2
 
         public void CheckForItems()
         {
+
+            slog("{0} - is this a bag? {1}", item.Name, item.ItemInfo.InventoryType);
             //Reload item lists
             MIRSave();
             MIRLoad();
@@ -141,7 +143,7 @@ namespace MrItemRemover2
             {
 
                 // Uncomment this to have quest items printed to log. DIAGNOSTIC.
-                Logging.Write("{0} - is this a bag? {1}", item.Name, item.ItemInfo.InventoryType);
+                
                 if ((item == null) || !item.IsValid)
                 {
                     continue;
