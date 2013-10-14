@@ -4,6 +4,7 @@ namespace MrItemRemover2.GUI
 {
     partial class MrItemRemover2GUI
     {
+
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -566,6 +567,7 @@ namespace MrItemRemover2.GUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(782, 354);
+            this.ControlBox = false;
             this.Controls.Add(this.SellSoulbound);
             this.Controls.Add(this.WhiteItems);
             this.Controls.Add(this.GreenItems);
