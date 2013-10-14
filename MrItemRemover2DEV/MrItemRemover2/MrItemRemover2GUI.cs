@@ -162,7 +162,7 @@ namespace MrItemRemover2.GUI
             }
         }
 
-        private void settingsDebug()
+        private void SettingsDebug()
         {
             slog("Enable Remove = {0}", EnableRemove);
         }
@@ -171,6 +171,7 @@ namespace MrItemRemover2.GUI
         {
             Controller.MIRSave();
             MrItemRemover2Settings.Instance.Save();
+            SettingsDebug();
             Close();
         }
 
