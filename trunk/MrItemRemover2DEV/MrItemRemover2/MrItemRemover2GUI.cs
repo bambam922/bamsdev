@@ -30,7 +30,7 @@ namespace MrItemRemover2.GUI
 
         private void MrItemRemover2GUI_Load(object sender, EventArgs e)
         {
-            Bitmap refresh = new Bitmap(refreshImangePathName);
+            var refresh = new Bitmap(refreshImangePathName);
             var GoldImg = new Bitmap(GoldImangePathName);
             GoldBox.Image = GoldImg;
             resf.Image = refresh;
