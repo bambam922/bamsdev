@@ -151,9 +151,7 @@ namespace MrItemRemover2
 
                 bool isQuestItem = IsQuestItem(item);
 
-                
-                 
-                
+                Logging.Write("{0}", ItemInfo.FromId(82446).Name);
                 
 
                 //if item name Matches whats in the text file / the internal list (after load)
@@ -262,8 +260,6 @@ namespace MrItemRemover2
             {
                 return false;
             }
-
-            dlog("Is it a bag?         = {0}", InventoryType.Bag);
 
             string luaCommand = string.Format("return GetContainerItemQuestInfo({0},{1});", item.BagIndex + 1,
                                               item.BagSlot + 1);
