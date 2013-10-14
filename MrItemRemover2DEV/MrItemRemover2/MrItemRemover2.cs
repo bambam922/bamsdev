@@ -176,6 +176,11 @@ namespace MrItemRemover2
 
         };
 
+        public List<string> _BagList = new List<string>
+        {
+
+        };
+
         //file Path for Saving and Loading. 
         private readonly string _removeListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
                                            string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/ItemNameRemoveList.txt"));
@@ -185,6 +190,8 @@ namespace MrItemRemover2
                                            string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/ItemNameKeepList.txt"));
         private readonly string _opnListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
                                            string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/ItemNameOpnList.txt"));
+        private readonly string _bagListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
+                                           string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/ItemNameBagList.txt"));
         public void initialMIRLoad()
         {
             slog("Initial Loading of Items to Remove List.");
@@ -195,6 +202,8 @@ namespace MrItemRemover2
             LoadList(_KeepList, _keepListPath);
             slog("Initial Loading of Items to Open List.");
             LoadList(_OpnList, _opnListPath);
+            slog("Initial Loading of Items to Bag List.");
+            LoadList(_BagList, _bagListPath);
             slog("Initial Loading Complete!");
         }
 
@@ -203,7 +212,8 @@ namespace MrItemRemover2
             LoadList(_ItemName, _removeListPath);
             LoadList(_ItemNameSell, _sellListPath);
             LoadList(_KeepList, _keepListPath);
-            LoadList(_OpnList, _opnListPath); 
+            LoadList(_OpnList, _opnListPath);
+            LoadList(_BagList, _bagListPath); 
         }
 
         public void LoadList(List<string> ListToLoad, string FilePath)

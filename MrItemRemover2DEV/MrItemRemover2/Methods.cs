@@ -142,7 +142,6 @@ namespace MrItemRemover2
             List<WoWItem> itemsToVisit = Me.BagItems.ToList();
             foreach (WoWItem item in itemsToVisit)
             {
-
                 // Uncomment this to have quest items printed to log. DIAGNOSTIC.
                 
                 if ((item == null) || !item.IsValid)
@@ -151,10 +150,6 @@ namespace MrItemRemover2
                 }
 
                 bool isQuestItem = IsQuestItem(item);
-
-                Logging.Write("{0}", ItemInfo.FromId(82446).Name);
-                //Logging.Write("Hello World");
-                
 
                 //if item name Matches whats in the text file / the internal list (after load)
                 if (_ItemName.Contains(item.Name) && !_KeepList.Contains(item.Name))
@@ -177,7 +172,7 @@ namespace MrItemRemover2
                 }
 
                 //Process all Gray Items if enabled. 
-                if (MrItemRemover2Settings.Instance.DeleteAllGray && item.Quality == WoWItemQuality.Poor && !_KeepList.Contains(item.Name))
+                if (MrItemRemover2Settings.Instance.DeleteAllGray && item.Quality == WoWItemQuality.Poor && !_KeepList.Contains(item.Name) && !_BagList.Contains(item.Name))
                 {
                     //Gold Format, goes in GXX SXX CXX 
                     string goldString = MrItemRemover2Settings.Instance.GoldGrays.ToString();
@@ -200,8 +195,7 @@ namespace MrItemRemover2
                 }
 
                 //Process all White Items if enabled.
-                if (MrItemRemover2Settings.Instance.DeleteAllWhite && item.Quality == WoWItemQuality.Common &&
-                    !_KeepList.Contains(item.Name))
+                if (MrItemRemover2Settings.Instance.DeleteAllWhite && item.Quality == WoWItemQuality.Common && !_KeepList.Contains(item.Name) && !_BagList.Contains(item.Name))
                 {
                     if (item.BagSlot != -1 && !isQuestItem)
                     {
@@ -214,8 +208,7 @@ namespace MrItemRemover2
                 }
 
                 //Process all Green Items if enabled.
-                if (MrItemRemover2Settings.Instance.DeleteAllGreen && item.Quality == WoWItemQuality.Uncommon &&
-                    !_KeepList.Contains(item.Name))
+                if (MrItemRemover2Settings.Instance.DeleteAllGreen && item.Quality == WoWItemQuality.Uncommon && !_KeepList.Contains(item.Name) && !_BagList.Contains(item.Name))
                 {
                     if (item.BagSlot != -1 && !isQuestItem)
                     {
@@ -228,8 +221,7 @@ namespace MrItemRemover2
                 }
 
                 //Process all Blue Items if enabled.
-                if (MrItemRemover2Settings.Instance.DeleteAllBlue && item.Quality == WoWItemQuality.Rare &&
-                    !_KeepList.Contains(item.Name))
+                if (MrItemRemover2Settings.Instance.DeleteAllBlue && item.Quality == WoWItemQuality.Rare && !_KeepList.Contains(item.Name) && !_BagList.Contains(item.Name))
                 {
                     if (item.BagSlot != -1 && !isQuestItem)
                     {
