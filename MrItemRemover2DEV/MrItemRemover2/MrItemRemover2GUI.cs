@@ -169,21 +169,21 @@ namespace MrItemRemover2.GUI
         private void SettingsDebug()
         {
             dlog("Enable Removing  = {0}", EnableRemove.Checked);
-            dlog("Enasble Selling      = {0}", EnableSell.Checked);
-            dlog("Enable Opening    = {0}", EnableOpen.Checked);
-            dlog("Remove Grays       = {0}", GrayItems.Checked);
-            dlog("Remove Whites     = {0}", WhiteItems.Checked);
-            dlog("Remove Greens     = {0}", GreenItems.Checked);
-            dlog("Remove Blues       = {0}", BlueItems.Checked);
-            dlog("Sell Grays              = {0}", SellGray.Checked);
-            dlog("Sell Whites            = {0}", SellWhite.Checked);
-            dlog("Sell Greens            = {0}", SellGreen.Checked);
-            dlog("Sell Blues              = {0}", SellBlue.Checked);
-            dlog("Sell Soulbound     = {0}", SellSoulbound.Checked);
-            dlog("Check After Loot   = {0}", LootEnable.Checked);
-            dlog("Gold Value            = {0}", GoldGrays.Text);
-            dlog("Silver Value           = {0}", SilverGrays.Text);
-            dlog("Copper Value        = {0}", CopperGrays.Text);
+            dlog("Enasble Selling  = {0}", EnableSell.Checked);
+            dlog("Enable Opening   = {0}", EnableOpen.Checked);
+            dlog("Remove Grays     = {0}", GrayItems.Checked);
+            dlog("Remove Whites    = {0}", WhiteItems.Checked);
+            dlog("Remove Greens    = {0}", GreenItems.Checked);
+            dlog("Remove Blues     = {0}", BlueItems.Checked);
+            dlog("Sell Grays       = {0}", SellGray.Checked);
+            dlog("Sell Whites      = {0}", SellWhite.Checked);
+            dlog("Sell Greens      = {0}", SellGreen.Checked);
+            dlog("Sell Blues       = {0}", SellBlue.Checked);
+            dlog("Sell Soulbound   = {0}", SellSoulbound.Checked);
+            dlog("Check After Loot = {0}", LootEnable.Checked);
+            dlog("Gold Value       = {0}", GoldGrays.Text);
+            dlog("Silver Value     = {0}", SilverGrays.Text);
+            dlog("Copper Value     = {0}", CopperGrays.Text);
         }
 
         private void Save_Click(object sender, EventArgs e)
