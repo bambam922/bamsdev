@@ -27,6 +27,7 @@ namespace MrItemRemover2
     public partial class MrItemRemover2 : HBPlugin
     {
         const string _name = "Mr.ItemRemover2DEV 1.5.3";
+        const string _debug = "Mr.Itemremover2 DEBUG";
 
         //Normal Stuff.
         public override string Name { get { return _name; } }
@@ -65,7 +66,7 @@ namespace MrItemRemover2
 
         public static void dlog(Color color, string format, params object[] args)
         {
-            Logging.WriteDiagnostic(color, "[" + _name + "]: " + format, args);
+            Logging.WriteDiagnostic(color, "[" + _debug + "]: " + format, args);
         }
 
 
