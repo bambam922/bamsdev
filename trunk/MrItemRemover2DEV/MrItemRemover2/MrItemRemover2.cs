@@ -155,16 +155,11 @@ namespace MrItemRemover2
 
         //All items from the TXT Doc are loaded here.
         public List<string> ItemName = new List<string>();
-
         //Specific items from the TXT Doc are loaded here.
         public List<string> ItemNameSell = new List<string>();
-
         public List<string> InventoryList = new List<string>();
-
         public List<string> KeepList = new List<string>();
-
         public List<string> OpnList = new List<string>();
-
         public List<string> BagList = new List<string>();
 
         //file Path for Saving and Loading. 
