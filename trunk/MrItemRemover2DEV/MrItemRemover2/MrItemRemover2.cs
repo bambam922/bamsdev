@@ -7,123 +7,70 @@
  * Version 1.6 for WoW Version 5.4 +
  */
 
-using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.IO;
 using System.Windows.Forms;
-using System.Windows.Media;
-using Styx;
-using Styx.Common;
-using Styx.Common.Helpers;
-using Styx.Plugins;
+using System;
 using Styx.WoWInternals;
 using Styx.WoWInternals.WoWObjects;
+using System.IO;
+using Styx.Plugins;
+using Styx;
+using Styx.Common.Helpers;
+using Styx.Common;
+using System.Collections.Generic;
+using System.Windows.Media;
+
 
 namespace MrItemRemover2
 {
+
     public partial class MrItemRemover2 : HBPlugin
     {
 // ReSharper disable InconsistentNaming
-        private const string _debug = "Mr.Itemremover2 DEBUG";
-        private const string _name = "Mr.ItemRemover2DEV 1.6";
+        const string _name = "Mr.ItemRemover2DEV 1.6";
+        const string _debug = "Mr.Itemremover2 DEBUG";
 // ReSharper restore InconsistentNaming
-        private readonly WaitTimer _checkTimer = new WaitTimer(TimeSpan.FromMinutes(MrItemRemover2Settings.Instance.Time));
-
-        private readonly string _bagListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                                                            string.Format(
-                                                                @"Plugins/MrItemRemover2DEV/MrItemRemover2/ItemNameBagList.txt"));
-        private readonly string _keepListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                                                             string.Format(
-                                                                @"Plugins/MrItemRemover2DEV/MrItemRemover2/ItemNameKeepList.txt"));
-        private readonly string _opnListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                                                            string.Format(
-                                                                @"Plugins/MrItemRemover2DEV/MrItemRemover2/ItemNameOpnList.txt"));
-        private readonly string _removeListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                                                               string.Format(
-                                                                @"Plugins/MrItemRemover2DEV/MrItemRemover2/ItemNameRemoveList.txt"));
-        private readonly string _sellListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                                                             string.Format(
-                                                                @"Plugins/MrItemRemover2DEV/MrItemRemover2/ItemNameSellList.txt"));
-
-        public List<string> BagList = new List<string>();
-        public List<string> InventoryList = new List<string>();
-        public List<string> ItemNameSell = new List<string>();
-        public List<string> KeepList = new List<string>();
-        public List<string> OpnList = new List<string>();
-        public List<string> ItemName = new List<string>();
 
         //Normal Stuff.
-        public override string Name
-        {
-            get { return _name; }
-        }
+        public override string Name { get { return _name; } }
+        public override string Author { get { return "CnG & Bambam922"; } }
+        public override Version Version { get { return new Version(1, 6); } }
+        public override bool WantButton { get { return true; } }
+        public override string ButtonText { get { return _name; } }
 
-        public override string Author
-        {
-            get { return "CnG & Bambam922"; }
-        }
 
-        public override Version Version
-        {
-            get { return new Version(1, 6); }
-        }
-
-        public override bool WantButton
-        {
-            get { return true; }
-        }
-
-        public override string ButtonText
-        {
-            get { return _name; }
-        }
-
-        public bool ManualCheckRequested { get; set; }
-        private bool EnableCheck { get; set; }
-        private bool IsInitialized { get; set; }
-
-        private static LocalPlayer Me
-        {
-            get { return StyxWoW.Me; }
-        }
-        
         public override void OnButtonPress()
         {
             if (!IsInitialized)
             {
-                slog("Not finished initializing");
+                Slog("Not finished initializing");
                 return;
             }
 
             var form = new MrItemRemover2Gui(this);
             form.ShowDialog();
         }
-
-// ReSharper disable InconsistentNaming
-        public static void slog(string format, params object[] args)
-// ReSharper restore InconsistentNaming
+    
+        public static void Slog(string format, params object[] args)
         {
-            slog(Colors.SkyBlue, format, args);
+            Slog(Colors.SkyBlue, format, args);
         }
-// ReSharper disable InconsistentNaming
-        public static void slog(Color color, string format, params object[] args)
-// ReSharper restore InconsistentNaming
+
+        public static void Slog(Color color, string format, params object[] args)
         {
             Logging.Write(color, "[" + _name + "]: " + format, args);
         }
-// ReSharper disable InconsistentNaming
-        public static void dlog(string format, params object[] args)
-// ReSharper restore InconsistentNaming
+
+        public static void Dlog(string format, params object[] args)
         {
-            dlog(Colors.Yellow, format, args);
+            Dlog(Colors.Yellow, format, args);
         }
-// ReSharper disable InconsistentNaming
-        public static void dlog(Color color, string format, params object[] args)
-// ReSharper restore InconsistentNaming
+
+        public static void Dlog(Color color, string format, params object[] args)
         {
             Logging.WriteDiagnostic(color, "[" + _debug + "]: " + format, args);
         }
+
 
         //My Crappy Initalise.
         public override void Initialize()
@@ -131,8 +78,8 @@ namespace MrItemRemover2
             Lua.Events.AttachEvent("DELETE_ITEM_CONFIRM", DeleteItemConfirmPopup);
             Lua.Events.AttachEvent("MERCHANT_SHOW", SellVenderItems);
             Lua.Events.AttachEvent("LOOT_CLOSED", LootEnded);
-
-            slog("Initial Loading of Item names.");
+            
+            Slog("Initial Loading of Item names.");
             InitialMirLoad();
             MrItemRemover2Settings.Instance.Load();
             _checkTimer.Reset(); //should start the timer 
@@ -140,6 +87,13 @@ namespace MrItemRemover2
             IsInitialized = true;
         }
 
+        public bool ManualCheckRequested { get; set; }
+       
+        private readonly WaitTimer _checkTimer = new WaitTimer(TimeSpan.FromMinutes(MrItemRemover2Settings.Instance.Time));
+        private bool EnableCheck { get; set; }
+        private bool IsInitialized { get; set; }
+        private static LocalPlayer Me { get { return StyxWoW.Me; } }
+   
         public override void Pulse()
         {
             if (ManualCheckRequested)
@@ -148,10 +102,10 @@ namespace MrItemRemover2
                 ManualCheckRequested = false;
                 _checkTimer.Reset();
 
-                slog("Checking Bags Manually & Reloading Item Lists.");
+                Slog("Checking Bags Manually & Reloading Item Lists.");
                 CheckForItems();
-            }
-
+            } 
+            
             else if (!MrItemRemover2Settings.Instance.LootEnable)
             {
                 if (_checkTimer.TimeLeft.Ticks <= 0)
@@ -161,19 +115,17 @@ namespace MrItemRemover2
                         EnableCheck = true;
                         _checkTimer.Reset();
 
-                        slog("Enabling Check at {0}", GetTime(DateTime.Now));
-                        dlog(
-                            "Checktimer has Finished its Total wait of {0} Minutes, Enabling Item Check for next Opportunity",
-                            MrItemRemover2Settings.Instance.Time.ToString(CultureInfo.InvariantCulture));
-                        slog("Will Run Next Check At {0}", GetTime(_checkTimer.EndTime));
+                        Slog("Enabling Check at {0}", GetTime(DateTime.Now));
+                        Dlog("Checktimer has Finished its Total wait of {0} Minutes, Enabling Item Check for next Opportunity", MrItemRemover2Settings.Instance.Time.ToString(CultureInfo.InvariantCulture));
+                        Slog("Will Run Next Check At {0}", GetTime(_checkTimer.EndTime));
                     }
                 }
             }
 
-
+    
             if (!Me.Combat && !Me.IsCasting && !Me.IsDead && !Me.IsGhost && EnableCheck)
             {
-                slog("EnableCheck was Passed!");
+                Slog("EnableCheck was Passed!");
                 if (MrItemRemover2Settings.Instance.EnableOpen)
                 {
                     OpenBagItems();
@@ -183,8 +135,8 @@ namespace MrItemRemover2
                     CheckForItems();
                 }
                 EnableCheck = false;
-                slog("Turning off Check Since Done!");
-            }
+                Slog("Turning off Check Since Done!");
+            }            
         }
 
         private void LootEnded(object sender, LuaEventArgs args)
@@ -194,26 +146,51 @@ namespace MrItemRemover2
                 if (EnableCheck == false)
                 {
                     EnableCheck = true;
-                    slog("Enabling Check because Loot Ended");
+                    Slog("Enabling Check because Loot Ended");
                 }
             }
         }
+        
+       
 
         //All items from the TXT Doc are loaded here.
+        public List<string> ItemName = new List<string>();
 
+        //Specific items from the TXT Doc are loaded here.
+        public List<string> ItemNameSell = new List<string>();
+
+        public List<string> InventoryList = new List<string>();
+
+        public List<string> KeepList = new List<string>();
+
+        public List<string> OpnList = new List<string>();
+
+        public List<string> BagList = new List<string>();
+
+        //file Path for Saving and Loading. 
+        private readonly string _removeListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
+                                           string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/ItemNameRemoveList.txt"));
+        private readonly string _sellListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
+                                           string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/ItemNameSellList.txt"));
+        private readonly string _keepListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
+                                           string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/ItemNameKeepList.txt"));
+        private readonly string _opnListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
+                                           string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/ItemNameOpnList.txt"));
+        private readonly string _bagListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
+                                           string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/ItemNameBagList.txt"));
         public void InitialMirLoad()
         {
-            slog("Initial Loading of Items to Remove List.");
+            Slog("Initial Loading of Items to Remove List.");
             LoadList(ItemName, _removeListPath);
-            slog("Initial Loading of Items to Sell List.");
+            Slog("Initial Loading of Items to Sell List.");
             LoadList(ItemNameSell, _sellListPath);
-            slog("Initial Loading of Items to Keep List.");
+            Slog("Initial Loading of Items to Keep List.");
             LoadList(KeepList, _keepListPath);
-            slog("Initial Loading of Items to Open List.");
+            Slog("Initial Loading of Items to Open List.");
             LoadList(OpnList, _opnListPath);
-            slog("Initial Loading of Items to Bag List.");
+            Slog("Initial Loading of Items to Bag List.");
             LoadList(BagList, _bagListPath);
-            slog("Initial Loading Complete!");
+            Slog("Initial Loading Complete!");
         }
 
         public void MirLoad()
@@ -222,7 +199,7 @@ namespace MrItemRemover2
             LoadList(ItemNameSell, _sellListPath);
             LoadList(KeepList, _keepListPath);
             LoadList(OpnList, _opnListPath);
-            LoadList(BagList, _bagListPath);
+            LoadList(BagList, _bagListPath); 
         }
 
         public void LoadList(List<string> listToLoad, string filePath)
@@ -230,13 +207,15 @@ namespace MrItemRemover2
             listToLoad.Clear();
             try
             {
-                var read = new StreamReader(Convert.ToString(filePath));
-                while (read.Peek() >= 0)
+                using (var read = new StreamReader(Convert.ToString(filePath)))
                 {
-                    listToLoad.Add(Convert.ToString(read.ReadLine()));
-                }
+                    while (read.Peek() >= 0)
+                    {
+                        listToLoad.Add(Convert.ToString(read.ReadLine()));
+                    }
 
-                read.Close();
+                    read.Close();
+                }
             }
             catch (Exception ex)
             {
@@ -246,22 +225,25 @@ namespace MrItemRemover2
 
         public void MirSave()
         {
-            slog("Saving All Lists.");
+            Slog("Saving All Lists.");
 
             WriteList(ItemName, _removeListPath);
+
             WriteList(ItemNameSell, _sellListPath);
+
             WriteList(KeepList, _keepListPath);
+
             WriteList(OpnList, _opnListPath);
         }
 
+
+
+
         public void WriteList(List<string> listName, string filePath)
         {
-// ReSharper disable TooWideLocalVariableScope
-            StreamWriter write;
-// ReSharper restore TooWideLocalVariableScope
             try
             {
-                write = new StreamWriter(filePath);
+                var write = new StreamWriter(filePath);
 // ReSharper disable ForCanBeConvertedToForeach
                 for (int I = 0; I < listName.Count; I++)
 // ReSharper restore ForCanBeConvertedToForeach
@@ -277,3 +259,4 @@ namespace MrItemRemover2
         }
     }
 }
+
