@@ -10,7 +10,9 @@ namespace MrItemRemover2
         public static readonly MrItemRemover2Settings Instance = new MrItemRemover2Settings();
 
         private MrItemRemover2Settings()
-            : base(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Settings/MrItemRemover2_Settings_{0}.xml",StyxWoW.Me.Name))
+            : base(
+                Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Settings/MrItemRemover2_Settings_{0}.xml",
+                             StyxWoW.Me.Name))
         {
         }
 

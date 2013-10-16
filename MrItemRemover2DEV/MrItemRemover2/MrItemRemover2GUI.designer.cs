@@ -436,7 +436,7 @@
             // 
             // Run
             // 
-            this.Run.Location = new System.Drawing.Point(680, 3);
+            this.Run.Location = new System.Drawing.Point(669, 1);
             this.Run.Name = "Run";
             this.Run.Size = new System.Drawing.Size(100, 23);
             this.Run.TabIndex = 33;
