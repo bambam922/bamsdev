@@ -70,6 +70,12 @@ namespace MrItemRemover2
             Logging.WriteDiagnostic(color, "[" + _debug + "]: " + format, args);
         }
 
+        public MrItemRemover2 Controller { get; private set; }
+
+        // RIGHT HERE CJ
+        MrItemRemover2Gui debugSettings = new MrItemRemover2Gui(this);
+
+
         //My Crappy Initalise.
         public override void Initialize()
         {

@@ -167,7 +167,7 @@ namespace MrItemRemover2
             }
         }
 
-        private void SettingsDebug()
+        public void SettingsDebug()
         {
             Dlog("Enable Removing  = {0}", EnableRemove.Checked);
             Dlog("Enasble Selling  = {0}", EnableSell.Checked);
