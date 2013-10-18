@@ -638,7 +638,7 @@
         private System.Windows.Forms.Button RemoveProtectedItem;
         private System.Windows.Forms.Button AddToBagList;
         private System.Windows.Forms.TextBox InputAddToBagItem;
-        private System.Windows.Forms.CheckBox EnableRemove;
+        public static System.Windows.Forms.CheckBox EnableRemove;
         private System.Windows.Forms.CheckBox EnableSell;
         private System.Windows.Forms.Button RefreshBagItems;
         private System.Windows.Forms.CheckBox SellWhite;
