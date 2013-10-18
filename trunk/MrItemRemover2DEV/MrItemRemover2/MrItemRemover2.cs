@@ -37,8 +37,7 @@ namespace MrItemRemover2
         public override Version Version { get { return new Version(1, 6); } }
         public override bool WantButton { get { return true; } }
         public override string ButtonText { get { return _name; } }
-
-
+        
         public override void OnButtonPress()
         {
             if (!IsInitialized)
@@ -70,7 +69,6 @@ namespace MrItemRemover2
         {
             Logging.WriteDiagnostic(color, "[" + _debug + "]: " + format, args);
         }
-
 
         //My Crappy Initalise.
         public override void Initialize()
@@ -230,9 +228,6 @@ namespace MrItemRemover2
 
             WriteList(OpnList, _opnListPath);
         }
-
-
-
 
         public void WriteList(List<string> listName, string filePath)
         {

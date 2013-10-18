@@ -14,7 +14,7 @@ namespace MrItemRemover2
                                                                   string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/Gold2.bmp"));
 
         private readonly string _refreshImangePathName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                                                                     string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/ref.bmp"));
+                                                                  string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/ref.bmp"));
 
         public MrItemRemover2Gui(MrItemRemover2 controller)
         {

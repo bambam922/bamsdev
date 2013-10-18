@@ -48,7 +48,6 @@ namespace MrItemRemover2
                                 Slog("Item Matched List Selling {0}", item.Name);
                                 item.UseContainerItem();
                             }
-                            
                         }
                     }
 
@@ -81,7 +80,6 @@ namespace MrItemRemover2
                                 Slog("Item Matched List Selling {0}", item.Name);
                                 item.UseContainerItem();
                             }
-                            
                         }
                     }
                 }
@@ -131,7 +129,6 @@ namespace MrItemRemover2
             MirSave();
             MirLoad();
             
-
             //Added to Make sure our list matches what we are looking for. 
             LoadList(ItemName, _removeListPath);
 
