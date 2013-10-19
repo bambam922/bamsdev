@@ -21,27 +21,7 @@ namespace MrItemRemover2
             Controller = controller;
             InitializeComponent();
         }
-
-        public MrItemRemover2Gui()
-        {
-            Dlog("Enable Removing  = {0}", EnableRemove.Checked);
-            Dlog("Enable Selling  = {0}", EnableSell.Checked);
-            Dlog("Enable Opening   = {0}", EnableOpen.Checked);
-            Dlog("Remove Grays     = {0}", GrayItems.Checked);
-            Dlog("Remove Whites    = {0}", WhiteItems.Checked);
-            Dlog("Remove Greens    = {0}", GreenItems.Checked);
-            Dlog("Remove Blues     = {0}", BlueItems.Checked);
-            Dlog("Sell Grays       = {0}", SellGray.Checked);
-            Dlog("Sell Whites      = {0}", SellWhite.Checked);
-            Dlog("Sell Greens      = {0}", SellGreen.Checked);
-            Dlog("Sell Blues       = {0}", SellBlue.Checked);
-            Dlog("Sell Soulbound   = {0}", SellSoulbound.Checked);
-            Dlog("Check After Loot = {0}", LootEnable.Checked);
-            Dlog("Gold Value       = {0}", GoldGrays.Text);
-            Dlog("Silver Value     = {0}", SilverGrays.Text);
-            Dlog("Copper Value     = {0}", CopperGrays.Text);
-        }
-
+        
         public MrItemRemover2 Controller { get; private set; }
 
         public static void Slog(string format, params object[] args)
@@ -190,7 +170,7 @@ namespace MrItemRemover2
         public void SettingsDebug()
         {
             Dlog("Enable Removing  = {0}", EnableRemove.Checked);
-            Dlog("Enasble Selling  = {0}", EnableSell.Checked);
+            Dlog("Enable Selling   = {0}", EnableSell.Checked);
             Dlog("Enable Opening   = {0}", EnableOpen.Checked);
             Dlog("Remove Grays     = {0}", GrayItems.Checked);
             Dlog("Remove Whites    = {0}", WhiteItems.Checked);
