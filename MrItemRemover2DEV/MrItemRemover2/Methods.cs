@@ -97,6 +97,19 @@ namespace MrItemRemover2
             }
         }
 
+        public void PrintSettings()
+        {
+            Slog("Mr.ItemRemoverSetttings");
+            Slog("------------------------------------------");
+            foreach (var setting in MrItemRemover2Settings.Instance.GetSettings())
+            {
+                string key = setting.Key;
+                var value = setting.Value;
+                Slog(key + " - " + value.ToString());
+            }
+            Slog("------------------------------------------");
+        }
+
         public void OpenBagItems()
         {
             MirSave();

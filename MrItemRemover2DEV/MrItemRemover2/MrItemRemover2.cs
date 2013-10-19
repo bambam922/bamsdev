@@ -73,7 +73,7 @@ namespace MrItemRemover2
         public MrItemRemover2 Controller { get; private set; }
 
         // RIGHT HERE CJ
-        MrItemRemover2Gui debugSettings = new MrItemRemover2Gui(this);
+        MrItemRemover2Gui debugSettings = new MrItemRemover2Gui();
 
 
         //My Crappy Initalise.
@@ -83,6 +83,8 @@ namespace MrItemRemover2
             Lua.Events.AttachEvent("MERCHANT_SHOW", SellVenderItems);
             Lua.Events.AttachEvent("LOOT_CLOSED", LootEnded);
             
+            PrintSettings();
+
             Slog("Initial Loading of Item names.");
             InitialMirLoad();
             MrItemRemover2Settings.Instance.Load();
