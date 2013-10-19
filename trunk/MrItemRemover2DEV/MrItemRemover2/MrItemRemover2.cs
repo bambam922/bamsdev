@@ -83,11 +83,12 @@ namespace MrItemRemover2
             Lua.Events.AttachEvent("MERCHANT_SHOW", SellVenderItems);
             Lua.Events.AttachEvent("LOOT_CLOSED", LootEnded);
             
-            PrintSettings();
-
             Slog("Initial Loading of Item names.");
             InitialMirLoad();
             MrItemRemover2Settings.Instance.Load();
+
+            PrintSettings();
+
             _checkTimer.Reset(); //should start the timer 
 
             IsInitialized = true;

@@ -105,7 +105,7 @@ namespace MrItemRemover2
             {
                 string key = setting.Key;
                 var value = setting.Value;
-                Slog(key + " - " + value.ToString());
+                Slog(string.Format("{0} - {1}", key, value));
             }
             Slog("------------------------------------------");
         }
