@@ -86,7 +86,6 @@ namespace MrItemRemover2
             Slog("Initial Loading of Item names.");
             InitialMirLoad();
             MrItemRemover2Settings.Instance.Load();
-
             PrintSettings();
 
             _checkTimer.Reset(); //should start the timer 
