@@ -99,15 +99,15 @@ namespace MrItemRemover2
 
         public void PrintSettings()
         {
-            Slog("Mr.ItemRemoverSetttings");
-            Slog("------------------------------------------");
+            Dlog("Mr.ItemRemover2 Settings");
+            Dlog("------------------------------------------");
             foreach (var setting in MrItemRemover2Settings.Instance.GetSettings())
             {
                 string key = setting.Key;
                 var value = setting.Value;
-                Slog(string.Format("{0} - {1}", key, value));
+                Dlog(string.Format("{0} - {1}", key, value));
             }
-            Slog("------------------------------------------");
+            Dlog("------------------------------------------");
         }
 
         public void OpenBagItems()
@@ -198,7 +198,7 @@ namespace MrItemRemover2
 
                     if (item.BagSlot != -1 && !isQuestItem && item.ItemInfo.SellPrice <= (goldValue + silverValue + copperValue))
                     {
-                        Slog("{0}'s Item Quality was Poor. Removing.", item.Name);
+                        Slog("{0}'s Item Quality was Poor and only worth {1} copper. Removing.", item.Name, item.ItemInfo.SellPrice);
                         Lua.DoString("ClearCursor()");
                         item.PickUp();
                         Lua.DoString("DeleteCursorItem()");
