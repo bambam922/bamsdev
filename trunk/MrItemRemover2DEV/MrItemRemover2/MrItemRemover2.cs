@@ -72,10 +72,6 @@ namespace MrItemRemover2
 
         public MrItemRemover2 Controller { get; private set; }
 
-        // RIGHT HERE CJ
-        MrItemRemover2Gui debugSettings = new MrItemRemover2Gui();
-
-
         //My Crappy Initalise.
         public override void Initialize()
         {
