@@ -89,6 +89,18 @@ namespace MrItemRemover2
             IsInitialized = true;
         }
 
+        public override void Dispose()
+        {
+            Lua.Events.DetachEvent("DELETE_ITEM_CONFIRM", DeleteItemConfirmPopup);
+            Lua.Events.DetachEvent("MERCHANT_SHOW", SellVenderItems);
+            Lua.Events.DetachEvent("LOOT_CLOSED", LootEnded);
+
+            IsInitialized = false;
+            MirSave();
+
+            Dlog("MrItemRemover2 is now disabled.");
+        }
+
         public bool ManualCheckRequested { get; set; }
        
         private readonly WaitTimer _checkTimer = new WaitTimer(TimeSpan.FromMinutes(MrItemRemover2Settings.Instance.Time));
