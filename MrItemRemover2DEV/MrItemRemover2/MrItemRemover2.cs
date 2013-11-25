@@ -27,14 +27,14 @@ namespace MrItemRemover2
     public partial class MrItemRemover2 : HBPlugin
     {
 // ReSharper disable InconsistentNaming
-        const string _name = "Mr.ItemRemover2DEV 1.6.1";
+        const string _name = "Mr.ItemRemover2DEV 2.0";
         const string _debug = "Mr.Itemremover2 DEBUG";
 // ReSharper restore InconsistentNaming
 
         //Normal Stuff.
         public override string Name { get { return _name; } }
         public override string Author { get { return "CnG & Bambam922"; } }
-        public override Version Version { get { return new Version(1, 6); } }
+        public override Version Version { get { return new Version(2,0); } }
         public override bool WantButton { get { return true; } }
         public override string ButtonText { get { return _name; } }
         
@@ -70,6 +70,7 @@ namespace MrItemRemover2
             Logging.WriteDiagnostic(color, "[" + _debug + "]: " + format, args);
         }
 
+// ReSharper disable once UnusedAutoPropertyAccessor.Local
         public MrItemRemover2 Controller { get; private set; }
 
         //My Crappy Initalise.
@@ -78,6 +79,7 @@ namespace MrItemRemover2
             Lua.Events.AttachEvent("DELETE_ITEM_CONFIRM", DeleteItemConfirmPopup);
             Lua.Events.AttachEvent("MERCHANT_SHOW", SellVenderItems);
             Lua.Events.AttachEvent("LOOT_CLOSED", LootEnded);
+            Lua.DoString("SetCVar('AutoLootDefault','1')");
             
             Slog("Initial Loading of Item names.");
             InitialMirLoad();
@@ -140,10 +142,6 @@ namespace MrItemRemover2
             if (!Me.Combat && !Me.IsCasting && !Me.IsDead && !Me.IsGhost && EnableCheck)
             {
                 Slog("EnableCheck was Passed!");
-                if (MrItemRemover2Settings.Instance.EnableOpen)
-                {
-                    OpenBagItems();
-                }
                 if (MrItemRemover2Settings.Instance.EnableRemove)
                 {
                     CheckForItems();
@@ -175,40 +173,52 @@ namespace MrItemRemover2
         public List<string> KeepList = new List<string>();
         public List<string> OpnList = new List<string>();
         public List<string> BagList = new List<string>();
+        public List<string> CombineList1 = new List<string>();
+        public List<string> CombineList3 = new List<string>();
+        public List<string> CombineList5 = new List<string>();
+        public List<string> CombineList10 = new List<string>();
+        public List<string> FoodList = new List<string>();
+        public List<string> DrinkList = new List<string>();
+
 
         //file Path for Saving and Loading. 
         private readonly string _removeListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                                           string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/ItemNameRemoveList.txt"));
+                                           string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/Lists/ItemNameRemoveList.txt"));
         private readonly string _sellListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                                           string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/ItemNameSellList.txt"));
+                                           string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/Lists/ItemNameSellList.txt"));
         private readonly string _keepListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                                           string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/ItemNameKeepList.txt"));
+                                           string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/Lists/ItemNameKeepList.txt"));
         private readonly string _opnListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                                           string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/ItemNameOpnList.txt"));
+                                           string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/Lists/ItemNameOpnList.txt"));
         private readonly string _bagListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                                           string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/ItemNameBagList.txt"));
+                                           string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/Lists/ItemNameBagList.txt"));
+        private readonly string _combineList1Path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
+                                           string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/Lists/ItemNameCombineList1.txt"));
+        private readonly string _combineList3Path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
+                                           string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/Lists/ItemNameCombineList3.txt"));
+        private readonly string _combineList5Path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
+                                           string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/Lists/ItemNameCombineList5.txt"));
+        private readonly string _combineList10Path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
+                                           string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/Lists/ItemNameCombineList10.txt"));
+        private readonly string _foodListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
+                                           string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/Lists/ItemNameFoodList.txt"));
+        private readonly string _drinkListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
+                                           string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/Lists/ItemNameDrinkList.txt"));
         public void InitialMirLoad()
         {
-            Slog("Initial Loading of Items to Remove List.");
+            Slog("Initial Loading of Individual Item Lists.");
             LoadList(ItemName, _removeListPath);
-            Slog("Initial Loading of Items to Sell List.");
             LoadList(ItemNameSell, _sellListPath);
-            Slog("Initial Loading of Items to Keep List.");
             LoadList(KeepList, _keepListPath);
-            Slog("Initial Loading of Items to Open List.");
             LoadList(OpnList, _opnListPath);
-            Slog("Initial Loading of Items to Bag List.");
             LoadList(BagList, _bagListPath);
+            LoadList(CombineList1, _combineList1Path);
+            LoadList(CombineList3, _combineList3Path);
+            LoadList(CombineList5, _combineList5Path);
+            LoadList(CombineList10, _combineList10Path);
+            LoadList(FoodList, _foodListPath);
+            LoadList(DrinkList, _drinkListPath);
             Slog("Initial Loading Complete!");
-        }
-
-        public void MirLoad()
-        {
-            LoadList(ItemName, _removeListPath);
-            LoadList(ItemNameSell, _sellListPath);
-            LoadList(KeepList, _keepListPath);
-            LoadList(OpnList, _opnListPath);
-            LoadList(BagList, _bagListPath); 
         }
 
         public void LoadList(List<string> listToLoad, string filePath)
@@ -235,13 +245,9 @@ namespace MrItemRemover2
         public void MirSave()
         {
             Slog("Saving All Lists.");
-
             WriteList(ItemName, _removeListPath);
-
             WriteList(ItemNameSell, _sellListPath);
-
             WriteList(KeepList, _keepListPath);
-
             WriteList(OpnList, _opnListPath);
         }
 

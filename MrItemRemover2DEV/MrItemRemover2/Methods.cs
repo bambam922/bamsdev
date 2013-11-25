@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Threading;
 using Styx;
 using Styx.CommonBot.Frames;
 using Styx.Helpers;
@@ -82,6 +81,17 @@ namespace MrItemRemover2
                             }
                         }
                     }
+
+                    if (MrItemRemover2Settings.Instance.RSFood || MrItemRemover2Settings.Instance.RSFood)
+                    {
+                        if (!KeepList.Contains(item.Name) && FoodList.Contains(item.Name) || DrinkList.Contains(item.Name))
+                        {
+                            Slog("{0} was in the Food or Drink List and We want to Remove Food. Removing.", item.Name, item.ItemInfo.SellPrice);
+                            Lua.DoString("ClearCursor()");
+                            item.PickUp();
+                            Lua.DoString("DeleteCursorItem()");                                   
+                        }
+                    }
                 }
             }
         }
@@ -110,38 +120,8 @@ namespace MrItemRemover2
             Dlog("------------------------------------------");
         }
 
-        public void OpenBagItems()
-        {
-            MirSave();
-            MirLoad();
-            LoadList(OpnList, _opnListPath);
-
-            // NB: Since we will be modifying the Me.BagItems list indirectly through WoWclient directives,
-            // we can't use it as our iterator--we must make a copy, instead.
-            List<WoWItem> itemsToVisit = Me.BagItems.ToList();
-            foreach (WoWItem item in itemsToVisit)
-            {
-                if ((item == null) || !item.IsValid)
-                {
-                    continue;
-                }
-
-                if (item.IsOpenable)
-                {
-                    //probally not needed, but still user could be messing with thier inventory.
-                    Slog("{0} Found Open Item", item.Name);
-                    //item.Interact();
-                    Thread.Sleep(600);
-                }
-            }
-        }
-
         public void CheckForItems()
         {
-            //Reload item lists
-            MirSave();
-            MirLoad();
-            
             //Added to Make sure our list matches what we are looking for. 
             LoadList(ItemName, _removeListPath);
 
@@ -150,21 +130,42 @@ namespace MrItemRemover2
             List<WoWItem> itemsToVisit = Me.BagItems.ToList();
             foreach (WoWItem item in itemsToVisit)
             {
-
-                Slog("{0} - Openable = {1} - isValid = {2}", item.Name, item.IsOpenable, item.IsValid);
-                // Uncomment this to have quest items printed to log. DIAGNOSTIC.
-                
-                if ((item == null) || !item.IsValid)
+                //Logging.Write("{0} - Consumable = {1}", item.Name, WoWItemClass.Consumable);
+       
+                if (!item.IsValid)
                 {
                     continue;
                 }
 
                 bool isQuestItem = IsQuestItem(item);
+
                 if (BagList.Contains(item.Entry.ToString(CultureInfo.InvariantCulture)))
                 {
                     Slog("{0} is a bag, ignoring.", item.Name);
                     return;
                 }
+
+                if (CombineList1.Contains(item.Entry.ToString(CultureInfo.InvariantCulture)))
+                {
+                    Slog("{0} can be used/opened. Using/Opening.", item.Name);
+                    Lua.DoString("UseItemByName(\"" + item.Name + "\")");
+                }
+                if (CombineList3.Contains(item.Entry.ToString(CultureInfo.InvariantCulture)) && item.StackCount >= 3)
+                {
+                    Slog("{0} can be combined, so we're combining it.", item.Name);
+                    Lua.DoString("UseItemByName(\"" + item.Name + "\")");
+                }
+                if (CombineList5.Contains(item.Entry.ToString(CultureInfo.InvariantCulture)) && item.StackCount >= 5)
+                {
+                    Slog("{0} can be combined, so we're combining it.", item.Name);
+                    Lua.DoString("UseItemByName(\"" + item.Name + "\")");
+                }
+                if (CombineList10.Contains(item.Entry.ToString(CultureInfo.InvariantCulture)) && item.StackCount >= 10)
+                {
+                    Slog("{0} can be combined, so we're combining it.", item.Name);
+                    Lua.DoString("UseItemByName(\"" + item.Name + "\")");
+                }
+
                 //if item name Matches whats in the text file / the internal list (after load)
                 if (ItemName.Contains(item.Name) && !KeepList.Contains(item.Name))
                 {
@@ -174,7 +175,6 @@ namespace MrItemRemover2
                     item.PickUp();
                     Lua.DoString("DeleteCursorItem()");
                     //a small Sleep, might not be needed. 
-                    Thread.Sleep(600);
                 }
 
                 if (MrItemRemover2Settings.Instance.DeleteQuestItems && item.ItemInfo.BeginQuestId != 0 &&
@@ -204,20 +204,18 @@ namespace MrItemRemover2
                         Lua.DoString("ClearCursor()");
                         item.PickUp();
                         Lua.DoString("DeleteCursorItem()");
-                        Thread.Sleep(300);
                     }
                 }
 
                 //Process all White Items if enabled.
-                if (MrItemRemover2Settings.Instance.DeleteAllWhite && item.Quality == WoWItemQuality.Common && !KeepList.Contains(item.Name) && !BagList.Contains(item.Name))
+                if (MrItemRemover2Settings.Instance.DeleteAllWhite && item.Quality == WoWItemQuality.Common && !KeepList.Contains(item.Name) && !BagList.Contains(item.Name) && !FoodList.Contains(item.Name) && !DrinkList.Contains(item.Name))
                 {
-                    if (item.BagSlot != -1 && !isQuestItem)
+                    if (item.BagSlot != -1 && !isQuestItem )
                     {
                         Slog("{0}'s Item Quality was Common. Removing.", item.Name);
                         Lua.DoString("ClearCursor()");
                         item.PickUp();
                         Lua.DoString("DeleteCursorItem()");
-                        Thread.Sleep(300);
                     }
                 }
 
@@ -230,7 +228,6 @@ namespace MrItemRemover2
                         Lua.DoString("ClearCursor()");
                         item.PickUp();
                         Lua.DoString("DeleteCursorItem()");
-                        Thread.Sleep(300);
                     }
                 }
 
@@ -243,7 +240,6 @@ namespace MrItemRemover2
                         Lua.DoString("ClearCursor()");
                         item.PickUp();
                         Lua.DoString("DeleteCursorItem()");
-                        Thread.Sleep(300);
                     }
                 }
             }
