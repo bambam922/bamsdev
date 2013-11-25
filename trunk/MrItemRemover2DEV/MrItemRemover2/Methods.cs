@@ -20,14 +20,14 @@ namespace MrItemRemover2
                 {
                     if (!MrItemRemover2Settings.Instance.SellSoulbound)
                     {
-                        if (!item.IsSoulbound && !KeepList.Contains(item.Name))
+                        if (!item.IsSoulbound && !KeepList.Contains(item.Name) && !FoodList.Contains(item.Name) && !DrinkList.Contains(item.Name))
                         {
                             if (item.Quality == WoWItemQuality.Poor && MrItemRemover2Settings.Instance.SellGray)
                             {
                                 Slog("Selling Gray Item {0}", item.Name);
                                 item.UseContainerItem();
                             }
-                            if ((item.Quality == WoWItemQuality.Common && MrItemRemover2Settings.Instance.SellWhite) && (!FoodList.Contains(item.Name) || !DrinkList.Contains(item.Name)))
+                            if ((item.Quality == WoWItemQuality.Common && MrItemRemover2Settings.Instance.SellWhite) && !FoodList.Contains(item.Name) && !DrinkList.Contains(item.Name))
                             {
                                 Slog("Selling White Item {0}", item.Name);
                                 item.UseContainerItem();
@@ -52,14 +52,14 @@ namespace MrItemRemover2
 
                     if (MrItemRemover2Settings.Instance.SellSoulbound)
                     {
-                        if (!KeepList.Contains(item.Name))
+                        if (!KeepList.Contains(item.Name) && !FoodList.Contains(item.Name) && !DrinkList.Contains(item.Name))
                         {
                             if (item.Quality == WoWItemQuality.Poor && MrItemRemover2Settings.Instance.SellGray)
                             {
                                 Slog("Selling Gray Item {0}", item.Name);
                                 item.UseContainerItem();
                             }
-                            if ((item.Quality == WoWItemQuality.Common && MrItemRemover2Settings.Instance.SellWhite) && (!FoodList.Contains(item.Name) || !DrinkList.Contains(item.Name)))
+                            if ((item.Quality == WoWItemQuality.Common && MrItemRemover2Settings.Instance.SellWhite))
                             {
                                 Slog("Selling White Item {0}", item.Name);
                                 item.UseContainerItem();
