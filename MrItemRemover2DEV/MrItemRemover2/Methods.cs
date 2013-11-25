@@ -81,17 +81,6 @@ namespace MrItemRemover2
                             }
                         }
                     }
-
-                    if (MrItemRemover2Settings.Instance.RSFood || MrItemRemover2Settings.Instance.RSFood)
-                    {
-                        if (!KeepList.Contains(item.Name) && FoodList.Contains(item.Name) || DrinkList.Contains(item.Name))
-                        {
-                            Slog("{0} was in the Food or Drink List and We want to Remove Food. Removing.", item.Name, item.ItemInfo.SellPrice);
-                            Lua.DoString("ClearCursor()");
-                            item.PickUp();
-                            Lua.DoString("DeleteCursorItem()");                                   
-                        }
-                    }
                 }
             }
         }
@@ -139,31 +128,45 @@ namespace MrItemRemover2
 
                 bool isQuestItem = IsQuestItem(item);
 
-                if (BagList.Contains(item.Entry.ToString(CultureInfo.InvariantCulture)))
+                if (BagList.Contains(item.Name))
                 {
                     Slog("{0} is a bag, ignoring.", item.Name);
                     return;
                 }
 
-                if (CombineList1.Contains(item.Entry.ToString(CultureInfo.InvariantCulture)))
+                if (CombineList1.Contains(item.Name) && item.StackCount == 1)
                 {
                     Slog("{0} can be used/opened. Using/Opening.", item.Name);
                     Lua.DoString("UseItemByName(\"" + item.Name + "\")");
                 }
-                if (CombineList3.Contains(item.Entry.ToString(CultureInfo.InvariantCulture)) && item.StackCount >= 3)
+
+                if (CombineList3.Contains(item.Name) && item.StackCount >= 3)
                 {
                     Slog("{0} can be combined, so we're combining it.", item.Name);
                     Lua.DoString("UseItemByName(\"" + item.Name + "\")");
                 }
-                if (CombineList5.Contains(item.Entry.ToString(CultureInfo.InvariantCulture)) && item.StackCount >= 5)
+
+                if (CombineList5.Contains(item.Name) && item.StackCount >= 5)
                 {
                     Slog("{0} can be combined, so we're combining it.", item.Name);
                     Lua.DoString("UseItemByName(\"" + item.Name + "\")");
                 }
-                if (CombineList10.Contains(item.Entry.ToString(CultureInfo.InvariantCulture)) && item.StackCount >= 10)
+
+                if (CombineList10.Contains(item.Name) && item.StackCount >= 10)
                 {
                     Slog("{0} can be combined, so we're combining it.", item.Name);
                     Lua.DoString("UseItemByName(\"" + item.Name + "\")");
+                }
+
+                if (MrItemRemover2Settings.Instance.RSFood || MrItemRemover2Settings.Instance.RSFood)
+                {
+                    if (!KeepList.Contains(item.Name) && FoodList.Contains(item.Name) || DrinkList.Contains(item.Name))
+                    {
+                        Slog("{0} was in the Food or Drink List and We want to Remove Food. Removing.", item.Name, item.ItemInfo.SellPrice);
+                        Lua.DoString("ClearCursor()");
+                        item.PickUp();
+                        Lua.DoString("DeleteCursorItem()");
+                    }
                 }
 
                 //if item name Matches whats in the text file / the internal list (after load)
