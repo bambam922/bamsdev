@@ -151,7 +151,7 @@ namespace MrItemRemover2
             foreach (WoWItem item in itemsToVisit)
             {
 
-                Slog("{0} - Openable = {1}", item.Name, item.IsOpenable);
+                Slog("{0} - Openable = {1} - isValid = {2}", item.Name, item.IsOpenable, item.IsValid);
                 // Uncomment this to have quest items printed to log. DIAGNOSTIC.
                 
                 if ((item == null) || !item.IsValid)
