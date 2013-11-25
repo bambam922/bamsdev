@@ -27,7 +27,7 @@ namespace MrItemRemover2
                                 Slog("Selling Gray Item {0}", item.Name);
                                 item.UseContainerItem();
                             }
-                            if (item.Quality == WoWItemQuality.Common && MrItemRemover2Settings.Instance.SellWhite && (!MrItemRemover2Settings.Instance.RSFood || !MrItemRemover2Settings.Instance.RSDrinks))
+                            if (item.Quality == WoWItemQuality.Common && MrItemRemover2Settings.Instance.SellWhite && (!FoodList.Contains(item.Name) || !DrinkList.Contains(item.Name)))
                             {
                                 Slog("Selling White Item {0}", item.Name);
                                 item.UseContainerItem();
@@ -59,7 +59,7 @@ namespace MrItemRemover2
                                 Slog("Selling Gray Item {0}", item.Name);
                                 item.UseContainerItem();
                             }
-                            if (item.Quality == WoWItemQuality.Common && MrItemRemover2Settings.Instance.SellWhite && (!MrItemRemover2Settings.Instance.RSFood || !MrItemRemover2Settings.Instance.RSDrinks))
+                            if (item.Quality == WoWItemQuality.Common && MrItemRemover2Settings.Instance.SellWhite && (!FoodList.Contains(item.Name) || !DrinkList.Contains(item.Name)))
                             {
                                 Slog("Selling White Item {0}", item.Name);
                                 item.UseContainerItem();
