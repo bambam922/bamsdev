@@ -126,11 +126,11 @@ namespace MrItemRemover2
                     continue;
                 }
 
-                if (OpnList.Contains(item.Name))
+                if (item.IsOpenable)
                 {
                     //probally not needed, but still user could be messing with thier inventory.
                     Slog("{0} Found Open Item", item.Name);
-                    item.Interact();
+                    //item.Interact();
                     Thread.Sleep(600);
                 }
             }

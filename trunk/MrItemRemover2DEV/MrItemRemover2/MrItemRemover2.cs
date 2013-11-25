@@ -27,7 +27,7 @@ namespace MrItemRemover2
     public partial class MrItemRemover2 : HBPlugin
     {
 // ReSharper disable InconsistentNaming
-        const string _name = "Mr.ItemRemover2DEV 1.6";
+        const string _name = "Mr.ItemRemover2DEV 1.6.1";
         const string _debug = "Mr.Itemremover2 DEBUG";
 // ReSharper restore InconsistentNaming
 
