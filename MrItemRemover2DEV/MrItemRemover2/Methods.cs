@@ -27,7 +27,7 @@ namespace MrItemRemover2
                                 Slog("Selling Gray Item {0}", item.Name);
                                 item.UseContainerItem();
                             }
-                            if (item.Quality == WoWItemQuality.Common && MrItemRemover2Settings.Instance.SellWhite)
+                            if (item.Quality == WoWItemQuality.Common && MrItemRemover2Settings.Instance.SellWhite && (!MrItemRemover2Settings.Instance.RSFood || !MrItemRemover2Settings.Instance.RSDrinks))
                             {
                                 Slog("Selling White Item {0}", item.Name);
                                 item.UseContainerItem();
@@ -59,7 +59,7 @@ namespace MrItemRemover2
                                 Slog("Selling Gray Item {0}", item.Name);
                                 item.UseContainerItem();
                             }
-                            if (item.Quality == WoWItemQuality.Common && MrItemRemover2Settings.Instance.SellWhite)
+                            if (item.Quality == WoWItemQuality.Common && MrItemRemover2Settings.Instance.SellWhite && (!MrItemRemover2Settings.Instance.RSFood || !MrItemRemover2Settings.Instance.RSDrinks))
                             {
                                 Slog("Selling White Item {0}", item.Name);
                                 item.UseContainerItem();
@@ -158,7 +158,7 @@ namespace MrItemRemover2
                     Lua.DoString("UseItemByName(\"" + item.Name + "\")");
                 }
 
-                if (MrItemRemover2Settings.Instance.RSFood || MrItemRemover2Settings.Instance.RSFood)
+                if (MrItemRemover2Settings.Instance.RSFood || MrItemRemover2Settings.Instance.RSDrinks)
                 {
                     if (!KeepList.Contains(item.Name) && FoodList.Contains(item.Name) || DrinkList.Contains(item.Name))
                     {
