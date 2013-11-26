@@ -119,7 +119,7 @@ namespace MrItemRemover2
             List<WoWItem> itemsToVisit = Me.BagItems.ToList();
             foreach (WoWItem item in itemsToVisit)
             {
-                //Logging.Write("{0} - Consumable = {1}", item.Name, WoWItemClass.Consumable);
+                Slog("{0} - Stack Count = {1}", item.Name, item.StackCount);
        
                 if (!item.IsValid)
                 {
