@@ -6,34 +6,34 @@ using System.Windows.Forms;
 using Styx;
 using Styx.WoWInternals.WoWObjects;
 
-namespace MrItemRemover2
+namespace BetterPull
 {
-    public partial class MrItemRemover2Gui : Form
+    public partial class BetterPullGui : Form
     {
         private readonly string _goldImangePathName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                                                                  string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/Gold2.bmp"));
+                                                                  string.Format(@"Plugins/BetterPullDEV/BetterPull/Gold2.bmp"));
 
         private readonly string _refreshImangePathName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                                                                  string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/ref.bmp"));
+                                                                  string.Format(@"Plugins/BetterPullDEV/BetterPull/ref.bmp"));
 
-        public MrItemRemover2Gui(MrItemRemover2 controller)
+        public BetterPullGui(BetterPull controller)
         {
             Controller = controller;
             InitializeComponent();
         }
         
-        public MrItemRemover2 Controller { get; private set; }
+        public BetterPull Controller { get; private set; }
 
         public static void Slog(string format, params object[] args)
         {
-            MrItemRemover2.Slog(format, args);
+            BetterPull.Slog(format, args);
         }
         public static void Dlog(string format, params object[] args)
         {
-            MrItemRemover2.Dlog(format, args);
+            BetterPull.Dlog(format, args);
         }
 
-        private void MrItemRemover2GUI_Load(object sender, EventArgs e)
+        private void BetterPullGUI_Load(object sender, EventArgs e)
         {
             var refresh = new Bitmap(_refreshImangePathName);
             var goldImg = new Bitmap(_goldImangePathName);
@@ -316,6 +316,16 @@ namespace MrItemRemover2
         private void RSFood_CheckedChanged(object sender, EventArgs e)
         {
             MrItemRemover2Settings.Instance.RSFood = CombineItems.Checked;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
