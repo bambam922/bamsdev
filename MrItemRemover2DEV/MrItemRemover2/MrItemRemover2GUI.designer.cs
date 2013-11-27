@@ -49,19 +49,9 @@ namespace MrItemRemover2
             this.RemoveProtectedItem = new System.Windows.Forms.Button();
             this.AddToBagList = new System.Windows.Forms.Button();
             this.InputAddToBagItem = new System.Windows.Forms.TextBox();
-            this.SellWhite = new System.Windows.Forms.CheckBox();
-            this.SellGreen = new System.Windows.Forms.CheckBox();
-            this.SellGray = new System.Windows.Forms.CheckBox();
-            this.GrayItems = new System.Windows.Forms.CheckBox();
-            this.SellSoulbound = new System.Windows.Forms.CheckBox();
-            this.SellBlue = new System.Windows.Forms.CheckBox();
-            this.RemoveQItems = new System.Windows.Forms.CheckBox();
             this.Save = new System.Windows.Forms.Button();
             this.Run = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.BlueItems = new System.Windows.Forms.CheckBox();
-            this.WhiteItems = new System.Windows.Forms.CheckBox();
-            this.GreenItems = new System.Windows.Forms.CheckBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.OpeningDropDown = new System.Windows.Forms.ComboBox();
@@ -320,55 +310,6 @@ namespace MrItemRemover2
             this.InputAddToBagItem.TabIndex = 18;
             this.InputAddToBagItem.Text = "     Enter an Item Name Here";
             // 
-            // SellWhite
-            // 
-            this.SellWhite.Location = new System.Drawing.Point(0, 0);
-            this.SellWhite.Name = "SellWhite";
-            this.SellWhite.Size = new System.Drawing.Size(104, 24);
-            this.SellWhite.TabIndex = 58;
-            // 
-            // SellGreen
-            // 
-            this.SellGreen.Location = new System.Drawing.Point(0, 0);
-            this.SellGreen.Name = "SellGreen";
-            this.SellGreen.Size = new System.Drawing.Size(104, 24);
-            this.SellGreen.TabIndex = 57;
-            // 
-            // SellGray
-            // 
-            this.SellGray.Location = new System.Drawing.Point(0, 0);
-            this.SellGray.Name = "SellGray";
-            this.SellGray.Size = new System.Drawing.Size(104, 24);
-            this.SellGray.TabIndex = 56;
-            // 
-            // GrayItems
-            // 
-            this.GrayItems.Location = new System.Drawing.Point(0, 0);
-            this.GrayItems.Name = "GrayItems";
-            this.GrayItems.Size = new System.Drawing.Size(104, 24);
-            this.GrayItems.TabIndex = 64;
-            // 
-            // SellSoulbound
-            // 
-            this.SellSoulbound.Location = new System.Drawing.Point(0, 0);
-            this.SellSoulbound.Name = "SellSoulbound";
-            this.SellSoulbound.Size = new System.Drawing.Size(104, 24);
-            this.SellSoulbound.TabIndex = 59;
-            // 
-            // SellBlue
-            // 
-            this.SellBlue.Location = new System.Drawing.Point(0, 0);
-            this.SellBlue.Name = "SellBlue";
-            this.SellBlue.Size = new System.Drawing.Size(104, 24);
-            this.SellBlue.TabIndex = 60;
-            // 
-            // RemoveQItems
-            // 
-            this.RemoveQItems.Location = new System.Drawing.Point(0, 0);
-            this.RemoveQItems.Name = "RemoveQItems";
-            this.RemoveQItems.Size = new System.Drawing.Size(104, 24);
-            this.RemoveQItems.TabIndex = 63;
-            // 
             // Save
             // 
             this.Save.Location = new System.Drawing.Point(257, 266);
@@ -397,27 +338,6 @@ namespace MrItemRemover2
             this.label1.Size = new System.Drawing.Size(161, 15);
             this.label1.TabIndex = 40;
             this.label1.Text = "Time Between Bag Checks -";
-            // 
-            // BlueItems
-            // 
-            this.BlueItems.Location = new System.Drawing.Point(0, 0);
-            this.BlueItems.Name = "BlueItems";
-            this.BlueItems.Size = new System.Drawing.Size(104, 24);
-            this.BlueItems.TabIndex = 65;
-            // 
-            // WhiteItems
-            // 
-            this.WhiteItems.Location = new System.Drawing.Point(0, 0);
-            this.WhiteItems.Name = "WhiteItems";
-            this.WhiteItems.Size = new System.Drawing.Size(104, 24);
-            this.WhiteItems.TabIndex = 67;
-            // 
-            // GreenItems
-            // 
-            this.GreenItems.Location = new System.Drawing.Point(0, 0);
-            this.GreenItems.Name = "GreenItems";
-            this.GreenItems.Size = new System.Drawing.Size(104, 24);
-            this.GreenItems.TabIndex = 66;
             // 
             // tabControl1
             // 
@@ -599,11 +519,6 @@ namespace MrItemRemover2
             this.tabPage2.Controls.Add(this.SellWhitesDropDown);
             this.tabPage2.Controls.Add(this.SellGraysDropDown);
             this.tabPage2.Controls.Add(this.groupBox3);
-            this.tabPage2.Controls.Add(this.SellGray);
-            this.tabPage2.Controls.Add(this.SellGreen);
-            this.tabPage2.Controls.Add(this.SellWhite);
-            this.tabPage2.Controls.Add(this.SellSoulbound);
-            this.tabPage2.Controls.Add(this.SellBlue);
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -616,6 +531,9 @@ namespace MrItemRemover2
             // 
             this.SellDrinksDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SellDrinksDropDown.FormattingEnabled = true;
+            this.SellDrinksDropDown.Items.AddRange(new object[] {
+            "False",
+            "True"});
             this.SellDrinksDropDown.Location = new System.Drawing.Point(315, 184);
             this.SellDrinksDropDown.Name = "SellDrinksDropDown";
             this.SellDrinksDropDown.Size = new System.Drawing.Size(121, 23);
@@ -626,6 +544,9 @@ namespace MrItemRemover2
             // 
             this.SellFoodDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SellFoodDropDown.FormattingEnabled = true;
+            this.SellFoodDropDown.Items.AddRange(new object[] {
+            "False",
+            "True"});
             this.SellFoodDropDown.Location = new System.Drawing.Point(315, 155);
             this.SellFoodDropDown.Name = "SellFoodDropDown";
             this.SellFoodDropDown.Size = new System.Drawing.Size(121, 23);
@@ -699,6 +620,9 @@ namespace MrItemRemover2
             // 
             this.SellSoulboundDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SellSoulboundDropDown.FormattingEnabled = true;
+            this.SellSoulboundDropDown.Items.AddRange(new object[] {
+            "False",
+            "True"});
             this.SellSoulboundDropDown.Location = new System.Drawing.Point(315, 126);
             this.SellSoulboundDropDown.Name = "SellSoulboundDropDown";
             this.SellSoulboundDropDown.Size = new System.Drawing.Size(121, 23);
@@ -709,6 +633,9 @@ namespace MrItemRemover2
             // 
             this.SellBluesDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SellBluesDropDown.FormattingEnabled = true;
+            this.SellBluesDropDown.Items.AddRange(new object[] {
+            "False",
+            "True"});
             this.SellBluesDropDown.Location = new System.Drawing.Point(315, 97);
             this.SellBluesDropDown.Name = "SellBluesDropDown";
             this.SellBluesDropDown.Size = new System.Drawing.Size(121, 23);
@@ -719,6 +646,9 @@ namespace MrItemRemover2
             // 
             this.SellGreensDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SellGreensDropDown.FormattingEnabled = true;
+            this.SellGreensDropDown.Items.AddRange(new object[] {
+            "False",
+            "True"});
             this.SellGreensDropDown.Location = new System.Drawing.Point(315, 68);
             this.SellGreensDropDown.Name = "SellGreensDropDown";
             this.SellGreensDropDown.Size = new System.Drawing.Size(121, 23);
@@ -729,6 +659,9 @@ namespace MrItemRemover2
             // 
             this.SellWhitesDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SellWhitesDropDown.FormattingEnabled = true;
+            this.SellWhitesDropDown.Items.AddRange(new object[] {
+            "False",
+            "True"});
             this.SellWhitesDropDown.Location = new System.Drawing.Point(315, 39);
             this.SellWhitesDropDown.Name = "SellWhitesDropDown";
             this.SellWhitesDropDown.Size = new System.Drawing.Size(121, 23);
@@ -739,6 +672,9 @@ namespace MrItemRemover2
             // 
             this.SellGraysDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SellGraysDropDown.FormattingEnabled = true;
+            this.SellGraysDropDown.Items.AddRange(new object[] {
+            "False",
+            "True"});
             this.SellGraysDropDown.Location = new System.Drawing.Point(315, 10);
             this.SellGraysDropDown.Name = "SellGraysDropDown";
             this.SellGraysDropDown.Size = new System.Drawing.Size(121, 23);
@@ -767,11 +703,6 @@ namespace MrItemRemover2
             this.tabPage3.Controls.Add(this.SilverGrays);
             this.tabPage3.Controls.Add(this.GoldBox);
             this.tabPage3.Controls.Add(this.groupBox2);
-            this.tabPage3.Controls.Add(this.RemoveQItems);
-            this.tabPage3.Controls.Add(this.GrayItems);
-            this.tabPage3.Controls.Add(this.BlueItems);
-            this.tabPage3.Controls.Add(this.GreenItems);
-            this.tabPage3.Controls.Add(this.WhiteItems);
             this.tabPage3.Location = new System.Drawing.Point(4, 24);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -784,6 +715,9 @@ namespace MrItemRemover2
             // 
             this.RemoveDrinksDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.RemoveDrinksDropDown.FormattingEnabled = true;
+            this.RemoveDrinksDropDown.Items.AddRange(new object[] {
+            "False",
+            "True"});
             this.RemoveDrinksDropDown.Location = new System.Drawing.Point(324, 185);
             this.RemoveDrinksDropDown.Name = "RemoveDrinksDropDown";
             this.RemoveDrinksDropDown.Size = new System.Drawing.Size(121, 23);
@@ -794,6 +728,9 @@ namespace MrItemRemover2
             // 
             this.RemoveFoodDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.RemoveFoodDropDown.FormattingEnabled = true;
+            this.RemoveFoodDropDown.Items.AddRange(new object[] {
+            "False",
+            "True"});
             this.RemoveFoodDropDown.Location = new System.Drawing.Point(324, 156);
             this.RemoveFoodDropDown.Name = "RemoveFoodDropDown";
             this.RemoveFoodDropDown.Size = new System.Drawing.Size(121, 23);
@@ -867,6 +804,9 @@ namespace MrItemRemover2
             // 
             this.RemoveGraysDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.RemoveGraysDropDown.FormattingEnabled = true;
+            this.RemoveGraysDropDown.Items.AddRange(new object[] {
+            "False",
+            "True"});
             this.RemoveGraysDropDown.Location = new System.Drawing.Point(324, 10);
             this.RemoveGraysDropDown.Name = "RemoveGraysDropDown";
             this.RemoveGraysDropDown.Size = new System.Drawing.Size(121, 23);
@@ -877,6 +817,9 @@ namespace MrItemRemover2
             // 
             this.RemoveGreensDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.RemoveGreensDropDown.FormattingEnabled = true;
+            this.RemoveGreensDropDown.Items.AddRange(new object[] {
+            "False",
+            "True"});
             this.RemoveGreensDropDown.Location = new System.Drawing.Point(324, 69);
             this.RemoveGreensDropDown.Name = "RemoveGreensDropDown";
             this.RemoveGreensDropDown.Size = new System.Drawing.Size(121, 23);
@@ -887,6 +830,9 @@ namespace MrItemRemover2
             // 
             this.RemoveBluesDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.RemoveBluesDropDown.FormattingEnabled = true;
+            this.RemoveBluesDropDown.Items.AddRange(new object[] {
+            "False",
+            "True"});
             this.RemoveBluesDropDown.Location = new System.Drawing.Point(324, 98);
             this.RemoveBluesDropDown.Name = "RemoveBluesDropDown";
             this.RemoveBluesDropDown.Size = new System.Drawing.Size(121, 23);
@@ -897,6 +843,9 @@ namespace MrItemRemover2
             // 
             this.RemoveQuestStartersDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.RemoveQuestStartersDropDown.FormattingEnabled = true;
+            this.RemoveQuestStartersDropDown.Items.AddRange(new object[] {
+            "False",
+            "True"});
             this.RemoveQuestStartersDropDown.Location = new System.Drawing.Point(324, 127);
             this.RemoveQuestStartersDropDown.Name = "RemoveQuestStartersDropDown";
             this.RemoveQuestStartersDropDown.Size = new System.Drawing.Size(121, 23);
@@ -907,6 +856,9 @@ namespace MrItemRemover2
             // 
             this.RemoveWhitesDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.RemoveWhitesDropDown.FormattingEnabled = true;
+            this.RemoveWhitesDropDown.Items.AddRange(new object[] {
+            "False",
+            "True"});
             this.RemoveWhitesDropDown.Location = new System.Drawing.Point(324, 40);
             this.RemoveWhitesDropDown.Name = "RemoveWhitesDropDown";
             this.RemoveWhitesDropDown.Size = new System.Drawing.Size(121, 23);
@@ -1094,7 +1046,7 @@ namespace MrItemRemover2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(495, 350);
             this.ControlBox = false;
             this.Controls.Add(this.tabControl1);
@@ -1149,20 +1101,10 @@ namespace MrItemRemover2
         private System.Windows.Forms.Button RemoveProtectedItem;
         private System.Windows.Forms.Button AddToBagList;
         private System.Windows.Forms.TextBox InputAddToBagItem;
-        private System.Windows.Forms.CheckBox SellWhite;
-        private System.Windows.Forms.CheckBox SellGreen;
-        private System.Windows.Forms.CheckBox SellGray;
-        private System.Windows.Forms.CheckBox GrayItems;
-        private System.Windows.Forms.CheckBox RemoveQItems;
         private System.Windows.Forms.Button Save;
         private System.Windows.Forms.Button Run;
         private System.Windows.Forms.PictureBox resf;
-        private System.Windows.Forms.CheckBox SellBlue;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox BlueItems;
-        private System.Windows.Forms.CheckBox WhiteItems;
-        private System.Windows.Forms.CheckBox GreenItems;
-        private System.Windows.Forms.CheckBox SellSoulbound;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
