@@ -58,7 +58,7 @@ namespace MrItemRemover2
             RemoveFoodDropDown.SelectedItem = MrItemRemover2Settings.Instance.RemoveFood;
             RemoveDrinksDropDown.SelectedItem = MrItemRemover2Settings.Instance.RemoveDrinks;
             SellSoulboundDropDown.SelectedItem = MrItemRemover2Settings.Instance.SellSoulbound;
-            CheckAfterLootDropDown.SelectedItem = MrItemRemover2Settings.Instance.LootEnable; 
+            CheckAfterLootDropDown.SelectedItem = MrItemRemover2Settings.Instance.LootCheck; 
             //ApplyAll.Checked = MrItemRemover2Settings.Instance.ApplyAll;
             GoldGrays.Text = MrItemRemover2Settings.Instance.GoldGrays.ToString(CultureInfo.InvariantCulture);
             SilverGrays.Text = MrItemRemover2Settings.Instance.SilverGrays.ToString(CultureInfo.InvariantCulture);
@@ -248,8 +248,7 @@ namespace MrItemRemover2
 
         private void CheckAfterLootDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            MrItemRemover2Settings.Instance.LootEnable = CheckAfterLootDropDown.SelectedItem.ToString();
+            MrItemRemover2Settings.Instance.LootCheck = CheckAfterLootDropDown.SelectedItem.ToString();
         }
 
         private void GoldGrays_TextChanged_1(object sender, EventArgs e)

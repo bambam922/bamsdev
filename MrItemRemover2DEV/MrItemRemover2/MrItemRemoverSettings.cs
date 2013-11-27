@@ -29,13 +29,10 @@ namespace MrItemRemover2
         public string EnableOpen { get; set; }
 
         [Setting, DefaultValue("False")]
-        public string LootEnable { get; set; }
+        public string LootCheck { get; set; }
 
         [Setting, DefaultValue("False")]
-        public string DeleteQuestItems { get; set; }
-
-        [Setting, DefaultValue(true)]
-        public bool EnableGray { get; set; }
+        public string SellGray { get; set; }
 
         [Setting, DefaultValue("False")]
         public string SellWhite { get; set; }
@@ -50,10 +47,15 @@ namespace MrItemRemover2
         public string SellSoulbound { get; set; }
 
         [Setting, DefaultValue("False")]
-        public string SellGray { get; set; }
+        public string SellFood { get; set; }
 
+        [Setting, DefaultValue("False")]
+        public string SellDrinks { get; set; }
+
+        /*
         [Setting, DefaultValue(true)]
         public bool ApplyAll { get; set; }
+        */
 
         [Setting, DefaultValue("False")]
         public string DeleteAllGray { get; set; }
@@ -67,6 +69,15 @@ namespace MrItemRemover2
         [Setting, DefaultValue("False")]
         public string DeleteAllBlue { get; set; }
 
+        [Setting, DefaultValue("False")]
+        public string DeleteQuestItems { get; set; }
+
+        [Setting, DefaultValue("False")]
+        public string RemoveFood { get; set; }
+
+        [Setting, DefaultValue("False")]
+        public string RemoveDrinks { get; set; }
+
         [Setting, DefaultValue(1)]
         public int GoldGrays { get; set; }
 
@@ -75,18 +86,6 @@ namespace MrItemRemover2
 
         [Setting, DefaultValue(41)]
         public int CopperGrays { get; set; }
-
-        [Setting, DefaultValue("False")]
-        public string RemoveFood { get; set; }
-
-        [Setting, DefaultValue("False")]
-        public string RemoveDrinks { get; set; }
-
-        [Setting, DefaultValue("False")]
-        public string SellFood { get; set; }
-
-        [Setting, DefaultValue("False")]
-        public string SellDrinks { get; set; }
 
         [Setting, DefaultValue(5)]
         public int Time { get; set; }
