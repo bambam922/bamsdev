@@ -71,14 +71,14 @@ namespace MrItemRemover2
             this.OpeningDropDown = new System.Windows.Forms.ComboBox();
             this.CombineDropDown = new System.Windows.Forms.ComboBox();
             this.RemoveDropDown = new System.Windows.Forms.ComboBox();
-            this.CheckAfterLootDropdown = new System.Windows.Forms.ComboBox();
+            this.CheckAfterLootDropDown = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.SellDropdown = new System.Windows.Forms.ComboBox();
+            this.SellDropDown = new System.Windows.Forms.ComboBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.GoldGrays = new System.Windows.Forms.TextBox();
@@ -392,19 +392,6 @@ namespace MrItemRemover2
             this.Run.UseVisualStyleBackColor = true;
             this.Run.Click += new System.EventHandler(this.Run_Click);
             // 
-            // LootEnable
-            // 
-            this.LootEnable.AutoSize = true;
-            this.LootEnable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.LootEnable.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.LootEnable.Location = new System.Drawing.Point(429, 160);
-            this.LootEnable.Name = "LootEnable";
-            this.LootEnable.Size = new System.Drawing.Size(114, 19);
-            this.LootEnable.TabIndex = 38;
-            this.LootEnable.Text = "Check After Loot";
-            this.LootEnable.UseVisualStyleBackColor = true;
-            this.LootEnable.CheckedChanged += new System.EventHandler(this.LootEnable_CheckedChanged);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -498,14 +485,14 @@ namespace MrItemRemover2
             this.tabPage1.Controls.Add(this.Run);
             this.tabPage1.Controls.Add(this.EnableSell);
             this.tabPage1.Controls.Add(this.Save);
-            this.tabPage1.Controls.Add(this.CheckAfterLootDropdown);
+            this.tabPage1.Controls.Add(this.CheckAfterLootDropDown);
             this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.SellDropdown);
+            this.tabPage1.Controls.Add(this.SellDropDown);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.InputAddToBagItem);
             this.tabPage1.Controls.Add(this.AddToBagList);
@@ -546,7 +533,7 @@ namespace MrItemRemover2
             this.CombineDropDown.SelectedIndexChanged += new System.EventHandler(this.CombineDropDown_SelectedIndexChanged);
             // 
             // RemoveDropDown
-            // 
+            //
             this.RemoveDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.RemoveDropDown.FormattingEnabled = true;
             this.RemoveDropDown.Items.AddRange(new object[] {
@@ -558,18 +545,18 @@ namespace MrItemRemover2
             this.RemoveDropDown.TabIndex = 57;
             this.RemoveDropDown.SelectedIndexChanged += new System.EventHandler(this.RemoveDropDown_SelectedIndexChanged);
             // 
-            // CheckAfterLootDropdown
+            // CheckAfterLootDropDown
             // 
-            this.CheckAfterLootDropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CheckAfterLootDropdown.FormattingEnabled = true;
-            this.CheckAfterLootDropdown.Items.AddRange(new object[] {
+            this.CheckAfterLootDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CheckAfterLootDropDown.FormattingEnabled = true;
+            this.CheckAfterLootDropDown.Items.AddRange(new object[] {
             "False",
             "True"});
-            this.CheckAfterLootDropdown.Location = new System.Drawing.Point(288, 158);
-            this.CheckAfterLootDropdown.Name = "CheckAfterLootDropdown";
-            this.CheckAfterLootDropdown.Size = new System.Drawing.Size(121, 23);
-            this.CheckAfterLootDropdown.TabIndex = 56;
-            this.CheckAfterLootDropdown.SelectedIndexChanged += new System.EventHandler(this.RemoveDropDown_SelectedIndexChanged);
+            this.CheckAfterLootDropDown.Location = new System.Drawing.Point(288, 158);
+            this.CheckAfterLootDropDown.Name = "CheckAfterLootDropDown";
+            this.CheckAfterLootDropDown.Size = new System.Drawing.Size(121, 23);
+            this.CheckAfterLootDropDown.TabIndex = 56;
+            this.CheckAfterLootDropDown.SelectedIndexChanged += new System.EventHandler(this.CheckAfterLootDropDown_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -625,18 +612,18 @@ namespace MrItemRemover2
             this.label2.TabIndex = 50;
             this.label2.Text = "mins";
             // 
-            // SellDropdown
+            // SellDropDown
             // 
-            this.SellDropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.SellDropdown.FormattingEnabled = true;
-            this.SellDropdown.Items.AddRange(new object[] {
+            this.SellDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SellDropDown.FormattingEnabled = true;
+            this.SellDropDown.Items.AddRange(new object[] {
             "False",
             "True"});
-            this.SellDropdown.Location = new System.Drawing.Point(288, 41);
-            this.SellDropdown.Name = "SellDropdown";
-            this.SellDropdown.Size = new System.Drawing.Size(121, 23);
-            this.SellDropdown.TabIndex = 49;
-            this.SellDropdown.SelectedIndexChanged += new System.EventHandler(this.SellDropdown_SelectedIndexChanged);
+            this.SellDropDown.Location = new System.Drawing.Point(288, 41);
+            this.SellDropDown.Name = "SellDropDown";
+            this.SellDropDown.Size = new System.Drawing.Size(121, 23);
+            this.SellDropDown.TabIndex = 49;
+            this.SellDropDown.SelectedIndexChanged += new System.EventHandler(this.SellDropDown_SelectedIndexChanged);
             // 
             // tabPage2
             // 
@@ -832,11 +819,11 @@ namespace MrItemRemover2
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.PageSetupDialog pageSetupDialog1;
-        private System.Windows.Forms.ComboBox SellDropdown;
+        private System.Windows.Forms.ComboBox SellDropDown;
         private System.Windows.Forms.ComboBox OpeningDropDown;
         private System.Windows.Forms.ComboBox CombineDropDown;
         private System.Windows.Forms.ComboBox RemoveDropDown;
-        private System.Windows.Forms.ComboBox CheckAfterLootDropdown;
+        private System.Windows.Forms.ComboBox CheckAfterLootDropDown;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;

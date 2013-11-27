@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel;
 using System.IO;
 using Styx;
 using Styx.Helpers;
@@ -26,11 +25,17 @@ namespace MrItemRemover2
         [Setting, Styx.Helpers.DefaultValue("False")]
         public string EnableOpen { get; set; }
 
+        [Setting, Styx.Helpers.DefaultValue("False")]
+        public string CombineItems { get; set; }
+
         [Setting, Styx.Helpers.DefaultValue(false)]
         public bool DeleteQuestItems { get; set; }
 
         [Setting, Styx.Helpers.DefaultValue("False")]
         public string EnableSell { get; set; }
+
+        [Setting, Styx.Helpers.DefaultValue("False")]
+        public string LootEnable { get; set; }
 
         [Setting, Styx.Helpers.DefaultValue(true)]
         public bool EnableGray { get; set; }
@@ -65,9 +70,6 @@ namespace MrItemRemover2
         [Setting, Styx.Helpers.DefaultValue(false)]
         public bool DeleteAllBlue { get; set; }
 
-        [Setting, Styx.Helpers.DefaultValue(false)]
-        public bool LootEnable { get; set; }
-
         [Setting, Styx.Helpers.DefaultValue(1)]
         public int GoldGrays { get; set; }
 
@@ -76,9 +78,6 @@ namespace MrItemRemover2
 
         [Setting, Styx.Helpers.DefaultValue(41)]
         public int CopperGrays { get; set; }
-
-        [Setting, Styx.Helpers.DefaultValue("False")]
-        public string CombineItems { get; set; }
 
         [Setting, Styx.Helpers.DefaultValue(false)]
         public bool RSFood { get; set; }

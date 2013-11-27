@@ -43,6 +43,11 @@ namespace MrItemRemover2
             SellList.Items.Clear();
             RemoveList.Items.Clear();
             ProtectedList.Items.Clear();
+            SellDropDown.SelectedItem = MrItemRemover2Settings.Instance.EnableSell;
+            RemoveDropDown.SelectedItem = MrItemRemover2Settings.Instance.EnableRemove;
+            CombineDropDown.SelectedItem = MrItemRemover2Settings.Instance.CombineItems;
+            OpeningDropDown.SelectedItem = MrItemRemover2Settings.Instance.EnableOpen;
+            CheckAfterLootDropDown.SelectedItem = MrItemRemover2Settings.Instance.LootEnable; 
             GrayItems.Checked = MrItemRemover2Settings.Instance.DeleteAllGray;
             WhiteItems.Checked = MrItemRemover2Settings.Instance.DeleteAllWhite;
             GreenItems.Checked = MrItemRemover2Settings.Instance.DeleteAllGreen;
@@ -54,7 +59,6 @@ namespace MrItemRemover2
             SellBlue.Checked = MrItemRemover2Settings.Instance.SellBlue;
             SellSoulbound.Checked = MrItemRemover2Settings.Instance.SellSoulbound;
             RemoveQItems.Checked = MrItemRemover2Settings.Instance.DeleteQuestItems;
-            LootEnable.Checked = MrItemRemover2Settings.Instance.LootEnable;
             GoldGrays.Text = MrItemRemover2Settings.Instance.GoldGrays.ToString(CultureInfo.InvariantCulture);
             SilverGrays.Text = MrItemRemover2Settings.Instance.SilverGrays.ToString(CultureInfo.InvariantCulture);
             CopperGrays.Text = MrItemRemover2Settings.Instance.CopperGrays.ToString(CultureInfo.InvariantCulture);
@@ -245,11 +249,6 @@ namespace MrItemRemover2
             Controller.ManualCheckRequested = true;
         }
 
-        private void LootEnable_CheckedChanged(object sender, EventArgs e)
-        {
-            MrItemRemover2Settings.Instance.LootEnable = LootEnable.Checked;
-        }
-
         private void SellList_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
@@ -278,42 +277,33 @@ namespace MrItemRemover2
         //    MrItemRemover2Settings.Instance.RSFood = CombineItems.Checked;
         }
 
-        private void SellDropdown_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string enableSell = SellDropdown.GetItemText(SellDropdown.SelectedItem);
-            bool sellItems = enableSell == "True";
-            MrItemRemover2Settings.Instance.EnableSell = enableSell;
-            if (enableSell == "True")
-            {
-                SellDropdown.SelectedIndex = 1;
-            }
-            else
-            {
-                SellDropdown.SelectedIndex = 0;
-            }
 
+        private void SellDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            MrItemRemover2Settings.Instance.EnableSell = SellDropDown.SelectedItem.ToString();
         }
 
         private void RemoveDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string enableRemove = RemoveDropDown.GetItemText(RemoveDropDown.SelectedItem);
-            bool removeItems = enableRemove == "True";
-            MrItemRemover2Settings.Instance.EnableRemove = enableRemove;
 
+            MrItemRemover2Settings.Instance.EnableRemove = RemoveDropDown.SelectedItem.ToString();
         }
 
         private void CombineDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string enableCombine = CombineDropDown.GetItemText(CombineDropDown.SelectedItem);
-            bool combineItems = enableCombine == "True";
-            MrItemRemover2Settings.Instance.CombineItems = enableCombine;
+            MrItemRemover2Settings.Instance.CombineItems = CombineDropDown.SelectedItem.ToString();
         }
 
         private void OpeningDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string enableOpening = CombineDropDown.GetItemText(CombineDropDown.SelectedItem);
-            bool openItems = enableOpening == "True";
-            MrItemRemover2Settings.Instance.EnableOpen = enableOpening;
+            MrItemRemover2Settings.Instance.EnableOpen = OpeningDropDown.SelectedItem.ToString();
+        }
+
+        private void CheckAfterLootDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            MrItemRemover2Settings.Instance.LootEnable = CheckAfterLootDropDown.SelectedItem.ToString();
         }
 
         private void GoldGrays_TextChanged_1(object sender, EventArgs e)
