@@ -285,20 +285,6 @@ namespace MrItemRemover2
             this.InputAddToBagItem.Size = new System.Drawing.Size(165, 21);
             this.InputAddToBagItem.TabIndex = 18;
             // 
-            // EnableRemove
-            // 
-            this.EnableRemove.AutoSize = true;
-            this.EnableRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.EnableRemove.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.EnableRemove.Location = new System.Drawing.Point(429, 78);
-            this.EnableRemove.Name = "EnableRemove";
-            this.EnableRemove.Size = new System.Drawing.Size(124, 19);
-            this.EnableRemove.TabIndex = 19;
-            this.EnableRemove.Text = "Enable Removing";
-            this.EnableRemove.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.EnableRemove.UseVisualStyleBackColor = true;
-            this.EnableRemove.CheckedChanged += new System.EventHandler(this.EnableRemove_CheckedChanged);
-            // 
             // EnableSell
             // 
             this.EnableSell.AutoSize = true;
@@ -408,20 +394,6 @@ namespace MrItemRemover2
             this.Run.Text = "Check Bag Items Now";
             this.Run.UseVisualStyleBackColor = true;
             this.Run.Click += new System.EventHandler(this.Run_Click);
-            // 
-            // EnableOpen
-            // 
-            this.EnableOpen.AutoSize = true;
-            this.EnableOpen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.EnableOpen.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.EnableOpen.Location = new System.Drawing.Point(429, 110);
-            this.EnableOpen.Name = "EnableOpen";
-            this.EnableOpen.Size = new System.Drawing.Size(115, 19);
-            this.EnableOpen.TabIndex = 35;
-            this.EnableOpen.Text = "Enable Opening";
-            this.EnableOpen.UseVisualStyleBackColor = true;
-            this.EnableOpen.CheckedChanged += new System.EventHandler(this.EnableOpen_CheckedChanged);
-            // 
             // LootEnable
             // 
             this.LootEnable.AutoSize = true;
@@ -476,19 +448,6 @@ namespace MrItemRemover2
             this.GreenItems.Text = "   Remove Greens";
             this.GreenItems.UseVisualStyleBackColor = true;
             this.GreenItems.CheckedChanged += new System.EventHandler(this.GreenItems_CheckedChanged);
-            // 
-            // CombineItems
-            // 
-            this.CombineItems.AutoSize = true;
-            this.CombineItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.CombineItems.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.CombineItems.Location = new System.Drawing.Point(429, 135);
-            this.CombineItems.Name = "CombineItems";
-            this.CombineItems.Size = new System.Drawing.Size(128, 19);
-            this.CombineItems.TabIndex = 45;
-            this.CombineItems.Text = "Enable Combining";
-            this.CombineItems.UseVisualStyleBackColor = true;
-            this.CombineItems.CheckedChanged += new System.EventHandler(this.CombineItems_CheckedChanged);
             // 
             // RSFood
             // 

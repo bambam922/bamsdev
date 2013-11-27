@@ -142,7 +142,7 @@ namespace MrItemRemover2
             if (!Me.Combat && !Me.IsCasting && !Me.IsDead && !Me.IsGhost && EnableCheck)
             {
                 Slog("EnableCheck was Passed!");
-                if (MrItemRemover2Settings.Instance.EnableRemove)
+                if (MrItemRemover2Settings.Instance.EnableRemove == "True")
                 {
                     CheckForItems();
                 }
