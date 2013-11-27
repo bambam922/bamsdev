@@ -48,6 +48,15 @@ namespace MrItemRemover2
             SellWhitesDropDown.SelectedItem = MrItemRemover2Settings.Instance.SellWhite;
             SellGreensDropDown.SelectedItem = MrItemRemover2Settings.Instance.SellGreen;
             SellBluesDropDown.SelectedItem = MrItemRemover2Settings.Instance.SellBlue;
+            SellFoodDropDown.SelectedItem = MrItemRemover2Settings.Instance.SellFood;
+            SellDrinksDropDown.SelectedItem = MrItemRemover2Settings.Instance.SellDrinks;
+            RemoveGraysDropDown.SelectedItem = MrItemRemover2Settings.Instance.DeleteAllGray;
+            RemoveWhitesDropDown.SelectedItem = MrItemRemover2Settings.Instance.DeleteAllWhite;
+            RemoveGreensDropDown.SelectedItem = MrItemRemover2Settings.Instance.DeleteAllGreen;
+            RemoveBluesDropDown.SelectedItem = MrItemRemover2Settings.Instance.DeleteAllBlue;
+            RemoveQuestStartersDropDown.SelectedItem = MrItemRemover2Settings.Instance.DeleteQuestItems;
+            RemoveFoodDropDown.SelectedItem = MrItemRemover2Settings.Instance.RemoveFood;
+            RemoveDrinksDropDown.SelectedItem = MrItemRemover2Settings.Instance.RemoveDrinks;
             SellSoulboundDropDown.SelectedItem = MrItemRemover2Settings.Instance.SellSoulbound;
             CheckAfterLootDropDown.SelectedItem = MrItemRemover2Settings.Instance.LootEnable; 
             //ApplyAll.Checked = MrItemRemover2Settings.Instance.ApplyAll;
@@ -283,6 +292,16 @@ namespace MrItemRemover2
             MrItemRemover2Settings.Instance.SellSoulbound = SellSoulboundDropDown.SelectedItem.ToString();
         }
 
+        private void SellFoodDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MrItemRemover2Settings.Instance.SellFood = SellFoodDropDown.SelectedItem.ToString();
+        }
+
+        private void SellDrinksDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MrItemRemover2Settings.Instance.SellDrinks = SellDrinksDropDown.SelectedItem.ToString();
+        }
+
         private void RemoveGraysDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
             MrItemRemover2Settings.Instance.DeleteAllGray = RemoveGraysDropDown.SelectedItem.ToString();
@@ -318,14 +337,6 @@ namespace MrItemRemover2
             MrItemRemover2Settings.Instance.RemoveDrinks = RemoveDrinksDropDown.SelectedItem.ToString();
         }
 
-        private void SellFoodDropDown_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            MrItemRemover2Settings.Instance.SellFood = SellFoodDropDown.SelectedItem.ToString();
-        }
-
-        private void SellDrinksDropDown_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            MrItemRemover2Settings.Instance.SellDrinks = SellDrinksDropDown.SelectedItem.ToString();
-        }
+        
     }
 }

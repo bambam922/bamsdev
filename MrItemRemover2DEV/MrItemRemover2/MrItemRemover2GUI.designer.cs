@@ -1048,9 +1048,9 @@ namespace MrItemRemover2
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(495, 350);
-            this.ControlBox = false;
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.MaximumSize = new System.Drawing.Size(495, 350);
             this.MinimumSize = new System.Drawing.Size(495, 350);
             this.Name = "MrItemRemover2Gui";
