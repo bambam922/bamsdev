@@ -1,8 +1,8 @@
 ﻿using System.Windows.Forms;
 
-namespace BetterPull
+namespace MrItemRemover2
 {
-    partial class BetterPullGui
+    partial class MrItemRemover2Gui
     {
 
         /// <summary>
@@ -802,7 +802,7 @@ namespace BetterPull
             this.GoldBox.TabIndex = 52;
             this.GoldBox.TabStop = false;
             // 
-            // BetterPullGui
+            // MrItemRemover2Gui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -813,10 +813,10 @@ namespace BetterPull
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximumSize = new System.Drawing.Size(715, 350);
             this.MinimumSize = new System.Drawing.Size(715, 350);
-            this.Name = "BetterPullGui";
+            this.Name = "MrItemRemover2Gui";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mr.ItemRemover2 - Removing items from your bags.";
-            this.Load += new System.EventHandler(this.BetterPullGUI_Load);
+            this.Load += new System.EventHandler(this.MrItemRemover2GUI_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Time)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.resf)).EndInit();
