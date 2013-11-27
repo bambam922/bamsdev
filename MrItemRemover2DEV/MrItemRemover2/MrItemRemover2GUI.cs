@@ -336,6 +336,11 @@ namespace MrItemRemover2
             MrItemRemover2Settings.Instance.RemoveDrinks = RemoveDrinksDropDown.SelectedItem.ToString();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         
     }
 }

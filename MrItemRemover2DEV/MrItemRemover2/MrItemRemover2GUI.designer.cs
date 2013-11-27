@@ -112,6 +112,9 @@ namespace MrItemRemover2
             this.Combine5List = new System.Windows.Forms.ListBox();
             this.Combine3 = new System.Windows.Forms.GroupBox();
             this.Combine3List = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Time)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resf)).BeginInit();
@@ -312,7 +315,7 @@ namespace MrItemRemover2
             // 
             // Save
             // 
-            this.Save.Location = new System.Drawing.Point(257, 266);
+            this.Save.Location = new System.Drawing.Point(338, 279);
             this.Save.Name = "Save";
             this.Save.Size = new System.Drawing.Size(131, 23);
             this.Save.TabIndex = 32;
@@ -322,7 +325,7 @@ namespace MrItemRemover2
             // 
             // Run
             // 
-            this.Run.Location = new System.Drawing.Point(251, 221);
+            this.Run.Location = new System.Drawing.Point(252, 219);
             this.Run.Name = "Run";
             this.Run.Size = new System.Drawing.Size(143, 23);
             this.Run.TabIndex = 33;
@@ -504,6 +507,7 @@ namespace MrItemRemover2
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.SellDrinksDropDown);
             this.tabPage2.Controls.Add(this.SellFoodDropDown);
             this.tabPage2.Controls.Add(this.label21);
@@ -683,6 +687,7 @@ namespace MrItemRemover2
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.button2);
             this.tabPage3.Controls.Add(this.RemoveDrinksDropDown);
             this.tabPage3.Controls.Add(this.RemoveFoodDropDown);
             this.tabPage3.Controls.Add(this.label20);
@@ -870,7 +875,7 @@ namespace MrItemRemover2
             this.GoldGrays.BackColor = System.Drawing.Color.Black;
             this.GoldGrays.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.GoldGrays.ForeColor = System.Drawing.Color.White;
-            this.GoldGrays.Location = new System.Drawing.Point(279, 274);
+            this.GoldGrays.Location = new System.Drawing.Point(279, 249);
             this.GoldGrays.MaxLength = 4;
             this.GoldGrays.Name = "GoldGrays";
             this.GoldGrays.Size = new System.Drawing.Size(26, 14);
@@ -881,7 +886,7 @@ namespace MrItemRemover2
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(219, 246);
+            this.label5.Location = new System.Drawing.Point(219, 221);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(226, 15);
             this.label5.TabIndex = 51;
@@ -892,7 +897,7 @@ namespace MrItemRemover2
             this.CopperGrays.BackColor = System.Drawing.Color.Black;
             this.CopperGrays.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CopperGrays.ForeColor = System.Drawing.Color.White;
-            this.CopperGrays.Location = new System.Drawing.Point(367, 274);
+            this.CopperGrays.Location = new System.Drawing.Point(367, 249);
             this.CopperGrays.MaxLength = 2;
             this.CopperGrays.Name = "CopperGrays";
             this.CopperGrays.Size = new System.Drawing.Size(18, 14);
@@ -905,7 +910,7 @@ namespace MrItemRemover2
             this.SilverGrays.BackColor = System.Drawing.Color.Black;
             this.SilverGrays.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.SilverGrays.ForeColor = System.Drawing.Color.White;
-            this.SilverGrays.Location = new System.Drawing.Point(329, 274);
+            this.SilverGrays.Location = new System.Drawing.Point(329, 249);
             this.SilverGrays.MaxLength = 2;
             this.SilverGrays.Name = "SilverGrays";
             this.SilverGrays.Size = new System.Drawing.Size(17, 14);
@@ -915,7 +920,7 @@ namespace MrItemRemover2
             // 
             // GoldBox
             // 
-            this.GoldBox.Location = new System.Drawing.Point(257, 269);
+            this.GoldBox.Location = new System.Drawing.Point(257, 244);
             this.GoldBox.Name = "GoldBox";
             this.GoldBox.Size = new System.Drawing.Size(151, 24);
             this.GoldBox.TabIndex = 52;
@@ -923,6 +928,7 @@ namespace MrItemRemover2
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.button3);
             this.tabPage4.Controls.Add(this.groupBox4);
             this.tabPage4.Location = new System.Drawing.Point(4, 24);
             this.tabPage4.Name = "tabPage4";
@@ -1041,6 +1047,36 @@ namespace MrItemRemover2
             this.Combine3List.Name = "Combine3List";
             this.Combine3List.Size = new System.Drawing.Size(83, 274);
             this.Combine3List.TabIndex = 9;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(338, 279);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(131, 23);
+            this.button1.TabIndex = 76;
+            this.button1.Text = "Save and Close";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Save_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(338, 279);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(131, 23);
+            this.button2.TabIndex = 72;
+            this.button2.Text = "Save and Close";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Save_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(338, 279);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(131, 23);
+            this.button3.TabIndex = 33;
+            this.button3.Text = "Save and Close";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Save_Click);
             // 
             // MrItemRemover2Gui
             // 
@@ -1165,5 +1201,8 @@ namespace MrItemRemover2
         private ListBox Combine5List;
         private GroupBox Combine3;
         private ListBox Combine3List;
+        private Button button1;
+        private Button button2;
+        private Button button3;
     }
 }
