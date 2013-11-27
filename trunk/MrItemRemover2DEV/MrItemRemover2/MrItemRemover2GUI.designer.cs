@@ -457,7 +457,7 @@ namespace MrItemRemover2
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(700, 337);
+            this.tabControl1.Size = new System.Drawing.Size(483, 337);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 48;
             // 
@@ -484,7 +484,7 @@ namespace MrItemRemover2
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(692, 309);
+            this.tabPage1.Size = new System.Drawing.Size(475, 309);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Main";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -719,7 +719,7 @@ namespace MrItemRemover2
             this.tabPage5.Location = new System.Drawing.Point(4, 24);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(692, 309);
+            this.tabPage5.Size = new System.Drawing.Size(475, 309);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Misc";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -729,12 +729,12 @@ namespace MrItemRemover2
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(715, 350);
+            this.ClientSize = new System.Drawing.Size(495, 350);
             this.ControlBox = false;
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximumSize = new System.Drawing.Size(715, 350);
-            this.MinimumSize = new System.Drawing.Size(715, 350);
+            this.MaximumSize = new System.Drawing.Size(495, 350);
+            this.MinimumSize = new System.Drawing.Size(495, 350);
             this.Name = "MrItemRemover2Gui";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mr.ItemRemover2 - Removing items from your bags.";

@@ -222,11 +222,6 @@ namespace MrItemRemover2
             MrItemRemover2Settings.Instance.SellWhite = SellWhite.Checked;
         }
 
-        private void EnableSell_CheckedChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void Time_ValueChanged(object sender, EventArgs e)
         {
             MrItemRemover2Settings.Instance.Time = int.Parse(Time.Value.ToString(CultureInfo.InvariantCulture));
