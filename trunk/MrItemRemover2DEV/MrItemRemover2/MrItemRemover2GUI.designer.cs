@@ -49,7 +49,6 @@ namespace MrItemRemover2
             this.RemoveProtectedItem = new System.Windows.Forms.Button();
             this.AddToBagList = new System.Windows.Forms.Button();
             this.InputAddToBagItem = new System.Windows.Forms.TextBox();
-            this.EnableSell = new System.Windows.Forms.CheckBox();
             this.SellWhite = new System.Windows.Forms.CheckBox();
             this.SellGreen = new System.Windows.Forms.CheckBox();
             this.SellGray = new System.Windows.Forms.CheckBox();
@@ -59,7 +58,6 @@ namespace MrItemRemover2
             this.RemoveQItems = new System.Windows.Forms.CheckBox();
             this.Save = new System.Windows.Forms.Button();
             this.Run = new System.Windows.Forms.Button();
-            this.LootEnable = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.BlueItems = new System.Windows.Forms.CheckBox();
             this.WhiteItems = new System.Windows.Forms.CheckBox();
@@ -282,19 +280,6 @@ namespace MrItemRemover2
             this.InputAddToBagItem.Size = new System.Drawing.Size(165, 21);
             this.InputAddToBagItem.TabIndex = 18;
             // 
-            // EnableSell
-            // 
-            this.EnableSell.AutoSize = true;
-            this.EnableSell.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.EnableSell.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.EnableSell.Location = new System.Drawing.Point(429, 48);
-            this.EnableSell.Name = "EnableSell";
-            this.EnableSell.Size = new System.Drawing.Size(106, 19);
-            this.EnableSell.TabIndex = 20;
-            this.EnableSell.Text = "Enable Selling";
-            this.EnableSell.UseVisualStyleBackColor = true;
-            this.EnableSell.CheckedChanged += new System.EventHandler(this.EnableSell_CheckedChanged);
-            // 
             // SellWhite
             // 
             this.SellWhite.AutoSize = true;
@@ -480,10 +465,8 @@ namespace MrItemRemover2
             // 
             this.tabPage1.Controls.Add(this.OpeningDropDown);
             this.tabPage1.Controls.Add(this.CombineDropDown);
-            this.tabPage1.Controls.Add(this.LootEnable);
             this.tabPage1.Controls.Add(this.RemoveDropDown);
             this.tabPage1.Controls.Add(this.Run);
-            this.tabPage1.Controls.Add(this.EnableSell);
             this.tabPage1.Controls.Add(this.Save);
             this.tabPage1.Controls.Add(this.CheckAfterLootDropDown);
             this.tabPage1.Controls.Add(this.label8);
@@ -533,7 +516,7 @@ namespace MrItemRemover2
             this.CombineDropDown.SelectedIndexChanged += new System.EventHandler(this.CombineDropDown_SelectedIndexChanged);
             // 
             // RemoveDropDown
-            //
+            // 
             this.RemoveDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.RemoveDropDown.FormattingEnabled = true;
             this.RemoveDropDown.Items.AddRange(new object[] {
@@ -794,7 +777,6 @@ namespace MrItemRemover2
         private System.Windows.Forms.Button RemoveProtectedItem;
         private System.Windows.Forms.Button AddToBagList;
         private System.Windows.Forms.TextBox InputAddToBagItem;
-        private System.Windows.Forms.CheckBox EnableSell;
         private System.Windows.Forms.CheckBox SellWhite;
         private System.Windows.Forms.CheckBox SellGreen;
         private System.Windows.Forms.CheckBox SellGray;
@@ -803,7 +785,6 @@ namespace MrItemRemover2
         private System.Windows.Forms.Button Save;
         private System.Windows.Forms.Button Run;
         private System.Windows.Forms.PictureBox resf;
-        private System.Windows.Forms.CheckBox LootEnable;
         private System.Windows.Forms.CheckBox SellBlue;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox BlueItems;
