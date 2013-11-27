@@ -576,11 +576,11 @@ namespace MrItemRemover2
             this.OpeningDropDown.Name = "OpeningDropDown";
             this.OpeningDropDown.Size = new System.Drawing.Size(121, 23);
             this.OpeningDropDown.TabIndex = 59;
+            this.OpeningDropDown.SelectedIndexChanged += new System.EventHandler(this.OpeningDropDown_SelectedIndexChanged);
             // 
             // CombineDropDown
             // 
             this.CombineDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CombineDropDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CombineDropDown.FormattingEnabled = true;
             this.CombineDropDown.Items.AddRange(new object[] {
             "False",
@@ -589,11 +589,11 @@ namespace MrItemRemover2
             this.CombineDropDown.Name = "CombineDropDown";
             this.CombineDropDown.Size = new System.Drawing.Size(121, 23);
             this.CombineDropDown.TabIndex = 58;
+            this.CombineDropDown.SelectedIndexChanged += new System.EventHandler(this.CombineDropDown_SelectedIndexChanged);
             // 
             // RemoveDropDown
             // 
             this.RemoveDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.RemoveDropDown.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.RemoveDropDown.FormattingEnabled = true;
             this.RemoveDropDown.Items.AddRange(new object[] {
             "False",
@@ -602,11 +602,11 @@ namespace MrItemRemover2
             this.RemoveDropDown.Name = "RemoveDropDown";
             this.RemoveDropDown.Size = new System.Drawing.Size(121, 23);
             this.RemoveDropDown.TabIndex = 57;
+            this.RemoveDropDown.SelectedIndexChanged += new System.EventHandler(this.RemoveDropDown_SelectedIndexChanged);
             // 
             // CheckAfterLootDropdown
             // 
             this.CheckAfterLootDropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CheckAfterLootDropdown.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.CheckAfterLootDropdown.FormattingEnabled = true;
             this.CheckAfterLootDropdown.Items.AddRange(new object[] {
             "False",
@@ -615,7 +615,7 @@ namespace MrItemRemover2
             this.CheckAfterLootDropdown.Name = "CheckAfterLootDropdown";
             this.CheckAfterLootDropdown.Size = new System.Drawing.Size(121, 23);
             this.CheckAfterLootDropdown.TabIndex = 56;
-            this.CheckAfterLootDropdown.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.CheckAfterLootDropdown.SelectedIndexChanged += new System.EventHandler(this.RemoveDropDown_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -682,7 +682,7 @@ namespace MrItemRemover2
             this.SellDropdown.Name = "SellDropdown";
             this.SellDropdown.Size = new System.Drawing.Size(121, 23);
             this.SellDropdown.TabIndex = 49;
-            this.SellDropdown.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.SellDropdown.SelectedIndexChanged += new System.EventHandler(this.SellDropdown_SelectedIndexChanged);
             // 
             // tabPage2
             // 
@@ -734,6 +734,7 @@ namespace MrItemRemover2
             this.GoldGrays.Size = new System.Drawing.Size(26, 14);
             this.GoldGrays.TabIndex = 48;
             this.GoldGrays.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.GoldGrays.TextChanged += new System.EventHandler(this.GoldGrays_TextChanged_1);
             // 
             // label5
             // 
@@ -755,6 +756,7 @@ namespace MrItemRemover2
             this.CopperGrays.Size = new System.Drawing.Size(18, 14);
             this.CopperGrays.TabIndex = 50;
             this.CopperGrays.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.CopperGrays.TextChanged += new System.EventHandler(this.CopperGrays_TextChanged_1);
             // 
             // SilverGrays
             // 
@@ -767,6 +769,7 @@ namespace MrItemRemover2
             this.SilverGrays.Size = new System.Drawing.Size(17, 14);
             this.SilverGrays.TabIndex = 49;
             this.SilverGrays.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.SilverGrays.TextChanged += new System.EventHandler(this.SilverGrays_TextChanged_1);
             // 
             // GoldBox
             // 
