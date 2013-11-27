@@ -66,6 +66,7 @@ namespace MrItemRemover2
             this.label2 = new System.Windows.Forms.Label();
             this.SellDropDown = new System.Windows.Forms.ComboBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.SellDrinksDropDown = new System.Windows.Forms.ComboBox();
             this.SellFoodDropDown = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
@@ -81,6 +82,7 @@ namespace MrItemRemover2
             this.SellWhitesDropDown = new System.Windows.Forms.ComboBox();
             this.SellGraysDropDown = new System.Windows.Forms.ComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
             this.RemoveDrinksDropDown = new System.Windows.Forms.ComboBox();
             this.RemoveFoodDropDown = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
@@ -101,6 +103,7 @@ namespace MrItemRemover2
             this.SilverGrays = new System.Windows.Forms.TextBox();
             this.GoldBox = new System.Windows.Forms.PictureBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.Drink = new System.Windows.Forms.GroupBox();
             this.DrinkList = new System.Windows.Forms.ListBox();
@@ -112,9 +115,6 @@ namespace MrItemRemover2
             this.Combine5List = new System.Windows.Forms.ListBox();
             this.Combine3 = new System.Windows.Forms.GroupBox();
             this.Combine3List = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Time)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resf)).BeginInit();
@@ -139,34 +139,34 @@ namespace MrItemRemover2
             // 
             this.Time.Location = new System.Drawing.Point(364, 173);
             this.Time.Name = "Time";
-            this.Time.Size = new System.Drawing.Size(51, 21);
+            this.Time.Size = new System.Drawing.Size(51, 22);
             this.Time.TabIndex = 0;
             this.Time.ValueChanged += new System.EventHandler(this.Time_ValueChanged);
             // 
             // MyBag
             // 
             this.MyBag.FormattingEnabled = true;
-            this.MyBag.ItemHeight = 15;
+            this.MyBag.ItemHeight = 17;
             this.MyBag.Location = new System.Drawing.Point(8, 19);
             this.MyBag.Name = "MyBag";
-            this.MyBag.Size = new System.Drawing.Size(162, 139);
+            this.MyBag.Size = new System.Drawing.Size(162, 123);
             this.MyBag.TabIndex = 4;
             // 
             // RemoveList
             // 
             this.RemoveList.FormattingEnabled = true;
-            this.RemoveList.ItemHeight = 15;
+            this.RemoveList.ItemHeight = 17;
             this.RemoveList.Location = new System.Drawing.Point(8, 19);
             this.RemoveList.Name = "RemoveList";
-            this.RemoveList.Size = new System.Drawing.Size(162, 244);
+            this.RemoveList.Size = new System.Drawing.Size(162, 242);
             this.RemoveList.TabIndex = 5;
             // 
             // SellList
             // 
-            this.SellList.ItemHeight = 15;
+            this.SellList.ItemHeight = 17;
             this.SellList.Location = new System.Drawing.Point(8, 19);
             this.SellList.Name = "SellList";
-            this.SellList.Size = new System.Drawing.Size(162, 244);
+            this.SellList.Size = new System.Drawing.Size(162, 242);
             this.SellList.TabIndex = 8;
             // 
             // groupBox1
@@ -279,10 +279,10 @@ namespace MrItemRemover2
             // ProtectedList
             // 
             this.ProtectedList.FormattingEnabled = true;
-            this.ProtectedList.ItemHeight = 15;
+            this.ProtectedList.ItemHeight = 17;
             this.ProtectedList.Location = new System.Drawing.Point(6, 19);
             this.ProtectedList.Name = "ProtectedList";
-            this.ProtectedList.Size = new System.Drawing.Size(162, 244);
+            this.ProtectedList.Size = new System.Drawing.Size(162, 242);
             this.ProtectedList.TabIndex = 9;
             // 
             // RemoveProtectedItem
@@ -309,7 +309,7 @@ namespace MrItemRemover2
             // 
             this.InputAddToBagItem.Location = new System.Drawing.Point(3, 254);
             this.InputAddToBagItem.Name = "InputAddToBagItem";
-            this.InputAddToBagItem.Size = new System.Drawing.Size(178, 21);
+            this.InputAddToBagItem.Size = new System.Drawing.Size(178, 22);
             this.InputAddToBagItem.TabIndex = 18;
             this.InputAddToBagItem.Text = "     Enter an Item Name Here";
             // 
@@ -336,9 +336,10 @@ namespace MrItemRemover2
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(203, 175);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(193, 175);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 15);
+            this.label1.Size = new System.Drawing.Size(170, 17);
             this.label1.TabIndex = 40;
             this.label1.Text = "Time Between Bag Checks -";
             // 
@@ -349,7 +350,7 @@ namespace MrItemRemover2
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.tabControl1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(6, 6);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -378,10 +379,11 @@ namespace MrItemRemover2
             this.tabPage1.Controls.Add(this.AddToBagList);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.Time);
-            this.tabPage1.Location = new System.Drawing.Point(4, 24);
+            this.tabPage1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage1.Location = new System.Drawing.Point(4, 26);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(475, 309);
+            this.tabPage1.Size = new System.Drawing.Size(475, 307);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Main";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -393,9 +395,9 @@ namespace MrItemRemover2
             this.OpeningDropDown.Items.AddRange(new object[] {
             "False",
             "True"});
-            this.OpeningDropDown.Location = new System.Drawing.Point(300, 98);
+            this.OpeningDropDown.Location = new System.Drawing.Point(305, 98);
             this.OpeningDropDown.Name = "OpeningDropDown";
-            this.OpeningDropDown.Size = new System.Drawing.Size(121, 23);
+            this.OpeningDropDown.Size = new System.Drawing.Size(121, 25);
             this.OpeningDropDown.TabIndex = 59;
             this.OpeningDropDown.SelectedIndexChanged += new System.EventHandler(this.OpeningDropDown_SelectedIndexChanged);
             // 
@@ -406,9 +408,9 @@ namespace MrItemRemover2
             this.CombineDropDown.Items.AddRange(new object[] {
             "False",
             "True"});
-            this.CombineDropDown.Location = new System.Drawing.Point(300, 69);
+            this.CombineDropDown.Location = new System.Drawing.Point(305, 69);
             this.CombineDropDown.Name = "CombineDropDown";
-            this.CombineDropDown.Size = new System.Drawing.Size(121, 23);
+            this.CombineDropDown.Size = new System.Drawing.Size(121, 25);
             this.CombineDropDown.TabIndex = 58;
             this.CombineDropDown.SelectedIndexChanged += new System.EventHandler(this.CombineDropDown_SelectedIndexChanged);
             // 
@@ -419,9 +421,9 @@ namespace MrItemRemover2
             this.RemoveDropDown.Items.AddRange(new object[] {
             "False",
             "True"});
-            this.RemoveDropDown.Location = new System.Drawing.Point(300, 39);
+            this.RemoveDropDown.Location = new System.Drawing.Point(305, 39);
             this.RemoveDropDown.Name = "RemoveDropDown";
-            this.RemoveDropDown.Size = new System.Drawing.Size(121, 23);
+            this.RemoveDropDown.Size = new System.Drawing.Size(121, 25);
             this.RemoveDropDown.TabIndex = 57;
             this.RemoveDropDown.SelectedIndexChanged += new System.EventHandler(this.RemoveDropDown_SelectedIndexChanged);
             // 
@@ -432,63 +434,69 @@ namespace MrItemRemover2
             this.CheckAfterLootDropDown.Items.AddRange(new object[] {
             "False",
             "True"});
-            this.CheckAfterLootDropDown.Location = new System.Drawing.Point(300, 127);
+            this.CheckAfterLootDropDown.Location = new System.Drawing.Point(305, 127);
             this.CheckAfterLootDropDown.Name = "CheckAfterLootDropDown";
-            this.CheckAfterLootDropDown.Size = new System.Drawing.Size(121, 23);
+            this.CheckAfterLootDropDown.Size = new System.Drawing.Size(121, 25);
             this.CheckAfterLootDropDown.TabIndex = 56;
             this.CheckAfterLootDropDown.SelectedIndexChanged += new System.EventHandler(this.CheckAfterLootDropDown_SelectedIndexChanged);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(183, 130);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(102, 15);
+            this.label8.Size = new System.Drawing.Size(116, 17);
             this.label8.TabIndex = 55;
             this.label8.Text = "Check After Loot -";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(183, 72);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(116, 15);
+            this.label7.Size = new System.Drawing.Size(122, 17);
             this.label7.TabIndex = 54;
             this.label7.Text = "Enable Combining -";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(183, 101);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(103, 15);
+            this.label6.Size = new System.Drawing.Size(109, 17);
             this.label6.TabIndex = 53;
             this.label6.Text = "Enable Opening -";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(183, 42);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(112, 15);
+            this.label4.Size = new System.Drawing.Size(118, 17);
             this.label4.TabIndex = 52;
             this.label4.Text = "Enable Removing -";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(183, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 15);
+            this.label3.Size = new System.Drawing.Size(97, 17);
             this.label3.TabIndex = 51;
             this.label3.Text = "Enable Selling -";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(417, 175);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 15);
+            this.label2.Size = new System.Drawing.Size(34, 17);
             this.label2.TabIndex = 50;
             this.label2.Text = "mins";
             // 
@@ -499,9 +507,9 @@ namespace MrItemRemover2
             this.SellDropDown.Items.AddRange(new object[] {
             "False",
             "True"});
-            this.SellDropDown.Location = new System.Drawing.Point(300, 10);
+            this.SellDropDown.Location = new System.Drawing.Point(305, 10);
             this.SellDropDown.Name = "SellDropDown";
-            this.SellDropDown.Size = new System.Drawing.Size(121, 23);
+            this.SellDropDown.Size = new System.Drawing.Size(121, 25);
             this.SellDropDown.TabIndex = 49;
             this.SellDropDown.SelectedIndexChanged += new System.EventHandler(this.SellDropDown_SelectedIndexChanged);
             // 
@@ -523,13 +531,23 @@ namespace MrItemRemover2
             this.tabPage2.Controls.Add(this.SellWhitesDropDown);
             this.tabPage2.Controls.Add(this.SellGraysDropDown);
             this.tabPage2.Controls.Add(this.groupBox3);
-            this.tabPage2.Location = new System.Drawing.Point(4, 24);
+            this.tabPage2.Location = new System.Drawing.Point(4, 26);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(475, 309);
+            this.tabPage2.Size = new System.Drawing.Size(475, 307);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Sell";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(338, 279);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(131, 23);
+            this.button1.TabIndex = 76;
+            this.button1.Text = "Save and Close";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Save_Click);
             // 
             // SellDrinksDropDown
             // 
@@ -538,9 +556,9 @@ namespace MrItemRemover2
             this.SellDrinksDropDown.Items.AddRange(new object[] {
             "False",
             "True"});
-            this.SellDrinksDropDown.Location = new System.Drawing.Point(315, 184);
+            this.SellDrinksDropDown.Location = new System.Drawing.Point(322, 184);
             this.SellDrinksDropDown.Name = "SellDrinksDropDown";
-            this.SellDrinksDropDown.Size = new System.Drawing.Size(121, 23);
+            this.SellDrinksDropDown.Size = new System.Drawing.Size(121, 25);
             this.SellDrinksDropDown.TabIndex = 75;
             this.SellDrinksDropDown.SelectedIndexChanged += new System.EventHandler(this.SellDrinksDropDown_SelectedIndexChanged);
             // 
@@ -551,9 +569,9 @@ namespace MrItemRemover2
             this.SellFoodDropDown.Items.AddRange(new object[] {
             "False",
             "True"});
-            this.SellFoodDropDown.Location = new System.Drawing.Point(315, 155);
+            this.SellFoodDropDown.Location = new System.Drawing.Point(322, 155);
             this.SellFoodDropDown.Name = "SellFoodDropDown";
-            this.SellFoodDropDown.Size = new System.Drawing.Size(121, 23);
+            this.SellFoodDropDown.Size = new System.Drawing.Size(121, 25);
             this.SellFoodDropDown.TabIndex = 74;
             this.SellFoodDropDown.SelectedIndexChanged += new System.EventHandler(this.SellFoodDropDown_SelectedIndexChanged);
             // 
@@ -562,7 +580,7 @@ namespace MrItemRemover2
             this.label21.AutoSize = true;
             this.label21.Location = new System.Drawing.Point(183, 187);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(73, 15);
+            this.label21.Size = new System.Drawing.Size(73, 17);
             this.label21.TabIndex = 73;
             this.label21.Text = "Sell Drinks -";
             // 
@@ -571,7 +589,7 @@ namespace MrItemRemover2
             this.label22.AutoSize = true;
             this.label22.Location = new System.Drawing.Point(183, 158);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(66, 15);
+            this.label22.Size = new System.Drawing.Size(69, 17);
             this.label22.TabIndex = 72;
             this.label22.Text = "Sell Food -";
             // 
@@ -580,7 +598,7 @@ namespace MrItemRemover2
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(183, 13);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(96, 15);
+            this.label14.Size = new System.Drawing.Size(102, 17);
             this.label14.TabIndex = 61;
             this.label14.Text = "Sell Gray Items -";
             // 
@@ -589,7 +607,7 @@ namespace MrItemRemover2
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(183, 129);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(131, 15);
+            this.label13.Size = new System.Drawing.Size(137, 17);
             this.label13.TabIndex = 54;
             this.label13.Text = "Sell Soulbound Items -";
             // 
@@ -598,7 +616,7 @@ namespace MrItemRemover2
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(183, 100);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(96, 15);
+            this.label12.Size = new System.Drawing.Size(99, 17);
             this.label12.TabIndex = 53;
             this.label12.Text = "Sell Blue Items -";
             // 
@@ -607,7 +625,7 @@ namespace MrItemRemover2
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(183, 71);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(105, 15);
+            this.label11.Size = new System.Drawing.Size(111, 17);
             this.label11.TabIndex = 52;
             this.label11.Text = "Sell Green Items -";
             // 
@@ -616,7 +634,7 @@ namespace MrItemRemover2
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(183, 42);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(102, 15);
+            this.label10.Size = new System.Drawing.Size(110, 17);
             this.label10.TabIndex = 51;
             this.label10.Text = "Sell White Items -";
             // 
@@ -627,9 +645,9 @@ namespace MrItemRemover2
             this.SellSoulboundDropDown.Items.AddRange(new object[] {
             "False",
             "True"});
-            this.SellSoulboundDropDown.Location = new System.Drawing.Point(315, 126);
+            this.SellSoulboundDropDown.Location = new System.Drawing.Point(322, 126);
             this.SellSoulboundDropDown.Name = "SellSoulboundDropDown";
-            this.SellSoulboundDropDown.Size = new System.Drawing.Size(121, 23);
+            this.SellSoulboundDropDown.Size = new System.Drawing.Size(121, 25);
             this.SellSoulboundDropDown.TabIndex = 49;
             this.SellSoulboundDropDown.SelectedIndexChanged += new System.EventHandler(this.SellSoulboundDropDown_SelectedIndexChanged);
             // 
@@ -640,9 +658,9 @@ namespace MrItemRemover2
             this.SellBluesDropDown.Items.AddRange(new object[] {
             "False",
             "True"});
-            this.SellBluesDropDown.Location = new System.Drawing.Point(315, 97);
+            this.SellBluesDropDown.Location = new System.Drawing.Point(322, 97);
             this.SellBluesDropDown.Name = "SellBluesDropDown";
-            this.SellBluesDropDown.Size = new System.Drawing.Size(121, 23);
+            this.SellBluesDropDown.Size = new System.Drawing.Size(121, 25);
             this.SellBluesDropDown.TabIndex = 48;
             this.SellBluesDropDown.SelectedIndexChanged += new System.EventHandler(this.SellBluesDropDown_SelectedIndexChanged);
             // 
@@ -653,9 +671,9 @@ namespace MrItemRemover2
             this.SellGreensDropDown.Items.AddRange(new object[] {
             "False",
             "True"});
-            this.SellGreensDropDown.Location = new System.Drawing.Point(315, 68);
+            this.SellGreensDropDown.Location = new System.Drawing.Point(322, 68);
             this.SellGreensDropDown.Name = "SellGreensDropDown";
-            this.SellGreensDropDown.Size = new System.Drawing.Size(121, 23);
+            this.SellGreensDropDown.Size = new System.Drawing.Size(121, 25);
             this.SellGreensDropDown.TabIndex = 47;
             this.SellGreensDropDown.SelectedIndexChanged += new System.EventHandler(this.SellGreensDropDown_SelectedIndexChanged);
             // 
@@ -666,9 +684,9 @@ namespace MrItemRemover2
             this.SellWhitesDropDown.Items.AddRange(new object[] {
             "False",
             "True"});
-            this.SellWhitesDropDown.Location = new System.Drawing.Point(315, 39);
+            this.SellWhitesDropDown.Location = new System.Drawing.Point(322, 39);
             this.SellWhitesDropDown.Name = "SellWhitesDropDown";
-            this.SellWhitesDropDown.Size = new System.Drawing.Size(121, 23);
+            this.SellWhitesDropDown.Size = new System.Drawing.Size(121, 25);
             this.SellWhitesDropDown.TabIndex = 46;
             this.SellWhitesDropDown.SelectedIndexChanged += new System.EventHandler(this.SellWhitesDropDown_SelectedIndexChanged);
             // 
@@ -679,9 +697,9 @@ namespace MrItemRemover2
             this.SellGraysDropDown.Items.AddRange(new object[] {
             "False",
             "True"});
-            this.SellGraysDropDown.Location = new System.Drawing.Point(315, 10);
+            this.SellGraysDropDown.Location = new System.Drawing.Point(322, 10);
             this.SellGraysDropDown.Name = "SellGraysDropDown";
-            this.SellGraysDropDown.Size = new System.Drawing.Size(121, 23);
+            this.SellGraysDropDown.Size = new System.Drawing.Size(121, 25);
             this.SellGraysDropDown.TabIndex = 45;
             this.SellGraysDropDown.SelectedIndexChanged += new System.EventHandler(this.SellGraysDropDown_SelectedIndexChanged);
             // 
@@ -708,13 +726,23 @@ namespace MrItemRemover2
             this.tabPage3.Controls.Add(this.SilverGrays);
             this.tabPage3.Controls.Add(this.GoldBox);
             this.tabPage3.Controls.Add(this.groupBox2);
-            this.tabPage3.Location = new System.Drawing.Point(4, 24);
+            this.tabPage3.Location = new System.Drawing.Point(4, 26);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(475, 309);
+            this.tabPage3.Size = new System.Drawing.Size(475, 307);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Remove";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(338, 279);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(131, 23);
+            this.button2.TabIndex = 72;
+            this.button2.Text = "Save and Close";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Save_Click);
             // 
             // RemoveDrinksDropDown
             // 
@@ -723,9 +751,9 @@ namespace MrItemRemover2
             this.RemoveDrinksDropDown.Items.AddRange(new object[] {
             "False",
             "True"});
-            this.RemoveDrinksDropDown.Location = new System.Drawing.Point(324, 185);
+            this.RemoveDrinksDropDown.Location = new System.Drawing.Point(337, 185);
             this.RemoveDrinksDropDown.Name = "RemoveDrinksDropDown";
-            this.RemoveDrinksDropDown.Size = new System.Drawing.Size(121, 23);
+            this.RemoveDrinksDropDown.Size = new System.Drawing.Size(121, 25);
             this.RemoveDrinksDropDown.TabIndex = 71;
             this.RemoveDrinksDropDown.SelectedIndexChanged += new System.EventHandler(this.RemoveDrinksDropDown_SelectedIndexChanged);
             // 
@@ -736,9 +764,9 @@ namespace MrItemRemover2
             this.RemoveFoodDropDown.Items.AddRange(new object[] {
             "False",
             "True"});
-            this.RemoveFoodDropDown.Location = new System.Drawing.Point(324, 156);
+            this.RemoveFoodDropDown.Location = new System.Drawing.Point(337, 156);
             this.RemoveFoodDropDown.Name = "RemoveFoodDropDown";
-            this.RemoveFoodDropDown.Size = new System.Drawing.Size(121, 23);
+            this.RemoveFoodDropDown.Size = new System.Drawing.Size(121, 25);
             this.RemoveFoodDropDown.TabIndex = 70;
             this.RemoveFoodDropDown.SelectedIndexChanged += new System.EventHandler(this.RemoveFoodDropDown_SelectedIndexChanged);
             // 
@@ -747,7 +775,7 @@ namespace MrItemRemover2
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(183, 188);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(98, 15);
+            this.label20.Size = new System.Drawing.Size(102, 17);
             this.label20.TabIndex = 69;
             this.label20.Text = "Remove Drinks -";
             // 
@@ -756,7 +784,7 @@ namespace MrItemRemover2
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(183, 159);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(91, 15);
+            this.label19.Size = new System.Drawing.Size(98, 17);
             this.label19.TabIndex = 68;
             this.label19.Text = "Remove Food -";
             // 
@@ -765,7 +793,7 @@ namespace MrItemRemover2
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(183, 130);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(140, 15);
+            this.label18.Size = new System.Drawing.Size(152, 17);
             this.label18.TabIndex = 62;
             this.label18.Text = "Remove Quest Starters -";
             // 
@@ -774,7 +802,7 @@ namespace MrItemRemover2
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(183, 101);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(121, 15);
+            this.label17.Size = new System.Drawing.Size(128, 17);
             this.label17.TabIndex = 61;
             this.label17.Text = "Remove Blue Items -";
             // 
@@ -783,7 +811,7 @@ namespace MrItemRemover2
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(183, 72);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(130, 15);
+            this.label16.Size = new System.Drawing.Size(140, 17);
             this.label16.TabIndex = 60;
             this.label16.Text = "Remove Green Items -";
             // 
@@ -792,7 +820,7 @@ namespace MrItemRemover2
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(183, 43);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(127, 15);
+            this.label15.Size = new System.Drawing.Size(139, 17);
             this.label15.TabIndex = 59;
             this.label15.Text = "Remove White Items -";
             // 
@@ -801,7 +829,7 @@ namespace MrItemRemover2
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(183, 13);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(121, 15);
+            this.label9.Size = new System.Drawing.Size(131, 17);
             this.label9.TabIndex = 58;
             this.label9.Text = "Remove Gray Items -";
             // 
@@ -812,9 +840,9 @@ namespace MrItemRemover2
             this.RemoveGraysDropDown.Items.AddRange(new object[] {
             "False",
             "True"});
-            this.RemoveGraysDropDown.Location = new System.Drawing.Point(324, 10);
+            this.RemoveGraysDropDown.Location = new System.Drawing.Point(337, 10);
             this.RemoveGraysDropDown.Name = "RemoveGraysDropDown";
-            this.RemoveGraysDropDown.Size = new System.Drawing.Size(121, 23);
+            this.RemoveGraysDropDown.Size = new System.Drawing.Size(121, 25);
             this.RemoveGraysDropDown.TabIndex = 57;
             this.RemoveGraysDropDown.SelectedIndexChanged += new System.EventHandler(this.RemoveGraysDropDown_SelectedIndexChanged);
             // 
@@ -825,9 +853,9 @@ namespace MrItemRemover2
             this.RemoveGreensDropDown.Items.AddRange(new object[] {
             "False",
             "True"});
-            this.RemoveGreensDropDown.Location = new System.Drawing.Point(324, 69);
+            this.RemoveGreensDropDown.Location = new System.Drawing.Point(337, 69);
             this.RemoveGreensDropDown.Name = "RemoveGreensDropDown";
-            this.RemoveGreensDropDown.Size = new System.Drawing.Size(121, 23);
+            this.RemoveGreensDropDown.Size = new System.Drawing.Size(121, 25);
             this.RemoveGreensDropDown.TabIndex = 56;
             this.RemoveGreensDropDown.SelectedIndexChanged += new System.EventHandler(this.RemoveGreensDropDown_SelectedIndexChanged);
             // 
@@ -838,9 +866,9 @@ namespace MrItemRemover2
             this.RemoveBluesDropDown.Items.AddRange(new object[] {
             "False",
             "True"});
-            this.RemoveBluesDropDown.Location = new System.Drawing.Point(324, 98);
+            this.RemoveBluesDropDown.Location = new System.Drawing.Point(337, 98);
             this.RemoveBluesDropDown.Name = "RemoveBluesDropDown";
-            this.RemoveBluesDropDown.Size = new System.Drawing.Size(121, 23);
+            this.RemoveBluesDropDown.Size = new System.Drawing.Size(121, 25);
             this.RemoveBluesDropDown.TabIndex = 55;
             this.RemoveBluesDropDown.SelectedIndexChanged += new System.EventHandler(this.RemoveBluesDropDown_SelectedIndexChanged);
             // 
@@ -851,9 +879,9 @@ namespace MrItemRemover2
             this.RemoveQuestStartersDropDown.Items.AddRange(new object[] {
             "False",
             "True"});
-            this.RemoveQuestStartersDropDown.Location = new System.Drawing.Point(324, 127);
+            this.RemoveQuestStartersDropDown.Location = new System.Drawing.Point(337, 127);
             this.RemoveQuestStartersDropDown.Name = "RemoveQuestStartersDropDown";
-            this.RemoveQuestStartersDropDown.Size = new System.Drawing.Size(121, 23);
+            this.RemoveQuestStartersDropDown.Size = new System.Drawing.Size(121, 25);
             this.RemoveQuestStartersDropDown.TabIndex = 54;
             this.RemoveQuestStartersDropDown.SelectedIndexChanged += new System.EventHandler(this.RemoveQuestStartersDropDown_SelectedIndexChanged);
             // 
@@ -864,9 +892,9 @@ namespace MrItemRemover2
             this.RemoveWhitesDropDown.Items.AddRange(new object[] {
             "False",
             "True"});
-            this.RemoveWhitesDropDown.Location = new System.Drawing.Point(324, 40);
+            this.RemoveWhitesDropDown.Location = new System.Drawing.Point(337, 40);
             this.RemoveWhitesDropDown.Name = "RemoveWhitesDropDown";
-            this.RemoveWhitesDropDown.Size = new System.Drawing.Size(121, 23);
+            this.RemoveWhitesDropDown.Size = new System.Drawing.Size(121, 25);
             this.RemoveWhitesDropDown.TabIndex = 53;
             this.RemoveWhitesDropDown.SelectedIndexChanged += new System.EventHandler(this.RemoveWhitesDropDown_SelectedIndexChanged);
             // 
@@ -878,7 +906,7 @@ namespace MrItemRemover2
             this.GoldGrays.Location = new System.Drawing.Point(279, 249);
             this.GoldGrays.MaxLength = 4;
             this.GoldGrays.Name = "GoldGrays";
-            this.GoldGrays.Size = new System.Drawing.Size(26, 14);
+            this.GoldGrays.Size = new System.Drawing.Size(26, 15);
             this.GoldGrays.TabIndex = 48;
             this.GoldGrays.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.GoldGrays.TextChanged += new System.EventHandler(this.GoldGrays_TextChanged_1);
@@ -888,7 +916,7 @@ namespace MrItemRemover2
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(219, 221);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(226, 15);
+            this.label5.Size = new System.Drawing.Size(240, 17);
             this.label5.TabIndex = 51;
             this.label5.Text = "Minimum Value Before Removing Grays";
             // 
@@ -900,7 +928,7 @@ namespace MrItemRemover2
             this.CopperGrays.Location = new System.Drawing.Point(367, 249);
             this.CopperGrays.MaxLength = 2;
             this.CopperGrays.Name = "CopperGrays";
-            this.CopperGrays.Size = new System.Drawing.Size(18, 14);
+            this.CopperGrays.Size = new System.Drawing.Size(18, 15);
             this.CopperGrays.TabIndex = 50;
             this.CopperGrays.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.CopperGrays.TextChanged += new System.EventHandler(this.CopperGrays_TextChanged_1);
@@ -913,7 +941,7 @@ namespace MrItemRemover2
             this.SilverGrays.Location = new System.Drawing.Point(329, 249);
             this.SilverGrays.MaxLength = 2;
             this.SilverGrays.Name = "SilverGrays";
-            this.SilverGrays.Size = new System.Drawing.Size(17, 14);
+            this.SilverGrays.Size = new System.Drawing.Size(17, 15);
             this.SilverGrays.TabIndex = 49;
             this.SilverGrays.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.SilverGrays.TextChanged += new System.EventHandler(this.SilverGrays_TextChanged_1);
@@ -930,13 +958,23 @@ namespace MrItemRemover2
             // 
             this.tabPage4.Controls.Add(this.button3);
             this.tabPage4.Controls.Add(this.groupBox4);
-            this.tabPage4.Location = new System.Drawing.Point(4, 24);
+            this.tabPage4.Location = new System.Drawing.Point(4, 26);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(475, 309);
+            this.tabPage4.Size = new System.Drawing.Size(475, 307);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Protected";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(338, 279);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(131, 23);
+            this.button3.TabIndex = 33;
+            this.button3.Text = "Save and Close";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Save_Click);
             // 
             // tabPage5
             // 
@@ -945,10 +983,10 @@ namespace MrItemRemover2
             this.tabPage5.Controls.Add(this.Combine10);
             this.tabPage5.Controls.Add(this.Combine5);
             this.tabPage5.Controls.Add(this.Combine3);
-            this.tabPage5.Location = new System.Drawing.Point(4, 24);
+            this.tabPage5.Location = new System.Drawing.Point(4, 26);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(475, 309);
+            this.tabPage5.Size = new System.Drawing.Size(475, 307);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Misc";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -966,10 +1004,10 @@ namespace MrItemRemover2
             // DrinkList
             // 
             this.DrinkList.FormattingEnabled = true;
-            this.DrinkList.ItemHeight = 15;
+            this.DrinkList.ItemHeight = 17;
             this.DrinkList.Location = new System.Drawing.Point(6, 19);
             this.DrinkList.Name = "DrinkList";
-            this.DrinkList.Size = new System.Drawing.Size(83, 274);
+            this.DrinkList.Size = new System.Drawing.Size(83, 259);
             this.DrinkList.TabIndex = 9;
             // 
             // Food
@@ -985,10 +1023,10 @@ namespace MrItemRemover2
             // FoodList
             // 
             this.FoodList.FormattingEnabled = true;
-            this.FoodList.ItemHeight = 15;
+            this.FoodList.ItemHeight = 17;
             this.FoodList.Location = new System.Drawing.Point(6, 19);
             this.FoodList.Name = "FoodList";
-            this.FoodList.Size = new System.Drawing.Size(83, 274);
+            this.FoodList.Size = new System.Drawing.Size(83, 259);
             this.FoodList.TabIndex = 9;
             // 
             // Combine10
@@ -1004,10 +1042,10 @@ namespace MrItemRemover2
             // Combine10List
             // 
             this.Combine10List.FormattingEnabled = true;
-            this.Combine10List.ItemHeight = 15;
+            this.Combine10List.ItemHeight = 17;
             this.Combine10List.Location = new System.Drawing.Point(6, 19);
             this.Combine10List.Name = "Combine10List";
-            this.Combine10List.Size = new System.Drawing.Size(83, 274);
+            this.Combine10List.Size = new System.Drawing.Size(83, 259);
             this.Combine10List.TabIndex = 9;
             // 
             // Combine5
@@ -1023,10 +1061,10 @@ namespace MrItemRemover2
             // Combine5List
             // 
             this.Combine5List.FormattingEnabled = true;
-            this.Combine5List.ItemHeight = 15;
+            this.Combine5List.ItemHeight = 17;
             this.Combine5List.Location = new System.Drawing.Point(6, 19);
             this.Combine5List.Name = "Combine5List";
-            this.Combine5List.Size = new System.Drawing.Size(83, 274);
+            this.Combine5List.Size = new System.Drawing.Size(83, 259);
             this.Combine5List.TabIndex = 9;
             // 
             // Combine3
@@ -1042,41 +1080,11 @@ namespace MrItemRemover2
             // Combine3List
             // 
             this.Combine3List.FormattingEnabled = true;
-            this.Combine3List.ItemHeight = 15;
+            this.Combine3List.ItemHeight = 17;
             this.Combine3List.Location = new System.Drawing.Point(6, 19);
             this.Combine3List.Name = "Combine3List";
-            this.Combine3List.Size = new System.Drawing.Size(83, 274);
+            this.Combine3List.Size = new System.Drawing.Size(83, 259);
             this.Combine3List.TabIndex = 9;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(338, 279);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 23);
-            this.button1.TabIndex = 76;
-            this.button1.Text = "Save and Close";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Save_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(338, 279);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(131, 23);
-            this.button2.TabIndex = 72;
-            this.button2.Text = "Save and Close";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.Save_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(338, 279);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(131, 23);
-            this.button3.TabIndex = 33;
-            this.button3.Text = "Save and Close";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.Save_Click);
             // 
             // MrItemRemover2Gui
             // 
