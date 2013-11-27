@@ -155,6 +155,7 @@ namespace MrItemRemover2
         {
             Dlog("Enable Removing  = {0}", EnableRemove.Checked);
             Dlog("Enable Selling   = {0}", EnableSell.Checked);
+            Dlog("Enable Combine   = {0}", CombineItems.Checked);
             Dlog("Enable Opening   = {0}", EnableOpen.Checked);
             Dlog("Remove Grays     = {0}", GrayItems.Checked);
             Dlog("Remove Whites    = {0}", WhiteItems.Checked);
@@ -226,7 +227,7 @@ namespace MrItemRemover2
 
         private void EnableSell_CheckedChanged(object sender, EventArgs e)
         {
-            MrItemRemover2Settings.Instance.EnableSell = EnableSell.Checked;
+            
         }
 
         private void EnableRemove_CheckedChanged(object sender, EventArgs e)
@@ -237,21 +238,6 @@ namespace MrItemRemover2
         private void Time_ValueChanged(object sender, EventArgs e)
         {
             MrItemRemover2Settings.Instance.Time = int.Parse(Time.Value.ToString(CultureInfo.InvariantCulture));
-        }
-
-        private void GoldGrays_TextChanged(object sender, EventArgs e)
-        {
-            MrItemRemover2Settings.Instance.GoldGrays = int.Parse(GoldGrays.Text);
-        }
-
-        private void SilverGrays_TextChanged(object sender, EventArgs e)
-        {
-            MrItemRemover2Settings.Instance.SilverGrays = int.Parse(SilverGrays.Text);
-        }
-
-        private void CopperGrays_TextChanged(object sender, EventArgs e)
-        {
-            MrItemRemover2Settings.Instance.CopperGrays = int.Parse(CopperGrays.Text);
         }
 
         private void EnableOpen_CheckedChanged(object sender, EventArgs e)
@@ -294,10 +280,6 @@ namespace MrItemRemover2
             MrItemRemover2Settings.Instance.SellBlue = SellBlue.Checked;
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-        }
-
         private void SellSoulbound_CheckedChanged(object sender, EventArgs e)
         {
             MrItemRemover2Settings.Instance.SellSoulbound = SellSoulbound.Checked;
@@ -318,14 +300,49 @@ namespace MrItemRemover2
             MrItemRemover2Settings.Instance.RSFood = CombineItems.Checked;
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void SellDropdown_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string enableSell = SellDropdown.GetItemText(SellDropdown.SelectedItem);
+            bool sellItems = enableSell == "True";
+            MrItemRemover2Settings.Instance.EnableSell = sellItems;
 
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        private void RemoveDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            string enableRemove = RemoveDropDown.GetItemText(RemoveDropDown.SelectedItem);
+            bool removeItems = enableRemove == "True";
+            MrItemRemover2Settings.Instance.EnableRemove = removeItems;
         }
+
+        private void CombineDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string enableCombine = CombineDropDown.GetItemText(CombineDropDown.SelectedItem);
+            bool combineItems = enableCombine == "True";
+            MrItemRemover2Settings.Instance.CombineItems = combineItems;
+        }
+
+        private void OpeningDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string enableOpening = CombineDropDown.GetItemText(CombineDropDown.SelectedItem);
+            bool openItems = enableOpening == "True";
+            MrItemRemover2Settings.Instance.EnableOpen = openItems;
+        }
+
+        private void GoldGrays_TextChanged_1(object sender, EventArgs e)
+        {
+            MrItemRemover2Settings.Instance.GoldGrays = int.Parse(GoldGrays.Text);
+        }
+
+        private void SilverGrays_TextChanged_1(object sender, EventArgs e)
+        {
+            MrItemRemover2Settings.Instance.SilverGrays = int.Parse(SilverGrays.Text);
+        }
+
+        private void CopperGrays_TextChanged_1(object sender, EventArgs e)
+        {
+            MrItemRemover2Settings.Instance.CopperGrays = int.Parse(CopperGrays.Text);
+        }
+
     }
 }
