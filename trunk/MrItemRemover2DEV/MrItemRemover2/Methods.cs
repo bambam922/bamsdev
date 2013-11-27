@@ -27,7 +27,7 @@ namespace MrItemRemover2
                                 Slog("Selling Gray Item {0}", item.Name);
                                 item.UseContainerItem();
                             }
-                            if ((item.Quality == WoWItemQuality.Common && MrItemRemover2Settings.Instance.SellWhite == "True") && !FoodList.Contains(item.Name) && !DrinkList.Contains(item.Name))
+                            if (item.Quality == WoWItemQuality.Common && MrItemRemover2Settings.Instance.SellWhite == "True" && !FoodList.Contains(item.Name) && !DrinkList.Contains(item.Name))
                             {
                                 Slog("Selling White Item {0}", item.Name);
                                 item.UseContainerItem();
@@ -47,6 +47,18 @@ namespace MrItemRemover2
                                 Slog("Item Matched List Selling {0}", item.Name);
                                 item.UseContainerItem();
                             }
+                            if (item.Quality == WoWItemQuality.Common && FoodList.Contains(item.Name) && MrItemRemover2Settings.Instance.SellFood == "True")
+                            {
+                                Slog("Item Matched Selling Food List {0}", item.Name);
+                                item.UseContainerItem();
+                            }
+
+                            if (item.Quality == WoWItemQuality.Common && DrinkList.Contains(item.Name) && MrItemRemover2Settings.Instance.SellDrinks == "True")
+                            {
+                                Slog("Item Matched Selling Food List {0}", item.Name);
+                                item.UseContainerItem();
+                            }
+
                         }
                     }
 
@@ -77,6 +89,18 @@ namespace MrItemRemover2
                             if (ItemNameSell.Contains(item.Name))
                             {
                                 Slog("Item Matched List Selling {0}", item.Name);
+                                item.UseContainerItem();
+                            }
+
+                            if (item.Quality == WoWItemQuality.Common && FoodList.Contains(item.Name) && MrItemRemover2Settings.Instance.SellFood == "True")
+                            {
+                                Slog("Item Matched Selling Food List {0}", item.Name);
+                                item.UseContainerItem();
+                            }
+
+                            if (item.Quality == WoWItemQuality.Common && DrinkList.Contains(item.Name) && MrItemRemover2Settings.Instance.SellDrinks == "True")
+                            {
+                                Slog("Item Matched Selling Food List {0}", item.Name);
                                 item.UseContainerItem();
                             }
                         }
@@ -113,6 +137,7 @@ namespace MrItemRemover2
         {
             //Added to Make sure our list matches what we are looking for. 
             LoadList(ItemName, _removeListPath);
+            LoadList(BagList, _bagListPath);
 
             // NB: Since we will be modifying the Me.BagItems list indirectly through WoWclient directives,
             // we can't use it as our iterator--we must make a copy, instead.
