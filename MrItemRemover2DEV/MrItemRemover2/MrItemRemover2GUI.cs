@@ -40,25 +40,17 @@ namespace MrItemRemover2
             GoldBox.Image = goldImg;
             resf.Image = refresh;
             MrItemRemover2Settings.Instance.Load();
-            SellList.Items.Clear();
-            RemoveList.Items.Clear();
-            ProtectedList.Items.Clear();
             SellDropDown.SelectedItem = MrItemRemover2Settings.Instance.EnableSell;
             RemoveDropDown.SelectedItem = MrItemRemover2Settings.Instance.EnableRemove;
             CombineDropDown.SelectedItem = MrItemRemover2Settings.Instance.CombineItems;
             OpeningDropDown.SelectedItem = MrItemRemover2Settings.Instance.EnableOpen;
+            SellGraysDropDown.SelectedItem = MrItemRemover2Settings.Instance.SellGray;
+            SellWhitesDropDown.SelectedItem = MrItemRemover2Settings.Instance.SellWhite;
+            SellGreensDropDown.SelectedItem = MrItemRemover2Settings.Instance.SellGreen;
+            SellBluesDropDown.SelectedItem = MrItemRemover2Settings.Instance.SellBlue;
+            SellSoulboundDropDown.SelectedItem = MrItemRemover2Settings.Instance.SellSoulbound;
             CheckAfterLootDropDown.SelectedItem = MrItemRemover2Settings.Instance.LootEnable; 
-            GrayItems.Checked = MrItemRemover2Settings.Instance.DeleteAllGray;
-            WhiteItems.Checked = MrItemRemover2Settings.Instance.DeleteAllWhite;
-            GreenItems.Checked = MrItemRemover2Settings.Instance.DeleteAllGreen;
-            BlueItems.Checked = MrItemRemover2Settings.Instance.DeleteAllBlue;
-            SellGray.Checked = MrItemRemover2Settings.Instance.SellGray;
             //ApplyAll.Checked = MrItemRemover2Settings.Instance.ApplyAll;
-            SellWhite.Checked = MrItemRemover2Settings.Instance.SellWhite;
-            SellGreen.Checked = MrItemRemover2Settings.Instance.SellGreen;
-            SellBlue.Checked = MrItemRemover2Settings.Instance.SellBlue;
-            SellSoulbound.Checked = MrItemRemover2Settings.Instance.SellSoulbound;
-            RemoveQItems.Checked = MrItemRemover2Settings.Instance.DeleteQuestItems;
             GoldGrays.Text = MrItemRemover2Settings.Instance.GoldGrays.ToString(CultureInfo.InvariantCulture);
             SilverGrays.Text = MrItemRemover2Settings.Instance.SilverGrays.ToString(CultureInfo.InvariantCulture);
             CopperGrays.Text = MrItemRemover2Settings.Instance.CopperGrays.ToString(CultureInfo.InvariantCulture);
@@ -74,6 +66,26 @@ namespace MrItemRemover2
             foreach (string itm in Controller.KeepList)
             {
                 ProtectedList.Items.Add(itm);
+            }
+            foreach (string itm in Controller.Combine3List)
+            {
+                Combine3List.Items.Add(itm);
+            }
+            foreach (string itm in Controller.Combine5List)
+            {
+                Combine5List.Items.Add(itm);
+            }
+            foreach (string itm in Controller.Combine10List)
+            {
+                Combine10List.Items.Add(itm);
+            }
+            foreach (string itm in Controller.FoodList)
+            {
+                FoodList.Items.Add(itm);
+            }
+            foreach (string itm in Controller.DrinkList)
+            {
+                DrinkList.Items.Add(itm);
             }
 
             foreach (WoWItem bagItem in StyxWoW.Me.BagItems)
@@ -172,50 +184,10 @@ namespace MrItemRemover2
             Close();
         }
 
-        private void GrayItems_CheckedChanged(object sender, EventArgs e)
-        {
-            MrItemRemover2Settings.Instance.DeleteAllGray = GrayItems.Checked;
-        }
-
-        private void WhiteItems_CheckedChanged(object sender, EventArgs e)
-        {
-            MrItemRemover2Settings.Instance.DeleteAllWhite = WhiteItems.Checked;
-        }
-
-        private void GreenItems_CheckedChanged(object sender, EventArgs e)
-        {
-            MrItemRemover2Settings.Instance.DeleteAllGreen = GreenItems.Checked;
-        }
-
-        private void BlueItems_CheckedChanged(object sender, EventArgs e)
-        {
-            MrItemRemover2Settings.Instance.DeleteAllBlue = BlueItems.Checked;
-        }
-
-        private void RemoveQItems_CheckedChanged(object sender, EventArgs e)
-        {
-            MrItemRemover2Settings.Instance.DeleteQuestItems = RemoveQItems.Checked;
-        }
-
-        private void SellGray_CheckedChanged(object sender, EventArgs e)
-        {
-            MrItemRemover2Settings.Instance.SellGray = SellGray.Checked;
-        }
-
         /* private void ApplyAll_CheckedChanged(object sender, EventArgs e)
         {
             MrItemRemover2Settings.Instance.ApplyAll = ApplyAll.Checked;
         }*/
-
-        private void SellGreen_CheckedChanged(object sender, EventArgs e)
-        {
-            MrItemRemover2Settings.Instance.SellGreen = SellGreen.Checked;
-        }
-
-        private void SellWhite_CheckedChanged(object sender, EventArgs e)
-        {
-            MrItemRemover2Settings.Instance.SellWhite = SellWhite.Checked;
-        }
 
         private void Time_ValueChanged(object sender, EventArgs e)
         {
@@ -239,34 +211,9 @@ namespace MrItemRemover2
             Controller.ManualCheckRequested = true;
         }
 
-        private void SellList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
         private void groupBox3_Enter(object sender, EventArgs e)
         {
         }
-
-        private void SellBlue_CheckedChanged_1(object sender, EventArgs e)
-        {
-            MrItemRemover2Settings.Instance.SellBlue = SellBlue.Checked;
-        }
-
-        private void SellSoulbound_CheckedChanged(object sender, EventArgs e)
-        {
-            MrItemRemover2Settings.Instance.SellSoulbound = SellSoulbound.Checked;
-        }
-
-        private void RSDrinks_CheckedChanged(object sender, EventArgs e)
-        {
-        //   MrItemRemover2Settings.Instance.RSDrinks = CombineItems.Checked;
-        }
-
-        private void RSFood_CheckedChanged(object sender, EventArgs e)
-        {
-        //    MrItemRemover2Settings.Instance.RSFood = CombineItems.Checked;
-        }
-
 
         private void SellDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -309,6 +256,76 @@ namespace MrItemRemover2
         private void CopperGrays_TextChanged_1(object sender, EventArgs e)
         {
             MrItemRemover2Settings.Instance.CopperGrays = int.Parse(CopperGrays.Text);
+        }
+
+        private void SellGraysDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MrItemRemover2Settings.Instance.SellGray = SellGraysDropDown.SelectedItem.ToString();
+        }
+
+        private void SellWhitesDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MrItemRemover2Settings.Instance.SellWhite = SellWhitesDropDown.SelectedItem.ToString();
+        }
+
+        private void SellGreensDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MrItemRemover2Settings.Instance.SellGreen = SellGreensDropDown.SelectedItem.ToString();
+        }
+
+        private void SellBluesDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MrItemRemover2Settings.Instance.SellBlue = SellBluesDropDown.SelectedItem.ToString();
+        }
+
+        private void SellSoulboundDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MrItemRemover2Settings.Instance.SellSoulbound = SellSoulboundDropDown.SelectedItem.ToString();
+        }
+
+        private void RemoveGraysDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MrItemRemover2Settings.Instance.DeleteAllGray = RemoveGraysDropDown.SelectedItem.ToString();
+        }
+
+        private void RemoveWhitesDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MrItemRemover2Settings.Instance.DeleteAllWhite = RemoveWhitesDropDown.SelectedItem.ToString();
+        }
+
+        private void RemoveGreensDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MrItemRemover2Settings.Instance.DeleteAllGreen = RemoveGreensDropDown.SelectedItem.ToString();
+        }
+
+        private void RemoveBluesDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MrItemRemover2Settings.Instance.DeleteAllBlue = RemoveBluesDropDown.SelectedItem.ToString();
+        }
+
+        private void RemoveQuestStartersDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MrItemRemover2Settings.Instance.DeleteQuestItems = RemoveQuestStartersDropDown.SelectedItem.ToString();
+        }
+
+        private void RemoveFoodDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MrItemRemover2Settings.Instance.RemoveFood = RemoveFoodDropDown.SelectedItem.ToString();
+        }
+
+        private void RemoveDrinksDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MrItemRemover2Settings.Instance.RemoveDrinks = RemoveDrinksDropDown.SelectedItem.ToString();
+        }
+
+        private void SellFoodDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MrItemRemover2Settings.Instance.SellFood = SellFoodDropDown.SelectedItem.ToString();
+        }
+
+        private void SellDrinksDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MrItemRemover2Settings.Instance.SellDrinks = SellDrinksDropDown.SelectedItem.ToString();
         }
     }
 }
