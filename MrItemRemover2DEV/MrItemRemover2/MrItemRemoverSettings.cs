@@ -16,73 +16,73 @@ namespace MrItemRemover2
         {
         }
 
-        [Setting, Styx.Helpers.DefaultValue(5)]
+        [Setting, DefaultValue(5)]
         public int Time { get; set; }
 
-        [Setting, Styx.Helpers.DefaultValue("False")]
+        [Setting, DefaultValue("False")]
         public string EnableRemove { get; set; }
 
-        [Setting, Styx.Helpers.DefaultValue("False")]
+        [Setting, DefaultValue("False")]
         public string EnableOpen { get; set; }
 
-        [Setting, Styx.Helpers.DefaultValue("False")]
+        [Setting, DefaultValue("False")]
         public string CombineItems { get; set; }
 
-        [Setting, Styx.Helpers.DefaultValue(false)]
+        [Setting, DefaultValue(false)]
         public bool DeleteQuestItems { get; set; }
 
-        [Setting, Styx.Helpers.DefaultValue("False")]
+        [Setting, DefaultValue("False")]
         public string EnableSell { get; set; }
 
-        [Setting, Styx.Helpers.DefaultValue("False")]
+        [Setting, DefaultValue("False")]
         public string LootEnable { get; set; }
 
-        [Setting, Styx.Helpers.DefaultValue(true)]
+        [Setting, DefaultValue(true)]
         public bool EnableGray { get; set; }
 
-        [Setting, Styx.Helpers.DefaultValue(false)]
+        [Setting, DefaultValue(false)]
         public bool SellWhite { get; set; }
 
-        [Setting, Styx.Helpers.DefaultValue(false)]
+        [Setting, DefaultValue(false)]
         public bool SellGreen { get; set; }
 
-        [Setting, Styx.Helpers.DefaultValue(false)]
+        [Setting, DefaultValue(false)]
         public bool SellBlue { get; set; }
 
-        [Setting, Styx.Helpers.DefaultValue(false)]
+        [Setting, DefaultValue(false)]
         public bool SellSoulbound { get; set; }
 
-        [Setting, Styx.Helpers.DefaultValue(false)]
+        [Setting, DefaultValue(false)]
         public bool SellGray { get; set; }
 
-        [Setting, Styx.Helpers.DefaultValue(true)]
+        [Setting, DefaultValue(true)]
         public bool ApplyAll { get; set; }
 
-        [Setting, Styx.Helpers.DefaultValue(true)]
+        [Setting, DefaultValue(true)]
         public bool DeleteAllGray { get; set; }
 
-        [Setting, Styx.Helpers.DefaultValue(false)]
+        [Setting, DefaultValue(false)]
         public bool DeleteAllWhite { get; set; }
 
-        [Setting, Styx.Helpers.DefaultValue(false)]
+        [Setting, DefaultValue(false)]
         public bool DeleteAllGreen { get; set; }
 
-        [Setting, Styx.Helpers.DefaultValue(false)]
+        [Setting, DefaultValue(false)]
         public bool DeleteAllBlue { get; set; }
 
-        [Setting, Styx.Helpers.DefaultValue(1)]
+        [Setting, DefaultValue(1)]
         public int GoldGrays { get; set; }
 
-        [Setting, Styx.Helpers.DefaultValue(53)]
+        [Setting, DefaultValue(53)]
         public int SilverGrays { get; set; }
 
-        [Setting, Styx.Helpers.DefaultValue(41)]
+        [Setting, DefaultValue(41)]
         public int CopperGrays { get; set; }
 
-        [Setting, Styx.Helpers.DefaultValue(false)]
+        [Setting, DefaultValue(false)]
         public bool RSFood { get; set; }
 
-        [Setting, Styx.Helpers.DefaultValue(false)]
+        [Setting, DefaultValue(false)]
         public bool RSDrinks { get; set; }
     }
 }
