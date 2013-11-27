@@ -14,7 +14,7 @@ namespace MrItemRemover2
     {
         public void SellVenderItems(object sender, LuaEventArgs args)
         {
-            if (MerchantFrame.Instance.IsVisible && MrItemRemover2Settings.Instance.EnableSell)
+            if (MerchantFrame.Instance.IsVisible && MrItemRemover2Settings.Instance.EnableSell == "True")
             {
                 foreach (WoWItem item in Me.BagItems)
                 {

@@ -53,10 +53,6 @@ namespace MrItemRemover2
             SellGreen.Checked = MrItemRemover2Settings.Instance.SellGreen;
             SellBlue.Checked = MrItemRemover2Settings.Instance.SellBlue;
             SellSoulbound.Checked = MrItemRemover2Settings.Instance.SellSoulbound;
-            CombineItems.Checked = MrItemRemover2Settings.Instance.CombineItems;
-            EnableRemove.Checked = MrItemRemover2Settings.Instance.EnableRemove;
-            EnableOpen.Checked = MrItemRemover2Settings.Instance.EnableOpen;
-            EnableSell.Checked = MrItemRemover2Settings.Instance.EnableSell;
             RemoveQItems.Checked = MrItemRemover2Settings.Instance.DeleteQuestItems;
             LootEnable.Checked = MrItemRemover2Settings.Instance.LootEnable;
             GoldGrays.Text = MrItemRemover2Settings.Instance.GoldGrays.ToString(CultureInfo.InvariantCulture);
@@ -230,19 +226,9 @@ namespace MrItemRemover2
             
         }
 
-        private void EnableRemove_CheckedChanged(object sender, EventArgs e)
-        {
-            MrItemRemover2Settings.Instance.EnableRemove = EnableRemove.Checked;
-        }
-
         private void Time_ValueChanged(object sender, EventArgs e)
         {
             MrItemRemover2Settings.Instance.Time = int.Parse(Time.Value.ToString(CultureInfo.InvariantCulture));
-        }
-
-        private void EnableOpen_CheckedChanged(object sender, EventArgs e)
-        {
-            MrItemRemover2Settings.Instance.EnableOpen = EnableOpen.Checked;
         }
 
         private void resf_Click(object sender, EventArgs e)
@@ -285,11 +271,6 @@ namespace MrItemRemover2
             MrItemRemover2Settings.Instance.SellSoulbound = SellSoulbound.Checked;
         }
 
-        private void CombineItems_CheckedChanged(object sender, EventArgs e)
-        {
-            MrItemRemover2Settings.Instance.CombineItems = CombineItems.Checked;
-        }
-
         private void RSDrinks_CheckedChanged(object sender, EventArgs e)
         {
             MrItemRemover2Settings.Instance.RSDrinks = CombineItems.Checked;
@@ -304,7 +285,7 @@ namespace MrItemRemover2
         {
             string enableSell = SellDropdown.GetItemText(SellDropdown.SelectedItem);
             bool sellItems = enableSell == "True";
-            MrItemRemover2Settings.Instance.EnableSell = sellItems;
+            MrItemRemover2Settings.Instance.EnableSell = enableSell;
 
         }
 
@@ -312,21 +293,22 @@ namespace MrItemRemover2
         {
             string enableRemove = RemoveDropDown.GetItemText(RemoveDropDown.SelectedItem);
             bool removeItems = enableRemove == "True";
-            MrItemRemover2Settings.Instance.EnableRemove = removeItems;
+            MrItemRemover2Settings.Instance.EnableRemove = enableRemove;
+
         }
 
         private void CombineDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
             string enableCombine = CombineDropDown.GetItemText(CombineDropDown.SelectedItem);
             bool combineItems = enableCombine == "True";
-            MrItemRemover2Settings.Instance.CombineItems = combineItems;
+            MrItemRemover2Settings.Instance.CombineItems = enableCombine;
         }
 
         private void OpeningDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
             string enableOpening = CombineDropDown.GetItemText(CombineDropDown.SelectedItem);
             bool openItems = enableOpening == "True";
-            MrItemRemover2Settings.Instance.EnableOpen = openItems;
+            MrItemRemover2Settings.Instance.EnableOpen = enableOpening;
         }
 
         private void GoldGrays_TextChanged_1(object sender, EventArgs e)
