@@ -122,7 +122,7 @@ namespace MrItemRemover2
                 CheckForItems();
             } 
             
-            else if (!MrItemRemover2Settings.Instance.LootEnable)
+            else if (MrItemRemover2Settings.Instance.LootEnable == "False")
             {
                 if (_checkTimer.TimeLeft.Ticks <= 0)
                 {
@@ -153,7 +153,7 @@ namespace MrItemRemover2
 
         private void LootEnded(object sender, LuaEventArgs args)
         {
-            if (MrItemRemover2Settings.Instance.LootEnable)
+            if (MrItemRemover2Settings.Instance.LootEnable == "True")
             {
                 if (EnableCheck == false)
                 {
