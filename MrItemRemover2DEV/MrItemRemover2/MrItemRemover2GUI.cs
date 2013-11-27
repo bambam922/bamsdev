@@ -6,34 +6,34 @@ using System.Windows.Forms;
 using Styx;
 using Styx.WoWInternals.WoWObjects;
 
-namespace BetterPull
+namespace MrItemRemover2
 {
-    public partial class BetterPullGui : Form
+    public partial class MrItemRemover2Gui : Form
     {
         private readonly string _goldImangePathName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                                                                  string.Format(@"Plugins/BetterPullDEV/BetterPull/Gold2.bmp"));
+                                                                  string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/Gold2.bmp"));
 
         private readonly string _refreshImangePathName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                                                                  string.Format(@"Plugins/BetterPullDEV/BetterPull/ref.bmp"));
+                                                                  string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/ref.bmp"));
 
-        public BetterPullGui(BetterPull controller)
+        public MrItemRemover2Gui(MrItemRemover2 controller)
         {
             Controller = controller;
             InitializeComponent();
         }
         
-        public BetterPull Controller { get; private set; }
+        public MrItemRemover2 Controller { get; private set; }
 
         public static void Slog(string format, params object[] args)
         {
-            BetterPull.Slog(format, args);
+            MrItemRemover2.Slog(format, args);
         }
         public static void Dlog(string format, params object[] args)
         {
-            BetterPull.Dlog(format, args);
+            MrItemRemover2.Dlog(format, args);
         }
 
-        private void BetterPullGUI_Load(object sender, EventArgs e)
+        private void MrItemRemover2GUI_Load(object sender, EventArgs e)
         {
             var refresh = new Bitmap(_refreshImangePathName);
             var goldImg = new Bitmap(_goldImangePathName);
