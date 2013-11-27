@@ -62,8 +62,6 @@ namespace MrItemRemover2
             this.BlueItems = new System.Windows.Forms.CheckBox();
             this.WhiteItems = new System.Windows.Forms.CheckBox();
             this.GreenItems = new System.Windows.Forms.CheckBox();
-            this.RSFood = new System.Windows.Forms.CheckBox();
-            this.RSDrinks = new System.Windows.Forms.CheckBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.OpeningDropDown = new System.Windows.Forms.ComboBox();
@@ -78,7 +76,35 @@ namespace MrItemRemover2
             this.label2 = new System.Windows.Forms.Label();
             this.SellDropDown = new System.Windows.Forms.ComboBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.SellDrinksDropDown = new System.Windows.Forms.ComboBox();
+            this.SellFoodDropDown = new System.Windows.Forms.ComboBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.SellSoulboundDropDown = new System.Windows.Forms.ComboBox();
+            this.SellBluesDropDown = new System.Windows.Forms.ComboBox();
+            this.SellGreensDropDown = new System.Windows.Forms.ComboBox();
+            this.SellWhitesDropDown = new System.Windows.Forms.ComboBox();
+            this.SellGraysDropDown = new System.Windows.Forms.ComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.RemoveDrinksDropDown = new System.Windows.Forms.ComboBox();
+            this.RemoveFoodDropDown = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.RemoveGraysDropDown = new System.Windows.Forms.ComboBox();
+            this.RemoveGreensDropDown = new System.Windows.Forms.ComboBox();
+            this.RemoveBluesDropDown = new System.Windows.Forms.ComboBox();
+            this.RemoveQuestStartersDropDown = new System.Windows.Forms.ComboBox();
+            this.RemoveWhitesDropDown = new System.Windows.Forms.ComboBox();
             this.GoldGrays = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.CopperGrays = new System.Windows.Forms.TextBox();
@@ -86,7 +112,16 @@ namespace MrItemRemover2
             this.GoldBox = new System.Windows.Forms.PictureBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
+            this.Drink = new System.Windows.Forms.GroupBox();
+            this.DrinkList = new System.Windows.Forms.ListBox();
+            this.Food = new System.Windows.Forms.GroupBox();
+            this.FoodList = new System.Windows.Forms.ListBox();
+            this.Combine10 = new System.Windows.Forms.GroupBox();
+            this.Combine10List = new System.Windows.Forms.ListBox();
+            this.Combine5 = new System.Windows.Forms.GroupBox();
+            this.Combine5List = new System.Windows.Forms.ListBox();
+            this.Combine3 = new System.Windows.Forms.GroupBox();
+            this.Combine3List = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.Time)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resf)).BeginInit();
@@ -99,11 +134,17 @@ namespace MrItemRemover2
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GoldBox)).BeginInit();
             this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            this.Drink.SuspendLayout();
+            this.Food.SuspendLayout();
+            this.Combine10.SuspendLayout();
+            this.Combine5.SuspendLayout();
+            this.Combine3.SuspendLayout();
             this.SuspendLayout();
             // 
             // Time
             // 
-            this.Time.Location = new System.Drawing.Point(331, 7);
+            this.Time.Location = new System.Drawing.Point(364, 173);
             this.Time.Name = "Time";
             this.Time.Size = new System.Drawing.Size(51, 21);
             this.Time.TabIndex = 0;
@@ -115,27 +156,25 @@ namespace MrItemRemover2
             this.MyBag.ItemHeight = 15;
             this.MyBag.Location = new System.Drawing.Point(8, 19);
             this.MyBag.Name = "MyBag";
-            this.MyBag.Size = new System.Drawing.Size(150, 139);
+            this.MyBag.Size = new System.Drawing.Size(162, 139);
             this.MyBag.TabIndex = 4;
             // 
             // RemoveList
             // 
             this.RemoveList.FormattingEnabled = true;
             this.RemoveList.ItemHeight = 15;
-            this.RemoveList.Location = new System.Drawing.Point(6, 19);
+            this.RemoveList.Location = new System.Drawing.Point(8, 19);
             this.RemoveList.Name = "RemoveList";
-            this.RemoveList.Size = new System.Drawing.Size(100, 139);
+            this.RemoveList.Size = new System.Drawing.Size(162, 244);
             this.RemoveList.TabIndex = 5;
             // 
             // SellList
             // 
-            this.SellList.FormattingEnabled = true;
             this.SellList.ItemHeight = 15;
-            this.SellList.Location = new System.Drawing.Point(6, 19);
+            this.SellList.Location = new System.Drawing.Point(8, 19);
             this.SellList.Name = "SellList";
-            this.SellList.Size = new System.Drawing.Size(100, 139);
-            this.SellList.TabIndex = 6;
-            this.SellList.SelectedIndexChanged += new System.EventHandler(this.SellList_SelectedIndexChanged);
+            this.SellList.Size = new System.Drawing.Size(162, 244);
+            this.SellList.TabIndex = 8;
             // 
             // groupBox1
             // 
@@ -146,14 +185,14 @@ namespace MrItemRemover2
             this.groupBox1.Controls.Add(this.MyBag);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(165, 246);
+            this.groupBox1.Size = new System.Drawing.Size(178, 246);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "My Bag Items";
             // 
             // resf
             // 
-            this.resf.Location = new System.Drawing.Point(87, 0);
+            this.resf.Location = new System.Drawing.Point(90, 0);
             this.resf.Name = "resf";
             this.resf.Size = new System.Drawing.Size(16, 16);
             this.resf.TabIndex = 38;
@@ -164,7 +203,7 @@ namespace MrItemRemover2
             // 
             this.AddToSellList.Location = new System.Drawing.Point(8, 164);
             this.AddToSellList.Name = "AddToSellList";
-            this.AddToSellList.Size = new System.Drawing.Size(150, 23);
+            this.AddToSellList.Size = new System.Drawing.Size(162, 23);
             this.AddToSellList.TabIndex = 7;
             this.AddToSellList.Text = "Add to Sell List";
             this.AddToSellList.UseVisualStyleBackColor = true;
@@ -174,7 +213,7 @@ namespace MrItemRemover2
             // 
             this.AddToProtList.Location = new System.Drawing.Point(8, 216);
             this.AddToProtList.Name = "AddToProtList";
-            this.AddToProtList.Size = new System.Drawing.Size(149, 23);
+            this.AddToProtList.Size = new System.Drawing.Size(162, 23);
             this.AddToProtList.TabIndex = 6;
             this.AddToProtList.Text = "Add To Protected List";
             this.AddToProtList.UseVisualStyleBackColor = true;
@@ -184,7 +223,7 @@ namespace MrItemRemover2
             // 
             this.AddToRemoveList.Location = new System.Drawing.Point(8, 190);
             this.AddToRemoveList.Name = "AddToRemoveList";
-            this.AddToRemoveList.Size = new System.Drawing.Size(149, 23);
+            this.AddToRemoveList.Size = new System.Drawing.Size(162, 23);
             this.AddToRemoveList.TabIndex = 5;
             this.AddToRemoveList.Text = "Add to Remove List";
             this.AddToRemoveList.UseVisualStyleBackColor = true;
@@ -194,18 +233,18 @@ namespace MrItemRemover2
             // 
             this.groupBox2.Controls.Add(this.RemoveRemoveItem);
             this.groupBox2.Controls.Add(this.RemoveList);
-            this.groupBox2.Location = new System.Drawing.Point(6, 6);
+            this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(112, 200);
+            this.groupBox2.Size = new System.Drawing.Size(178, 298);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "My Remove List";
             // 
             // RemoveRemoveItem
             // 
-            this.RemoveRemoveItem.Location = new System.Drawing.Point(5, 173);
+            this.RemoveRemoveItem.Location = new System.Drawing.Point(7, 269);
             this.RemoveRemoveItem.Name = "RemoveRemoveItem";
-            this.RemoveRemoveItem.Size = new System.Drawing.Size(102, 23);
+            this.RemoveRemoveItem.Size = new System.Drawing.Size(164, 23);
             this.RemoveRemoveItem.TabIndex = 6;
             this.RemoveRemoveItem.Text = "Remove Selected";
             this.RemoveRemoveItem.UseVisualStyleBackColor = true;
@@ -215,9 +254,9 @@ namespace MrItemRemover2
             // 
             this.groupBox3.Controls.Add(this.RemoveSellItem);
             this.groupBox3.Controls.Add(this.SellList);
-            this.groupBox3.Location = new System.Drawing.Point(6, 6);
+            this.groupBox3.Location = new System.Drawing.Point(3, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(112, 200);
+            this.groupBox3.Size = new System.Drawing.Size(178, 298);
             this.groupBox3.TabIndex = 10;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "My Sell List";
@@ -225,9 +264,9 @@ namespace MrItemRemover2
             // 
             // RemoveSellItem
             // 
-            this.RemoveSellItem.Location = new System.Drawing.Point(5, 173);
+            this.RemoveSellItem.Location = new System.Drawing.Point(7, 269);
             this.RemoveSellItem.Name = "RemoveSellItem";
-            this.RemoveSellItem.Size = new System.Drawing.Size(102, 23);
+            this.RemoveSellItem.Size = new System.Drawing.Size(164, 23);
             this.RemoveSellItem.TabIndex = 7;
             this.RemoveSellItem.Text = "Remove Selected";
             this.RemoveSellItem.UseVisualStyleBackColor = true;
@@ -237,9 +276,9 @@ namespace MrItemRemover2
             // 
             this.groupBox4.Controls.Add(this.ProtectedList);
             this.groupBox4.Controls.Add(this.RemoveProtectedItem);
-            this.groupBox4.Location = new System.Drawing.Point(6, 6);
+            this.groupBox4.Location = new System.Drawing.Point(3, 3);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(112, 200);
+            this.groupBox4.Size = new System.Drawing.Size(178, 300);
             this.groupBox4.TabIndex = 11;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "My Protected List";
@@ -250,14 +289,14 @@ namespace MrItemRemover2
             this.ProtectedList.ItemHeight = 15;
             this.ProtectedList.Location = new System.Drawing.Point(6, 19);
             this.ProtectedList.Name = "ProtectedList";
-            this.ProtectedList.Size = new System.Drawing.Size(100, 139);
+            this.ProtectedList.Size = new System.Drawing.Size(162, 244);
             this.ProtectedList.TabIndex = 9;
             // 
             // RemoveProtectedItem
             // 
-            this.RemoveProtectedItem.Location = new System.Drawing.Point(5, 172);
+            this.RemoveProtectedItem.Location = new System.Drawing.Point(5, 271);
             this.RemoveProtectedItem.Name = "RemoveProtectedItem";
-            this.RemoveProtectedItem.Size = new System.Drawing.Size(102, 23);
+            this.RemoveProtectedItem.Size = new System.Drawing.Size(163, 23);
             this.RemoveProtectedItem.TabIndex = 8;
             this.RemoveProtectedItem.Text = "Remove Selected";
             this.RemoveProtectedItem.UseVisualStyleBackColor = true;
@@ -267,7 +306,7 @@ namespace MrItemRemover2
             // 
             this.AddToBagList.Location = new System.Drawing.Point(3, 279);
             this.AddToBagList.Name = "AddToBagList";
-            this.AddToBagList.Size = new System.Drawing.Size(165, 23);
+            this.AddToBagList.Size = new System.Drawing.Size(178, 23);
             this.AddToBagList.TabIndex = 17;
             this.AddToBagList.Text = "Add Item to My Bag Items";
             this.AddToBagList.UseVisualStyleBackColor = true;
@@ -277,91 +316,64 @@ namespace MrItemRemover2
             // 
             this.InputAddToBagItem.Location = new System.Drawing.Point(3, 254);
             this.InputAddToBagItem.Name = "InputAddToBagItem";
-            this.InputAddToBagItem.Size = new System.Drawing.Size(165, 21);
+            this.InputAddToBagItem.Size = new System.Drawing.Size(178, 21);
             this.InputAddToBagItem.TabIndex = 18;
+            this.InputAddToBagItem.Text = "     Enter an Item Name Here";
             // 
             // SellWhite
             // 
-            this.SellWhite.AutoSize = true;
-            this.SellWhite.Location = new System.Drawing.Point(141, 43);
+            this.SellWhite.Location = new System.Drawing.Point(0, 0);
             this.SellWhite.Name = "SellWhite";
-            this.SellWhite.Size = new System.Drawing.Size(96, 19);
-            this.SellWhite.TabIndex = 30;
-            this.SellWhite.Text = "   Sell Whites";
-            this.SellWhite.UseVisualStyleBackColor = true;
-            this.SellWhite.CheckedChanged += new System.EventHandler(this.SellWhite_CheckedChanged);
+            this.SellWhite.Size = new System.Drawing.Size(104, 24);
+            this.SellWhite.TabIndex = 58;
             // 
             // SellGreen
             // 
-            this.SellGreen.AutoSize = true;
-            this.SellGreen.Location = new System.Drawing.Point(141, 60);
+            this.SellGreen.Location = new System.Drawing.Point(0, 0);
             this.SellGreen.Name = "SellGreen";
-            this.SellGreen.Size = new System.Drawing.Size(99, 19);
-            this.SellGreen.TabIndex = 29;
-            this.SellGreen.Text = "   Sell Greens";
-            this.SellGreen.UseVisualStyleBackColor = true;
-            this.SellGreen.CheckedChanged += new System.EventHandler(this.SellGreen_CheckedChanged);
+            this.SellGreen.Size = new System.Drawing.Size(104, 24);
+            this.SellGreen.TabIndex = 57;
             // 
             // SellGray
             // 
-            this.SellGray.AutoSize = true;
-            this.SellGray.Location = new System.Drawing.Point(141, 25);
+            this.SellGray.Location = new System.Drawing.Point(0, 0);
             this.SellGray.Name = "SellGray";
-            this.SellGray.Size = new System.Drawing.Size(90, 19);
-            this.SellGray.TabIndex = 28;
-            this.SellGray.Text = "   Sell Grays";
-            this.SellGray.UseVisualStyleBackColor = true;
-            this.SellGray.CheckedChanged += new System.EventHandler(this.SellGray_CheckedChanged);
+            this.SellGray.Size = new System.Drawing.Size(104, 24);
+            this.SellGray.TabIndex = 56;
             // 
             // GrayItems
             // 
-            this.GrayItems.AutoSize = true;
-            this.GrayItems.Location = new System.Drawing.Point(205, 52);
+            this.GrayItems.Location = new System.Drawing.Point(0, 0);
             this.GrayItems.Name = "GrayItems";
-            this.GrayItems.Size = new System.Drawing.Size(115, 19);
-            this.GrayItems.TabIndex = 27;
-            this.GrayItems.Text = "   Remove Grays";
-            this.GrayItems.UseVisualStyleBackColor = true;
-            this.GrayItems.CheckedChanged += new System.EventHandler(this.GrayItems_CheckedChanged);
+            this.GrayItems.Size = new System.Drawing.Size(104, 24);
+            this.GrayItems.TabIndex = 64;
             // 
             // SellSoulbound
             // 
-            this.SellSoulbound.AutoSize = true;
-            this.SellSoulbound.Location = new System.Drawing.Point(141, 94);
+            this.SellSoulbound.Location = new System.Drawing.Point(0, 0);
             this.SellSoulbound.Name = "SellSoulbound";
-            this.SellSoulbound.Size = new System.Drawing.Size(119, 19);
-            this.SellSoulbound.TabIndex = 44;
-            this.SellSoulbound.Text = "   Sell Soulbound";
-            this.SellSoulbound.UseVisualStyleBackColor = true;
-            this.SellSoulbound.CheckedChanged += new System.EventHandler(this.SellSoulbound_CheckedChanged);
+            this.SellSoulbound.Size = new System.Drawing.Size(104, 24);
+            this.SellSoulbound.TabIndex = 59;
             // 
             // SellBlue
             // 
-            this.SellBlue.AutoSize = true;
-            this.SellBlue.Location = new System.Drawing.Point(141, 77);
+            this.SellBlue.Location = new System.Drawing.Point(0, 0);
             this.SellBlue.Name = "SellBlue";
-            this.SellBlue.Size = new System.Drawing.Size(90, 19);
-            this.SellBlue.TabIndex = 39;
-            this.SellBlue.Text = "   Sell Blues";
-            this.SellBlue.UseVisualStyleBackColor = true;
-            this.SellBlue.CheckedChanged += new System.EventHandler(this.SellBlue_CheckedChanged_1);
+            this.SellBlue.Size = new System.Drawing.Size(104, 24);
+            this.SellBlue.TabIndex = 60;
             // 
             // RemoveQItems
             // 
-            this.RemoveQItems.AutoSize = true;
-            this.RemoveQItems.Location = new System.Drawing.Point(205, 121);
+            this.RemoveQItems.Location = new System.Drawing.Point(0, 0);
             this.RemoveQItems.Name = "RemoveQItems";
-            this.RemoveQItems.Size = new System.Drawing.Size(112, 19);
-            this.RemoveQItems.TabIndex = 31;
-            this.RemoveQItems.Text = "   Quest Starters";
-            this.RemoveQItems.UseVisualStyleBackColor = true;
-            this.RemoveQItems.CheckedChanged += new System.EventHandler(this.RemoveQItems_CheckedChanged);
+            this.RemoveQItems.Size = new System.Drawing.Size(104, 24);
+            this.RemoveQItems.TabIndex = 63;
             // 
             // Save
             // 
-            this.Save.Location = new System.Drawing.Point(246, 254);
+            this.Save.Location = new System.Drawing.Point(257, 266);
             this.Save.Name = "Save";
-            this.Save.Size = new System.Drawing.Size(131, 26);
+            this.Save.Size = new System.Drawing.Size(131, 23);
             this.Save.TabIndex = 32;
             this.Save.Text = "Save and Close";
             this.Save.UseVisualStyleBackColor = true;
@@ -369,7 +381,7 @@ namespace MrItemRemover2
             // 
             // Run
             // 
-            this.Run.Location = new System.Drawing.Point(239, 213);
+            this.Run.Location = new System.Drawing.Point(251, 221);
             this.Run.Name = "Run";
             this.Run.Size = new System.Drawing.Size(143, 23);
             this.Run.TabIndex = 33;
@@ -380,7 +392,7 @@ namespace MrItemRemover2
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(170, 9);
+            this.label1.Location = new System.Drawing.Point(203, 175);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(161, 15);
             this.label1.TabIndex = 40;
@@ -388,62 +400,24 @@ namespace MrItemRemover2
             // 
             // BlueItems
             // 
-            this.BlueItems.AutoSize = true;
-            this.BlueItems.Location = new System.Drawing.Point(205, 104);
+            this.BlueItems.Location = new System.Drawing.Point(0, 0);
             this.BlueItems.Name = "BlueItems";
-            this.BlueItems.Size = new System.Drawing.Size(115, 19);
-            this.BlueItems.TabIndex = 41;
-            this.BlueItems.Text = "   Remove Blues";
-            this.BlueItems.UseVisualStyleBackColor = true;
-            this.BlueItems.CheckedChanged += new System.EventHandler(this.BlueItems_CheckedChanged);
+            this.BlueItems.Size = new System.Drawing.Size(104, 24);
+            this.BlueItems.TabIndex = 65;
             // 
             // WhiteItems
             // 
-            this.WhiteItems.AutoSize = true;
-            this.WhiteItems.Location = new System.Drawing.Point(205, 70);
+            this.WhiteItems.Location = new System.Drawing.Point(0, 0);
             this.WhiteItems.Name = "WhiteItems";
-            this.WhiteItems.Size = new System.Drawing.Size(121, 19);
-            this.WhiteItems.TabIndex = 43;
-            this.WhiteItems.Text = "   Remove Whites";
-            this.WhiteItems.UseVisualStyleBackColor = true;
-            this.WhiteItems.CheckedChanged += new System.EventHandler(this.WhiteItems_CheckedChanged);
+            this.WhiteItems.Size = new System.Drawing.Size(104, 24);
+            this.WhiteItems.TabIndex = 67;
             // 
             // GreenItems
             // 
-            this.GreenItems.AutoSize = true;
-            this.GreenItems.Location = new System.Drawing.Point(205, 87);
+            this.GreenItems.Location = new System.Drawing.Point(0, 0);
             this.GreenItems.Name = "GreenItems";
-            this.GreenItems.Size = new System.Drawing.Size(124, 19);
-            this.GreenItems.TabIndex = 42;
-            this.GreenItems.Text = "   Remove Greens";
-            this.GreenItems.UseVisualStyleBackColor = true;
-            this.GreenItems.CheckedChanged += new System.EventHandler(this.GreenItems_CheckedChanged);
-            // 
-            // RSFood
-            // 
-            this.RSFood.AutoSize = true;
-            this.RSFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.RSFood.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.RSFood.Location = new System.Drawing.Point(255, 212);
-            this.RSFood.Name = "RSFood";
-            this.RSFood.Size = new System.Drawing.Size(127, 19);
-            this.RSFood.TabIndex = 46;
-            this.RSFood.Text = "Remove/Sell Food";
-            this.RSFood.UseVisualStyleBackColor = true;
-            this.RSFood.CheckedChanged += new System.EventHandler(this.RSFood_CheckedChanged);
-            // 
-            // RSDrinks
-            // 
-            this.RSDrinks.AutoSize = true;
-            this.RSDrinks.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.RSDrinks.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.RSDrinks.Location = new System.Drawing.Point(248, 187);
-            this.RSDrinks.Name = "RSDrinks";
-            this.RSDrinks.Size = new System.Drawing.Size(134, 19);
-            this.RSDrinks.TabIndex = 47;
-            this.RSDrinks.Text = "Remove/Sell Drinks";
-            this.RSDrinks.UseVisualStyleBackColor = true;
-            this.RSDrinks.CheckedChanged += new System.EventHandler(this.RSDrinks_CheckedChanged);
+            this.GreenItems.Size = new System.Drawing.Size(104, 24);
+            this.GreenItems.TabIndex = 66;
             // 
             // tabControl1
             // 
@@ -453,7 +427,7 @@ namespace MrItemRemover2
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.tabControl1.Location = new System.Drawing.Point(7, 7);
+            this.tabControl1.Location = new System.Drawing.Point(6, 6);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tabControl1.SelectedIndex = 0;
@@ -496,7 +470,7 @@ namespace MrItemRemover2
             this.OpeningDropDown.Items.AddRange(new object[] {
             "False",
             "True"});
-            this.OpeningDropDown.Location = new System.Drawing.Point(288, 129);
+            this.OpeningDropDown.Location = new System.Drawing.Point(300, 98);
             this.OpeningDropDown.Name = "OpeningDropDown";
             this.OpeningDropDown.Size = new System.Drawing.Size(121, 23);
             this.OpeningDropDown.TabIndex = 59;
@@ -509,7 +483,7 @@ namespace MrItemRemover2
             this.CombineDropDown.Items.AddRange(new object[] {
             "False",
             "True"});
-            this.CombineDropDown.Location = new System.Drawing.Point(288, 100);
+            this.CombineDropDown.Location = new System.Drawing.Point(300, 69);
             this.CombineDropDown.Name = "CombineDropDown";
             this.CombineDropDown.Size = new System.Drawing.Size(121, 23);
             this.CombineDropDown.TabIndex = 58;
@@ -522,7 +496,7 @@ namespace MrItemRemover2
             this.RemoveDropDown.Items.AddRange(new object[] {
             "False",
             "True"});
-            this.RemoveDropDown.Location = new System.Drawing.Point(288, 70);
+            this.RemoveDropDown.Location = new System.Drawing.Point(300, 39);
             this.RemoveDropDown.Name = "RemoveDropDown";
             this.RemoveDropDown.Size = new System.Drawing.Size(121, 23);
             this.RemoveDropDown.TabIndex = 57;
@@ -535,7 +509,7 @@ namespace MrItemRemover2
             this.CheckAfterLootDropDown.Items.AddRange(new object[] {
             "False",
             "True"});
-            this.CheckAfterLootDropDown.Location = new System.Drawing.Point(288, 158);
+            this.CheckAfterLootDropDown.Location = new System.Drawing.Point(300, 127);
             this.CheckAfterLootDropDown.Name = "CheckAfterLootDropDown";
             this.CheckAfterLootDropDown.Size = new System.Drawing.Size(121, 23);
             this.CheckAfterLootDropDown.TabIndex = 56;
@@ -544,7 +518,7 @@ namespace MrItemRemover2
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(170, 161);
+            this.label8.Location = new System.Drawing.Point(183, 130);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(102, 15);
             this.label8.TabIndex = 55;
@@ -553,7 +527,7 @@ namespace MrItemRemover2
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(170, 103);
+            this.label7.Location = new System.Drawing.Point(183, 72);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(116, 15);
             this.label7.TabIndex = 54;
@@ -562,7 +536,7 @@ namespace MrItemRemover2
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(170, 132);
+            this.label6.Location = new System.Drawing.Point(183, 101);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(103, 15);
             this.label6.TabIndex = 53;
@@ -571,7 +545,7 @@ namespace MrItemRemover2
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(170, 73);
+            this.label4.Location = new System.Drawing.Point(183, 42);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(112, 15);
             this.label4.TabIndex = 52;
@@ -580,7 +554,7 @@ namespace MrItemRemover2
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(170, 44);
+            this.label3.Location = new System.Drawing.Point(183, 13);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 15);
             this.label3.TabIndex = 51;
@@ -589,7 +563,7 @@ namespace MrItemRemover2
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(384, 9);
+            this.label2.Location = new System.Drawing.Point(417, 175);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(34, 15);
             this.label2.TabIndex = 50;
@@ -602,7 +576,7 @@ namespace MrItemRemover2
             this.SellDropDown.Items.AddRange(new object[] {
             "False",
             "True"});
-            this.SellDropDown.Location = new System.Drawing.Point(288, 41);
+            this.SellDropDown.Location = new System.Drawing.Point(300, 10);
             this.SellDropDown.Name = "SellDropDown";
             this.SellDropDown.Size = new System.Drawing.Size(121, 23);
             this.SellDropDown.TabIndex = 49;
@@ -610,6 +584,20 @@ namespace MrItemRemover2
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.SellDrinksDropDown);
+            this.tabPage2.Controls.Add(this.SellFoodDropDown);
+            this.tabPage2.Controls.Add(this.label21);
+            this.tabPage2.Controls.Add(this.label22);
+            this.tabPage2.Controls.Add(this.label14);
+            this.tabPage2.Controls.Add(this.label13);
+            this.tabPage2.Controls.Add(this.label12);
+            this.tabPage2.Controls.Add(this.label11);
+            this.tabPage2.Controls.Add(this.label10);
+            this.tabPage2.Controls.Add(this.SellSoulboundDropDown);
+            this.tabPage2.Controls.Add(this.SellBluesDropDown);
+            this.tabPage2.Controls.Add(this.SellGreensDropDown);
+            this.tabPage2.Controls.Add(this.SellWhitesDropDown);
+            this.tabPage2.Controls.Add(this.SellGraysDropDown);
             this.tabPage2.Controls.Add(this.groupBox3);
             this.tabPage2.Controls.Add(this.SellGray);
             this.tabPage2.Controls.Add(this.SellGreen);
@@ -619,21 +607,166 @@ namespace MrItemRemover2
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(692, 309);
+            this.tabPage2.Size = new System.Drawing.Size(475, 309);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Sell";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // SellDrinksDropDown
+            // 
+            this.SellDrinksDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SellDrinksDropDown.FormattingEnabled = true;
+            this.SellDrinksDropDown.Location = new System.Drawing.Point(315, 184);
+            this.SellDrinksDropDown.Name = "SellDrinksDropDown";
+            this.SellDrinksDropDown.Size = new System.Drawing.Size(121, 23);
+            this.SellDrinksDropDown.TabIndex = 75;
+            this.SellDrinksDropDown.SelectedIndexChanged += new System.EventHandler(this.SellDrinksDropDown_SelectedIndexChanged);
+            // 
+            // SellFoodDropDown
+            // 
+            this.SellFoodDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SellFoodDropDown.FormattingEnabled = true;
+            this.SellFoodDropDown.Location = new System.Drawing.Point(315, 155);
+            this.SellFoodDropDown.Name = "SellFoodDropDown";
+            this.SellFoodDropDown.Size = new System.Drawing.Size(121, 23);
+            this.SellFoodDropDown.TabIndex = 74;
+            this.SellFoodDropDown.SelectedIndexChanged += new System.EventHandler(this.SellFoodDropDown_SelectedIndexChanged);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(183, 187);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(73, 15);
+            this.label21.TabIndex = 73;
+            this.label21.Text = "Sell Drinks -";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(183, 158);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(66, 15);
+            this.label22.TabIndex = 72;
+            this.label22.Text = "Sell Food -";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(183, 13);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(96, 15);
+            this.label14.TabIndex = 61;
+            this.label14.Text = "Sell Gray Items -";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(183, 129);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(131, 15);
+            this.label13.TabIndex = 54;
+            this.label13.Text = "Sell Soulbound Items -";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(183, 100);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(96, 15);
+            this.label12.TabIndex = 53;
+            this.label12.Text = "Sell Blue Items -";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(183, 71);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(105, 15);
+            this.label11.TabIndex = 52;
+            this.label11.Text = "Sell Green Items -";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(183, 42);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(102, 15);
+            this.label10.TabIndex = 51;
+            this.label10.Text = "Sell White Items -";
+            // 
+            // SellSoulboundDropDown
+            // 
+            this.SellSoulboundDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SellSoulboundDropDown.FormattingEnabled = true;
+            this.SellSoulboundDropDown.Location = new System.Drawing.Point(315, 126);
+            this.SellSoulboundDropDown.Name = "SellSoulboundDropDown";
+            this.SellSoulboundDropDown.Size = new System.Drawing.Size(121, 23);
+            this.SellSoulboundDropDown.TabIndex = 49;
+            this.SellSoulboundDropDown.SelectedIndexChanged += new System.EventHandler(this.SellSoulboundDropDown_SelectedIndexChanged);
+            // 
+            // SellBluesDropDown
+            // 
+            this.SellBluesDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SellBluesDropDown.FormattingEnabled = true;
+            this.SellBluesDropDown.Location = new System.Drawing.Point(315, 97);
+            this.SellBluesDropDown.Name = "SellBluesDropDown";
+            this.SellBluesDropDown.Size = new System.Drawing.Size(121, 23);
+            this.SellBluesDropDown.TabIndex = 48;
+            this.SellBluesDropDown.SelectedIndexChanged += new System.EventHandler(this.SellBluesDropDown_SelectedIndexChanged);
+            // 
+            // SellGreensDropDown
+            // 
+            this.SellGreensDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SellGreensDropDown.FormattingEnabled = true;
+            this.SellGreensDropDown.Location = new System.Drawing.Point(315, 68);
+            this.SellGreensDropDown.Name = "SellGreensDropDown";
+            this.SellGreensDropDown.Size = new System.Drawing.Size(121, 23);
+            this.SellGreensDropDown.TabIndex = 47;
+            this.SellGreensDropDown.SelectedIndexChanged += new System.EventHandler(this.SellGreensDropDown_SelectedIndexChanged);
+            // 
+            // SellWhitesDropDown
+            // 
+            this.SellWhitesDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SellWhitesDropDown.FormattingEnabled = true;
+            this.SellWhitesDropDown.Location = new System.Drawing.Point(315, 39);
+            this.SellWhitesDropDown.Name = "SellWhitesDropDown";
+            this.SellWhitesDropDown.Size = new System.Drawing.Size(121, 23);
+            this.SellWhitesDropDown.TabIndex = 46;
+            this.SellWhitesDropDown.SelectedIndexChanged += new System.EventHandler(this.SellWhitesDropDown_SelectedIndexChanged);
+            // 
+            // SellGraysDropDown
+            // 
+            this.SellGraysDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SellGraysDropDown.FormattingEnabled = true;
+            this.SellGraysDropDown.Location = new System.Drawing.Point(315, 10);
+            this.SellGraysDropDown.Name = "SellGraysDropDown";
+            this.SellGraysDropDown.Size = new System.Drawing.Size(121, 23);
+            this.SellGraysDropDown.TabIndex = 45;
+            this.SellGraysDropDown.SelectedIndexChanged += new System.EventHandler(this.SellGraysDropDown_SelectedIndexChanged);
+            // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.RemoveDrinksDropDown);
+            this.tabPage3.Controls.Add(this.RemoveFoodDropDown);
+            this.tabPage3.Controls.Add(this.label20);
+            this.tabPage3.Controls.Add(this.label19);
+            this.tabPage3.Controls.Add(this.label18);
+            this.tabPage3.Controls.Add(this.label17);
+            this.tabPage3.Controls.Add(this.label16);
+            this.tabPage3.Controls.Add(this.label15);
+            this.tabPage3.Controls.Add(this.label9);
+            this.tabPage3.Controls.Add(this.RemoveGraysDropDown);
+            this.tabPage3.Controls.Add(this.RemoveGreensDropDown);
+            this.tabPage3.Controls.Add(this.RemoveBluesDropDown);
+            this.tabPage3.Controls.Add(this.RemoveQuestStartersDropDown);
+            this.tabPage3.Controls.Add(this.RemoveWhitesDropDown);
             this.tabPage3.Controls.Add(this.GoldGrays);
             this.tabPage3.Controls.Add(this.label5);
             this.tabPage3.Controls.Add(this.CopperGrays);
             this.tabPage3.Controls.Add(this.SilverGrays);
             this.tabPage3.Controls.Add(this.GoldBox);
             this.tabPage3.Controls.Add(this.groupBox2);
-            this.tabPage3.Controls.Add(this.RSFood);
-            this.tabPage3.Controls.Add(this.RSDrinks);
             this.tabPage3.Controls.Add(this.RemoveQItems);
             this.tabPage3.Controls.Add(this.GrayItems);
             this.tabPage3.Controls.Add(this.BlueItems);
@@ -642,17 +775,150 @@ namespace MrItemRemover2
             this.tabPage3.Location = new System.Drawing.Point(4, 24);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(692, 309);
+            this.tabPage3.Size = new System.Drawing.Size(475, 309);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Remove";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // RemoveDrinksDropDown
+            // 
+            this.RemoveDrinksDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.RemoveDrinksDropDown.FormattingEnabled = true;
+            this.RemoveDrinksDropDown.Location = new System.Drawing.Point(324, 185);
+            this.RemoveDrinksDropDown.Name = "RemoveDrinksDropDown";
+            this.RemoveDrinksDropDown.Size = new System.Drawing.Size(121, 23);
+            this.RemoveDrinksDropDown.TabIndex = 71;
+            this.RemoveDrinksDropDown.SelectedIndexChanged += new System.EventHandler(this.RemoveDrinksDropDown_SelectedIndexChanged);
+            // 
+            // RemoveFoodDropDown
+            // 
+            this.RemoveFoodDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.RemoveFoodDropDown.FormattingEnabled = true;
+            this.RemoveFoodDropDown.Location = new System.Drawing.Point(324, 156);
+            this.RemoveFoodDropDown.Name = "RemoveFoodDropDown";
+            this.RemoveFoodDropDown.Size = new System.Drawing.Size(121, 23);
+            this.RemoveFoodDropDown.TabIndex = 70;
+            this.RemoveFoodDropDown.SelectedIndexChanged += new System.EventHandler(this.RemoveFoodDropDown_SelectedIndexChanged);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(183, 188);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(98, 15);
+            this.label20.TabIndex = 69;
+            this.label20.Text = "Remove Drinks -";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(183, 159);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(91, 15);
+            this.label19.TabIndex = 68;
+            this.label19.Text = "Remove Food -";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(183, 130);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(140, 15);
+            this.label18.TabIndex = 62;
+            this.label18.Text = "Remove Quest Starters -";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(183, 101);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(121, 15);
+            this.label17.TabIndex = 61;
+            this.label17.Text = "Remove Blue Items -";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(183, 72);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(130, 15);
+            this.label16.TabIndex = 60;
+            this.label16.Text = "Remove Green Items -";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(183, 43);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(127, 15);
+            this.label15.TabIndex = 59;
+            this.label15.Text = "Remove White Items -";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(183, 13);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(121, 15);
+            this.label9.TabIndex = 58;
+            this.label9.Text = "Remove Gray Items -";
+            // 
+            // RemoveGraysDropDown
+            // 
+            this.RemoveGraysDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.RemoveGraysDropDown.FormattingEnabled = true;
+            this.RemoveGraysDropDown.Location = new System.Drawing.Point(324, 10);
+            this.RemoveGraysDropDown.Name = "RemoveGraysDropDown";
+            this.RemoveGraysDropDown.Size = new System.Drawing.Size(121, 23);
+            this.RemoveGraysDropDown.TabIndex = 57;
+            this.RemoveGraysDropDown.SelectedIndexChanged += new System.EventHandler(this.RemoveGraysDropDown_SelectedIndexChanged);
+            // 
+            // RemoveGreensDropDown
+            // 
+            this.RemoveGreensDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.RemoveGreensDropDown.FormattingEnabled = true;
+            this.RemoveGreensDropDown.Location = new System.Drawing.Point(324, 69);
+            this.RemoveGreensDropDown.Name = "RemoveGreensDropDown";
+            this.RemoveGreensDropDown.Size = new System.Drawing.Size(121, 23);
+            this.RemoveGreensDropDown.TabIndex = 56;
+            this.RemoveGreensDropDown.SelectedIndexChanged += new System.EventHandler(this.RemoveGreensDropDown_SelectedIndexChanged);
+            // 
+            // RemoveBluesDropDown
+            // 
+            this.RemoveBluesDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.RemoveBluesDropDown.FormattingEnabled = true;
+            this.RemoveBluesDropDown.Location = new System.Drawing.Point(324, 98);
+            this.RemoveBluesDropDown.Name = "RemoveBluesDropDown";
+            this.RemoveBluesDropDown.Size = new System.Drawing.Size(121, 23);
+            this.RemoveBluesDropDown.TabIndex = 55;
+            this.RemoveBluesDropDown.SelectedIndexChanged += new System.EventHandler(this.RemoveBluesDropDown_SelectedIndexChanged);
+            // 
+            // RemoveQuestStartersDropDown
+            // 
+            this.RemoveQuestStartersDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.RemoveQuestStartersDropDown.FormattingEnabled = true;
+            this.RemoveQuestStartersDropDown.Location = new System.Drawing.Point(324, 127);
+            this.RemoveQuestStartersDropDown.Name = "RemoveQuestStartersDropDown";
+            this.RemoveQuestStartersDropDown.Size = new System.Drawing.Size(121, 23);
+            this.RemoveQuestStartersDropDown.TabIndex = 54;
+            this.RemoveQuestStartersDropDown.SelectedIndexChanged += new System.EventHandler(this.RemoveQuestStartersDropDown_SelectedIndexChanged);
+            // 
+            // RemoveWhitesDropDown
+            // 
+            this.RemoveWhitesDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.RemoveWhitesDropDown.FormattingEnabled = true;
+            this.RemoveWhitesDropDown.Location = new System.Drawing.Point(324, 40);
+            this.RemoveWhitesDropDown.Name = "RemoveWhitesDropDown";
+            this.RemoveWhitesDropDown.Size = new System.Drawing.Size(121, 23);
+            this.RemoveWhitesDropDown.TabIndex = 53;
+            this.RemoveWhitesDropDown.SelectedIndexChanged += new System.EventHandler(this.RemoveWhitesDropDown_SelectedIndexChanged);
             // 
             // GoldGrays
             // 
             this.GoldGrays.BackColor = System.Drawing.Color.Black;
             this.GoldGrays.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.GoldGrays.ForeColor = System.Drawing.Color.White;
-            this.GoldGrays.Location = new System.Drawing.Point(193, 271);
+            this.GoldGrays.Location = new System.Drawing.Point(279, 274);
             this.GoldGrays.MaxLength = 4;
             this.GoldGrays.Name = "GoldGrays";
             this.GoldGrays.Size = new System.Drawing.Size(26, 14);
@@ -663,7 +929,7 @@ namespace MrItemRemover2
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(126, 244);
+            this.label5.Location = new System.Drawing.Point(219, 246);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(226, 15);
             this.label5.TabIndex = 51;
@@ -674,7 +940,7 @@ namespace MrItemRemover2
             this.CopperGrays.BackColor = System.Drawing.Color.Black;
             this.CopperGrays.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CopperGrays.ForeColor = System.Drawing.Color.White;
-            this.CopperGrays.Location = new System.Drawing.Point(281, 271);
+            this.CopperGrays.Location = new System.Drawing.Point(367, 274);
             this.CopperGrays.MaxLength = 2;
             this.CopperGrays.Name = "CopperGrays";
             this.CopperGrays.Size = new System.Drawing.Size(18, 14);
@@ -687,7 +953,7 @@ namespace MrItemRemover2
             this.SilverGrays.BackColor = System.Drawing.Color.Black;
             this.SilverGrays.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.SilverGrays.ForeColor = System.Drawing.Color.White;
-            this.SilverGrays.Location = new System.Drawing.Point(243, 271);
+            this.SilverGrays.Location = new System.Drawing.Point(329, 274);
             this.SilverGrays.MaxLength = 2;
             this.SilverGrays.Name = "SilverGrays";
             this.SilverGrays.Size = new System.Drawing.Size(17, 14);
@@ -697,7 +963,7 @@ namespace MrItemRemover2
             // 
             // GoldBox
             // 
-            this.GoldBox.Location = new System.Drawing.Point(171, 267);
+            this.GoldBox.Location = new System.Drawing.Point(257, 269);
             this.GoldBox.Name = "GoldBox";
             this.GoldBox.Size = new System.Drawing.Size(151, 24);
             this.GoldBox.TabIndex = 52;
@@ -709,13 +975,18 @@ namespace MrItemRemover2
             this.tabPage4.Location = new System.Drawing.Point(4, 24);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(692, 309);
+            this.tabPage4.Size = new System.Drawing.Size(475, 309);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Protected";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.Drink);
+            this.tabPage5.Controls.Add(this.Food);
+            this.tabPage5.Controls.Add(this.Combine10);
+            this.tabPage5.Controls.Add(this.Combine5);
+            this.tabPage5.Controls.Add(this.Combine3);
             this.tabPage5.Location = new System.Drawing.Point(4, 24);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
@@ -724,11 +995,106 @@ namespace MrItemRemover2
             this.tabPage5.Text = "Misc";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // Drink
+            // 
+            this.Drink.Controls.Add(this.DrinkList);
+            this.Drink.Location = new System.Drawing.Point(379, 3);
+            this.Drink.Name = "Drink";
+            this.Drink.Size = new System.Drawing.Size(95, 300);
+            this.Drink.TabIndex = 16;
+            this.Drink.TabStop = false;
+            this.Drink.Text = "Drink List";
+            // 
+            // DrinkList
+            // 
+            this.DrinkList.FormattingEnabled = true;
+            this.DrinkList.ItemHeight = 15;
+            this.DrinkList.Location = new System.Drawing.Point(6, 19);
+            this.DrinkList.Name = "DrinkList";
+            this.DrinkList.Size = new System.Drawing.Size(83, 274);
+            this.DrinkList.TabIndex = 9;
+            // 
+            // Food
+            // 
+            this.Food.Controls.Add(this.FoodList);
+            this.Food.Location = new System.Drawing.Point(285, 3);
+            this.Food.Name = "Food";
+            this.Food.Size = new System.Drawing.Size(95, 300);
+            this.Food.TabIndex = 15;
+            this.Food.TabStop = false;
+            this.Food.Text = "Food List";
+            // 
+            // FoodList
+            // 
+            this.FoodList.FormattingEnabled = true;
+            this.FoodList.ItemHeight = 15;
+            this.FoodList.Location = new System.Drawing.Point(6, 19);
+            this.FoodList.Name = "FoodList";
+            this.FoodList.Size = new System.Drawing.Size(83, 274);
+            this.FoodList.TabIndex = 9;
+            // 
+            // Combine10
+            // 
+            this.Combine10.Controls.Add(this.Combine10List);
+            this.Combine10.Location = new System.Drawing.Point(190, 3);
+            this.Combine10.Name = "Combine10";
+            this.Combine10.Size = new System.Drawing.Size(95, 300);
+            this.Combine10.TabIndex = 14;
+            this.Combine10.TabStop = false;
+            this.Combine10.Text = "Combine 10";
+            // 
+            // Combine10List
+            // 
+            this.Combine10List.FormattingEnabled = true;
+            this.Combine10List.ItemHeight = 15;
+            this.Combine10List.Location = new System.Drawing.Point(6, 19);
+            this.Combine10List.Name = "Combine10List";
+            this.Combine10List.Size = new System.Drawing.Size(83, 274);
+            this.Combine10List.TabIndex = 9;
+            // 
+            // Combine5
+            // 
+            this.Combine5.Controls.Add(this.Combine5List);
+            this.Combine5.Location = new System.Drawing.Point(95, 3);
+            this.Combine5.Name = "Combine5";
+            this.Combine5.Size = new System.Drawing.Size(95, 300);
+            this.Combine5.TabIndex = 13;
+            this.Combine5.TabStop = false;
+            this.Combine5.Text = "Combine 5";
+            // 
+            // Combine5List
+            // 
+            this.Combine5List.FormattingEnabled = true;
+            this.Combine5List.ItemHeight = 15;
+            this.Combine5List.Location = new System.Drawing.Point(6, 19);
+            this.Combine5List.Name = "Combine5List";
+            this.Combine5List.Size = new System.Drawing.Size(83, 274);
+            this.Combine5List.TabIndex = 9;
+            // 
+            // Combine3
+            // 
+            this.Combine3.Controls.Add(this.Combine3List);
+            this.Combine3.Location = new System.Drawing.Point(0, 3);
+            this.Combine3.Name = "Combine3";
+            this.Combine3.Size = new System.Drawing.Size(95, 300);
+            this.Combine3.TabIndex = 12;
+            this.Combine3.TabStop = false;
+            this.Combine3.Text = "Combine 3";
+            // 
+            // Combine3List
+            // 
+            this.Combine3List.FormattingEnabled = true;
+            this.Combine3List.ItemHeight = 15;
+            this.Combine3List.Location = new System.Drawing.Point(6, 19);
+            this.Combine3List.Name = "Combine3List";
+            this.Combine3List.Size = new System.Drawing.Size(83, 274);
+            this.Combine3List.TabIndex = 9;
+            // 
             // MrItemRemover2Gui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DimGray;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(495, 350);
             this.ControlBox = false;
             this.Controls.Add(this.tabControl1);
@@ -754,6 +1120,12 @@ namespace MrItemRemover2
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GoldBox)).EndInit();
             this.tabPage4.ResumeLayout(false);
+            this.tabPage5.ResumeLayout(false);
+            this.Drink.ResumeLayout(false);
+            this.Food.ResumeLayout(false);
+            this.Combine10.ResumeLayout(false);
+            this.Combine5.ResumeLayout(false);
+            this.Combine3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -791,15 +1163,12 @@ namespace MrItemRemover2
         private System.Windows.Forms.CheckBox WhiteItems;
         private System.Windows.Forms.CheckBox GreenItems;
         private System.Windows.Forms.CheckBox SellSoulbound;
-        private System.Windows.Forms.CheckBox RSFood;
-        private System.Windows.Forms.CheckBox RSDrinks;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.PageSetupDialog pageSetupDialog1;
         private System.Windows.Forms.ComboBox SellDropDown;
         private System.Windows.Forms.ComboBox OpeningDropDown;
         private System.Windows.Forms.ComboBox CombineDropDown;
@@ -816,5 +1185,43 @@ namespace MrItemRemover2
         private System.Windows.Forms.TextBox CopperGrays;
         private System.Windows.Forms.TextBox SilverGrays;
         private System.Windows.Forms.PictureBox GoldBox;
+        private ComboBox SellSoulboundDropDown;
+        private ComboBox SellBluesDropDown;
+        private ComboBox SellGreensDropDown;
+        private ComboBox SellWhitesDropDown;
+        private Label label13;
+        private Label label12;
+        private Label label11;
+        private Label label10;
+        private ComboBox SellGraysDropDown;
+        private Label label14;
+        private Label label18;
+        private Label label17;
+        private Label label16;
+        private Label label15;
+        private Label label9;
+        private ComboBox RemoveGraysDropDown;
+        private ComboBox RemoveGreensDropDown;
+        private ComboBox RemoveBluesDropDown;
+        private ComboBox RemoveQuestStartersDropDown;
+        private ComboBox RemoveWhitesDropDown;
+        private ComboBox RemoveDrinksDropDown;
+        private ComboBox RemoveFoodDropDown;
+        private Label label20;
+        private Label label19;
+        private ComboBox SellDrinksDropDown;
+        private ComboBox SellFoodDropDown;
+        private Label label21;
+        private Label label22;
+        private GroupBox Drink;
+        private ListBox DrinkList;
+        private GroupBox Food;
+        private ListBox FoodList;
+        private GroupBox Combine10;
+        private ListBox Combine10List;
+        private GroupBox Combine5;
+        private ListBox Combine5List;
+        private GroupBox Combine3;
+        private ListBox Combine3List;
     }
 }

@@ -162,8 +162,7 @@ namespace MrItemRemover2
                 }
             }
         }
-        
-       
+
 
         //All items from the TXT Doc are loaded here.
         public List<string> ItemName = new List<string>();
@@ -174,9 +173,9 @@ namespace MrItemRemover2
         public List<string> OpnList = new List<string>();
         public List<string> BagList = new List<string>();
         public List<string> CombineList1 = new List<string>();
-        public List<string> CombineList3 = new List<string>();
-        public List<string> CombineList5 = new List<string>();
-        public List<string> CombineList10 = new List<string>();
+        public List<string> Combine3List = new List<string>();
+        public List<string> Combine5List = new List<string>();
+        public List<string> Combine10List = new List<string>();
         public List<string> FoodList = new List<string>();
         public List<string> DrinkList = new List<string>();
 
@@ -195,11 +194,11 @@ namespace MrItemRemover2
         private readonly string _combineList1Path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
                                            string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/Lists/ItemNameCombineList1.txt"));
         private readonly string _combineList3Path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                                           string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/Lists/ItemNameCombineList3.txt"));
+                                           string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/Lists/ItemNameCombine3List.txt"));
         private readonly string _combineList5Path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                                           string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/Lists/ItemNameCombineList5.txt"));
+                                           string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/Lists/ItemNameCombine5List.txt"));
         private readonly string _combineList10Path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                                           string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/Lists/ItemNameCombineList10.txt"));
+                                           string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/Lists/ItemNameCombine10List.txt"));
         private readonly string _foodListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
                                            string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/Lists/ItemNameFoodList.txt"));
         private readonly string _drinkListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
@@ -213,9 +212,9 @@ namespace MrItemRemover2
             LoadList(OpnList, _opnListPath);
             LoadList(BagList, _bagListPath);
             LoadList(CombineList1, _combineList1Path);
-            LoadList(CombineList3, _combineList3Path);
-            LoadList(CombineList5, _combineList5Path);
-            LoadList(CombineList10, _combineList10Path);
+            LoadList(Combine3List, _combineList3Path);
+            LoadList(Combine5List, _combineList5Path);
+            LoadList(Combine10List, _combineList10Path);
             LoadList(FoodList, _foodListPath);
             LoadList(DrinkList, _drinkListPath);
             Slog("Initial Loading Complete!");
@@ -244,29 +243,35 @@ namespace MrItemRemover2
 
         public void MirSave()
         {
-            Slog("Saving All Lists.");
-            WriteList(ItemName, _removeListPath);
-            WriteList(ItemNameSell, _sellListPath);
-            WriteList(KeepList, _keepListPath);
-            WriteList(OpnList, _opnListPath);
+            if (ItemName.Count != 0)
+            {
+                Slog("Saving All Lists.");
+                WriteList(ItemName, _removeListPath);
+                WriteList(ItemNameSell, _sellListPath);
+                WriteList(KeepList, _keepListPath);
+                WriteList(OpnList, _opnListPath);
+            }
         }
 
         public void WriteList(List<string> listName, string filePath)
         {
-            try
+            if (ItemName.Count != 0)
             {
-                var write = new StreamWriter(filePath);
-// ReSharper disable ForCanBeConvertedToForeach
-                for (int I = 0; I < listName.Count; I++)
-// ReSharper restore ForCanBeConvertedToForeach
+                try
                 {
-                    write.WriteLine(Convert.ToString(listName[I]));
+                    var write = new StreamWriter(filePath);
+// ReSharper disable ForCanBeConvertedToForeach
+                    for (int I = 0; I < listName.Count; I++)
+// ReSharper restore ForCanBeConvertedToForeach
+                    {
+                        write.WriteLine(Convert.ToString(listName[I]));
+                    }
+                    write.Close(); //dakkon for this fix.
                 }
-                write.Close(); //dakkon for this fix.
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(Convert.ToString(ex.Message));
+                catch (Exception ex)
+                {
+                    MessageBox.Show(Convert.ToString(ex.Message));
+                }
             }
         }
     }
