@@ -149,10 +149,7 @@ namespace MrItemRemover2
 
         public void SettingsDebug()
         {
-            Dlog("Enable Removing  = {0}", EnableRemove.Checked);
             Dlog("Enable Selling   = {0}", EnableSell.Checked);
-            Dlog("Enable Combine   = {0}", CombineItems.Checked);
-            Dlog("Enable Opening   = {0}", EnableOpen.Checked);
             Dlog("Remove Grays     = {0}", GrayItems.Checked);
             Dlog("Remove Whites    = {0}", WhiteItems.Checked);
             Dlog("Remove Greens    = {0}", GreenItems.Checked);
@@ -273,12 +270,12 @@ namespace MrItemRemover2
 
         private void RSDrinks_CheckedChanged(object sender, EventArgs e)
         {
-            MrItemRemover2Settings.Instance.RSDrinks = CombineItems.Checked;
+        //   MrItemRemover2Settings.Instance.RSDrinks = CombineItems.Checked;
         }
 
         private void RSFood_CheckedChanged(object sender, EventArgs e)
         {
-            MrItemRemover2Settings.Instance.RSFood = CombineItems.Checked;
+        //    MrItemRemover2Settings.Instance.RSFood = CombineItems.Checked;
         }
 
         private void SellDropdown_SelectedIndexChanged(object sender, EventArgs e)
@@ -286,6 +283,14 @@ namespace MrItemRemover2
             string enableSell = SellDropdown.GetItemText(SellDropdown.SelectedItem);
             bool sellItems = enableSell == "True";
             MrItemRemover2Settings.Instance.EnableSell = enableSell;
+            if (enableSell == "True")
+            {
+                SellDropdown.SelectedIndex = 1;
+            }
+            else
+            {
+                SellDropdown.SelectedIndex = 0;
+            }
 
         }
 
@@ -325,6 +330,5 @@ namespace MrItemRemover2
         {
             MrItemRemover2Settings.Instance.CopperGrays = int.Parse(CopperGrays.Text);
         }
-
     }
 }
