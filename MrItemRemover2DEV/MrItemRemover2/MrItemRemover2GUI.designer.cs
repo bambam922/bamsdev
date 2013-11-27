@@ -49,7 +49,6 @@ namespace MrItemRemover2
             this.RemoveProtectedItem = new System.Windows.Forms.Button();
             this.AddToBagList = new System.Windows.Forms.Button();
             this.InputAddToBagItem = new System.Windows.Forms.TextBox();
-            this.EnableRemove = new System.Windows.Forms.CheckBox();
             this.EnableSell = new System.Windows.Forms.CheckBox();
             this.SellWhite = new System.Windows.Forms.CheckBox();
             this.SellGreen = new System.Windows.Forms.CheckBox();
@@ -60,13 +59,11 @@ namespace MrItemRemover2
             this.RemoveQItems = new System.Windows.Forms.CheckBox();
             this.Save = new System.Windows.Forms.Button();
             this.Run = new System.Windows.Forms.Button();
-            this.EnableOpen = new System.Windows.Forms.CheckBox();
             this.LootEnable = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.BlueItems = new System.Windows.Forms.CheckBox();
             this.WhiteItems = new System.Windows.Forms.CheckBox();
             this.GreenItems = new System.Windows.Forms.CheckBox();
-            this.CombineItems = new System.Windows.Forms.CheckBox();
             this.RSFood = new System.Windows.Forms.CheckBox();
             this.RSDrinks = new System.Windows.Forms.CheckBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -394,6 +391,7 @@ namespace MrItemRemover2
             this.Run.Text = "Check Bag Items Now";
             this.Run.UseVisualStyleBackColor = true;
             this.Run.Click += new System.EventHandler(this.Run_Click);
+            // 
             // LootEnable
             // 
             this.LootEnable.AutoSize = true;
@@ -494,15 +492,12 @@ namespace MrItemRemover2
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.OpeningDropDown);
-            this.tabPage1.Controls.Add(this.CombineItems);
             this.tabPage1.Controls.Add(this.CombineDropDown);
             this.tabPage1.Controls.Add(this.LootEnable);
             this.tabPage1.Controls.Add(this.RemoveDropDown);
-            this.tabPage1.Controls.Add(this.EnableOpen);
             this.tabPage1.Controls.Add(this.Run);
             this.tabPage1.Controls.Add(this.EnableSell);
             this.tabPage1.Controls.Add(this.Save);
-            this.tabPage1.Controls.Add(this.EnableRemove);
             this.tabPage1.Controls.Add(this.CheckAfterLootDropdown);
             this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.label7);
@@ -812,7 +807,6 @@ namespace MrItemRemover2
         private System.Windows.Forms.Button RemoveProtectedItem;
         private System.Windows.Forms.Button AddToBagList;
         private System.Windows.Forms.TextBox InputAddToBagItem;
-        public System.Windows.Forms.CheckBox EnableRemove;
         private System.Windows.Forms.CheckBox EnableSell;
         private System.Windows.Forms.CheckBox SellWhite;
         private System.Windows.Forms.CheckBox SellGreen;
@@ -821,7 +815,6 @@ namespace MrItemRemover2
         private System.Windows.Forms.CheckBox RemoveQItems;
         private System.Windows.Forms.Button Save;
         private System.Windows.Forms.Button Run;
-        private System.Windows.Forms.CheckBox EnableOpen;
         private System.Windows.Forms.PictureBox resf;
         private System.Windows.Forms.CheckBox LootEnable;
         private System.Windows.Forms.CheckBox SellBlue;
@@ -830,7 +823,6 @@ namespace MrItemRemover2
         private System.Windows.Forms.CheckBox WhiteItems;
         private System.Windows.Forms.CheckBox GreenItems;
         private System.Windows.Forms.CheckBox SellSoulbound;
-        private System.Windows.Forms.CheckBox CombineItems;
         private System.Windows.Forms.CheckBox RSFood;
         private System.Windows.Forms.CheckBox RSDrinks;
         private System.Windows.Forms.TabControl tabControl1;
