@@ -102,7 +102,7 @@ namespace MrItemRemover2
             Dlog("------------------------------------------");
             foreach (var setting in MrItemRemover2Settings.Instance.GetSettings())
             {
-                string key = setting.Key;
+                var key = setting.Key;
                 var value = setting.Value.GetType();
                 Dlog(string.Format("{0} - {1}", key, value));
             }
