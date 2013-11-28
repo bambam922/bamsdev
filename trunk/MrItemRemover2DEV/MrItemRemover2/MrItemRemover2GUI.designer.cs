@@ -903,7 +903,7 @@ namespace MrItemRemover2
             this.GoldGrays.BackColor = System.Drawing.Color.Black;
             this.GoldGrays.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.GoldGrays.ForeColor = System.Drawing.Color.White;
-            this.GoldGrays.Location = new System.Drawing.Point(279, 249);
+            this.GoldGrays.Location = new System.Drawing.Point(275, 249);
             this.GoldGrays.MaxLength = 4;
             this.GoldGrays.Name = "GoldGrays";
             this.GoldGrays.Size = new System.Drawing.Size(26, 15);
@@ -914,7 +914,7 @@ namespace MrItemRemover2
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(219, 221);
+            this.label5.Location = new System.Drawing.Point(210, 221);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(240, 17);
             this.label5.TabIndex = 51;
@@ -925,7 +925,7 @@ namespace MrItemRemover2
             this.CopperGrays.BackColor = System.Drawing.Color.Black;
             this.CopperGrays.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CopperGrays.ForeColor = System.Drawing.Color.White;
-            this.CopperGrays.Location = new System.Drawing.Point(367, 249);
+            this.CopperGrays.Location = new System.Drawing.Point(363, 249);
             this.CopperGrays.MaxLength = 2;
             this.CopperGrays.Name = "CopperGrays";
             this.CopperGrays.Size = new System.Drawing.Size(18, 15);
@@ -938,7 +938,7 @@ namespace MrItemRemover2
             this.SilverGrays.BackColor = System.Drawing.Color.Black;
             this.SilverGrays.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.SilverGrays.ForeColor = System.Drawing.Color.White;
-            this.SilverGrays.Location = new System.Drawing.Point(329, 249);
+            this.SilverGrays.Location = new System.Drawing.Point(325, 249);
             this.SilverGrays.MaxLength = 2;
             this.SilverGrays.Name = "SilverGrays";
             this.SilverGrays.Size = new System.Drawing.Size(17, 15);
@@ -948,7 +948,7 @@ namespace MrItemRemover2
             // 
             // GoldBox
             // 
-            this.GoldBox.Location = new System.Drawing.Point(257, 244);
+            this.GoldBox.Location = new System.Drawing.Point(253, 244);
             this.GoldBox.Name = "GoldBox";
             this.GoldBox.Size = new System.Drawing.Size(151, 24);
             this.GoldBox.TabIndex = 52;
@@ -1007,7 +1007,7 @@ namespace MrItemRemover2
             this.DrinkList.ItemHeight = 17;
             this.DrinkList.Location = new System.Drawing.Point(6, 19);
             this.DrinkList.Name = "DrinkList";
-            this.DrinkList.Size = new System.Drawing.Size(83, 259);
+            this.DrinkList.Size = new System.Drawing.Size(83, 276);
             this.DrinkList.TabIndex = 9;
             // 
             // Food
@@ -1026,7 +1026,7 @@ namespace MrItemRemover2
             this.FoodList.ItemHeight = 17;
             this.FoodList.Location = new System.Drawing.Point(6, 19);
             this.FoodList.Name = "FoodList";
-            this.FoodList.Size = new System.Drawing.Size(83, 259);
+            this.FoodList.Size = new System.Drawing.Size(83, 276);
             this.FoodList.TabIndex = 9;
             // 
             // Combine10
@@ -1045,7 +1045,7 @@ namespace MrItemRemover2
             this.Combine10List.ItemHeight = 17;
             this.Combine10List.Location = new System.Drawing.Point(6, 19);
             this.Combine10List.Name = "Combine10List";
-            this.Combine10List.Size = new System.Drawing.Size(83, 259);
+            this.Combine10List.Size = new System.Drawing.Size(83, 276);
             this.Combine10List.TabIndex = 9;
             // 
             // Combine5
@@ -1064,7 +1064,7 @@ namespace MrItemRemover2
             this.Combine5List.ItemHeight = 17;
             this.Combine5List.Location = new System.Drawing.Point(6, 19);
             this.Combine5List.Name = "Combine5List";
-            this.Combine5List.Size = new System.Drawing.Size(83, 259);
+            this.Combine5List.Size = new System.Drawing.Size(83, 276);
             this.Combine5List.TabIndex = 9;
             // 
             // Combine3
@@ -1083,7 +1083,7 @@ namespace MrItemRemover2
             this.Combine3List.ItemHeight = 17;
             this.Combine3List.Location = new System.Drawing.Point(6, 19);
             this.Combine3List.Name = "Combine3List";
-            this.Combine3List.Size = new System.Drawing.Size(83, 259);
+            this.Combine3List.Size = new System.Drawing.Size(83, 276);
             this.Combine3List.TabIndex = 9;
             // 
             // MrItemRemover2Gui
