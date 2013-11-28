@@ -144,7 +144,7 @@ namespace MrItemRemover2
             List<WoWItem> itemsToVisit = Me.BagItems.ToList();
             foreach (WoWItem item in itemsToVisit)
             {
-                Slog("{0} - Stack Count = {1}", item.Name, item.StackCount);
+                //Slog("{0} - Stack Count = {1}", item.Name, item.StackCount);
        
                 if (!item.IsValid)
                 {
@@ -183,11 +183,22 @@ namespace MrItemRemover2
                     Lua.DoString("UseItemByName(\"" + item.Name + "\")");
                 }
 
-                if (MrItemRemover2Settings.Instance.SellFood == "True" || MrItemRemover2Settings.Instance.SellDrinks == "True")
+                if (MrItemRemover2Settings.Instance.SellFood == "True")
                 {
-                    if (!KeepList.Contains(item.Name) && FoodList.Contains(item.Name) || DrinkList.Contains(item.Name))
+                    if (!KeepList.Contains(item.Name) && FoodList.Contains(item.Name))
                     {
-                        Slog("{0} was in the Food or Drink List and We want to Remove Food. Removing.", item.Name, item.ItemInfo.SellPrice);
+                        Slog("{0} was in the Food List and We want to Remove Food. Removing.", item.Name, item.ItemInfo.SellPrice);
+                        Lua.DoString("ClearCursor()");
+                        item.PickUp();
+                        Lua.DoString("DeleteCursorItem()");
+                    }
+                }
+
+                if (MrItemRemover2Settings.Instance.SellDrinks == "True")
+                {
+                    if (!KeepList.Contains(item.Name) && DrinkList.Contains(item.Name))
+                    {
+                        Slog("{0} was in the Food List and We want to Remove Food. Removing.", item.Name, item.ItemInfo.SellPrice);
                         Lua.DoString("ClearCursor()");
                         item.PickUp();
                         Lua.DoString("DeleteCursorItem()");
