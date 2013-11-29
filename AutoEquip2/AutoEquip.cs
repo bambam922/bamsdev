@@ -85,7 +85,7 @@ namespace Styx.Bot.Plugins.AutoEquip2
         /// <summary>
         /// The author of this plugin.
         /// </summary>
-        public override string Author { get { return "The Buddy Team"; } }
+        public override string Author { get { return "bambam922 AEDEV"; } }
 
         /// <summary>
         /// The version of the plugin.
