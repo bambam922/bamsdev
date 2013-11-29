@@ -340,6 +340,11 @@ namespace Styx.Bot.Plugins.AutoEquip2
             if (AutoEquipSettings.Instance.RollForLootDE && canDisenchant && (((rollItemInfo.Bond == WoWItemBondType.OnPickup) && DisenchantBoPQualities.Contains(rollItemInfo.Quality)) ||
                 ((rollItemInfo.Bond == WoWItemBondType.OnEquip) && DisenchantBoEQualities.Contains(rollItemInfo.Quality))))
             {
+                Log("Primary stat: " + primary);
+                Log("bestEquipItemScore: " + bestEquipItemScore);
+                Log("rollItemScore: " + rollItemScore);
+                Log("bestSlot: " + bestSlot);
+
                 Log("Rolling for disenchant");
                 Lua.DoString("RollOnLoot(" + rollId + ", 3)");
                 return;
