@@ -30,13 +30,13 @@ namespace MrItemRemover2
             string.Format(@"Plugins/MIRDEV/Lists/ItemNameBagList.txt"));
 
         private readonly string _combineList10Path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-            string.Format(@"Plugins/MIRDEV/Lists/ItemNameCombine10List.txt"));
+            string.Format(@"Plugins/MIRDEV/Lists/ItemNameCombineList10.txt"));
 
         private readonly string _combineList3Path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-            string.Format(@"Plugins/MIRDEV/Lists/ItemNameCombine3List.txt"));
+            string.Format(@"Plugins/MIRDEV/Lists/ItemNameCombineList3.txt"));
 
         private readonly string _combineList5Path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-            string.Format(@"Plugins/MIRDEV/Lists/ItemNameCombine5List.txt"));
+            string.Format(@"Plugins/MIRDEV/Lists/ItemNameCombineList3.txt"));
 
         private readonly string _drinkListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
             string.Format(@"Plugins/MIRDEV/Lists/ItemNameDrinkList.txt"));
