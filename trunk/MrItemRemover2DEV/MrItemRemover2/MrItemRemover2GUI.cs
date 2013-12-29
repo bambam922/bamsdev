@@ -59,7 +59,6 @@ namespace MrItemRemover2
             RemoveDrinksDropDown.SelectedItem = MrItemRemover2Settings.Instance.RemoveDrinks;
             SellSoulboundDropDown.SelectedItem = MrItemRemover2Settings.Instance.SellSoulbound;
             CheckAfterLootDropDown.SelectedItem = MrItemRemover2Settings.Instance.LootCheck; 
-            //ApplyAll.Checked = MrItemRemover2Settings.Instance.ApplyAll;
             GoldGrays.Text = MrItemRemover2Settings.Instance.GoldGrays.ToString(CultureInfo.InvariantCulture);
             SilverGrays.Text = MrItemRemover2Settings.Instance.SilverGrays.ToString(CultureInfo.InvariantCulture);
             CopperGrays.Text = MrItemRemover2Settings.Instance.CopperGrays.ToString(CultureInfo.InvariantCulture);
@@ -192,11 +191,6 @@ namespace MrItemRemover2
             PrintSettings();
             Close();
         }
-
-        /* private void ApplyAll_CheckedChanged(object sender, EventArgs e)
-        {
-            MrItemRemover2Settings.Instance.ApplyAll = ApplyAll.Checked;
-        }*/
 
         private void Time_ValueChanged(object sender, EventArgs e)
         {
@@ -334,13 +328,6 @@ namespace MrItemRemover2
         private void RemoveDrinksDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
             MrItemRemover2Settings.Instance.RemoveDrinks = RemoveDrinksDropDown.SelectedItem.ToString();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        
+        }     
     }
 }
