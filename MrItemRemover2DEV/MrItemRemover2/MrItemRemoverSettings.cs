@@ -52,11 +52,6 @@ namespace MrItemRemover2
         [Setting, DefaultValue("False")]
         public string SellDrinks { get; set; }
 
-        /*
-        [Setting, DefaultValue(true)]
-        public bool ApplyAll { get; set; }
-        */
-
         [Setting, DefaultValue("False")]
         public string DeleteAllGray { get; set; }
 
