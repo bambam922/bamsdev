@@ -138,7 +138,7 @@ namespace MrItemRemover2
             Logging.WriteDiagnostic(color, "[" + _debug + "]: " + format, args);
         }
 
-        public void OnEnable()
+        public override void OnEnable()
         {
             Lua.Events.AttachEvent("DELETE_ITEM_CONFIRM", DeleteItemConfirmPopup);
             Lua.Events.AttachEvent("MERCHANT_SHOW", SellVenderItems);
@@ -155,7 +155,7 @@ namespace MrItemRemover2
             IsInitialized = true;
         }
 
-        public void OnDisable()
+        public override void OnDisable()
         {
             Lua.Events.DetachEvent("DELETE_ITEM_CONFIRM", DeleteItemConfirmPopup);
             Lua.Events.DetachEvent("MERCHANT_SHOW", SellVenderItems);
