@@ -55,7 +55,6 @@ namespace MrItemRemover2
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.OpeningDropDown = new System.Windows.Forms.ComboBox();
-            this.CombineDropDown = new System.Windows.Forms.ComboBox();
             this.RemoveDropDown = new System.Windows.Forms.ComboBox();
             this.CheckAfterLootDropDown = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -361,7 +360,6 @@ namespace MrItemRemover2
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.OpeningDropDown);
-            this.tabPage1.Controls.Add(this.CombineDropDown);
             this.tabPage1.Controls.Add(this.RemoveDropDown);
             this.tabPage1.Controls.Add(this.Run);
             this.tabPage1.Controls.Add(this.Save);
@@ -393,18 +391,11 @@ namespace MrItemRemover2
             this.OpeningDropDown.Items.AddRange(new object[] {
             "False",
             "True"});
-            this.OpeningDropDown.Location = new System.Drawing.Point(305, 69);
+            this.OpeningDropDown.Location = new System.Drawing.Point(336, 69);
             this.OpeningDropDown.Name = "OpeningDropDown";
             this.OpeningDropDown.Size = new System.Drawing.Size(121, 25);
             this.OpeningDropDown.TabIndex = 59;
             this.OpeningDropDown.SelectedIndexChanged += new System.EventHandler(this.OpeningDropDown_SelectedIndexChanged);
-            // 
-            // CombineDropDown
-            // 
-            this.CombineDropDown.Location = new System.Drawing.Point(0, 0);
-            this.CombineDropDown.Name = "CombineDropDown";
-            this.CombineDropDown.Size = new System.Drawing.Size(121, 25);
-            this.CombineDropDown.TabIndex = 60;
             // 
             // RemoveDropDown
             // 
@@ -413,7 +404,7 @@ namespace MrItemRemover2
             this.RemoveDropDown.Items.AddRange(new object[] {
             "False",
             "True"});
-            this.RemoveDropDown.Location = new System.Drawing.Point(305, 39);
+            this.RemoveDropDown.Location = new System.Drawing.Point(336, 39);
             this.RemoveDropDown.Name = "RemoveDropDown";
             this.RemoveDropDown.Size = new System.Drawing.Size(121, 25);
             this.RemoveDropDown.TabIndex = 57;
@@ -426,7 +417,7 @@ namespace MrItemRemover2
             this.CheckAfterLootDropDown.Items.AddRange(new object[] {
             "False",
             "True"});
-            this.CheckAfterLootDropDown.Location = new System.Drawing.Point(305, 98);
+            this.CheckAfterLootDropDown.Location = new System.Drawing.Point(336, 98);
             this.CheckAfterLootDropDown.Name = "CheckAfterLootDropDown";
             this.CheckAfterLootDropDown.Size = new System.Drawing.Size(121, 25);
             this.CheckAfterLootDropDown.TabIndex = 56;
@@ -448,9 +439,9 @@ namespace MrItemRemover2
             this.label6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(183, 72);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(109, 17);
+            this.label6.Size = new System.Drawing.Size(150, 17);
             this.label6.TabIndex = 53;
-            this.label6.Text = "Enable Opening -";
+            this.label6.Text = "Enable Open/Combine -";
             // 
             // label4
             // 
@@ -489,7 +480,7 @@ namespace MrItemRemover2
             this.SellDropDown.Items.AddRange(new object[] {
             "False",
             "True"});
-            this.SellDropDown.Location = new System.Drawing.Point(305, 10);
+            this.SellDropDown.Location = new System.Drawing.Point(336, 10);
             this.SellDropDown.Name = "SellDropDown";
             this.SellDropDown.Size = new System.Drawing.Size(121, 25);
             this.SellDropDown.TabIndex = 49;
@@ -1139,7 +1130,6 @@ namespace MrItemRemover2
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.ComboBox SellDropDown;
         private System.Windows.Forms.ComboBox OpeningDropDown;
-        private System.Windows.Forms.ComboBox CombineDropDown;
         private System.Windows.Forms.ComboBox RemoveDropDown;
         private System.Windows.Forms.ComboBox CheckAfterLootDropDown;
         private System.Windows.Forms.Label label8;
