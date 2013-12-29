@@ -349,7 +349,7 @@ namespace MrItemRemover2
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(6, 6);
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tabControl1.SelectedIndex = 0;
@@ -507,7 +507,7 @@ namespace MrItemRemover2
             this.tabPage2.Location = new System.Drawing.Point(4, 26);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(475, 307);
+            this.tabPage2.Size = new System.Drawing.Size(475, 282);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Sell";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -702,7 +702,7 @@ namespace MrItemRemover2
             this.tabPage3.Location = new System.Drawing.Point(4, 26);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(475, 307);
+            this.tabPage3.Size = new System.Drawing.Size(475, 282);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Remove";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -934,7 +934,7 @@ namespace MrItemRemover2
             this.tabPage4.Location = new System.Drawing.Point(4, 26);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(475, 307);
+            this.tabPage4.Size = new System.Drawing.Size(475, 282);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Protected";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -959,7 +959,7 @@ namespace MrItemRemover2
             this.tabPage5.Location = new System.Drawing.Point(4, 26);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(475, 307);
+            this.tabPage5.Size = new System.Drawing.Size(475, 282);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Misc";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1064,12 +1064,12 @@ namespace MrItemRemover2
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(495, 350);
+            this.ClientSize = new System.Drawing.Size(484, 338);
             this.Controls.Add(this.tabControl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.MaximumSize = new System.Drawing.Size(495, 350);
-            this.MinimumSize = new System.Drawing.Size(495, 350);
+            this.MaximumSize = new System.Drawing.Size(500, 377);
+            this.MinimumSize = new System.Drawing.Size(500, 377);
             this.Name = "MrItemRemover2Gui";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mr.ItemRemover2 - Removing items from your bags.";
