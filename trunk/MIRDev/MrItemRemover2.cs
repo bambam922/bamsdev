@@ -1,10 +1,5 @@
 ﻿/*
- * Mr.ItemRemover2 - Created by CodenameGamma - 1-31-11 - For WoW Version 4.0.3
- * 2.2 Update by Bambam922
- * www.thebuddyforum.com
- * This is a free plugin and should not be sold or repackaged.
- * Donations accepted.
- * Version 2.2 for WoW Version 5.4.2 +
+ * DEV COPY
  */
 
 using System;
@@ -25,41 +20,41 @@ namespace MrItemRemover2
     public partial class MrItemRemover2 : HBPlugin
     {
         // ReSharper disable InconsistentNaming
-        private const string _name = "MIR2 2.2 DEV";
-        private const string _debug = "Mr.Itemremover2 DEBUG";
-
-        private readonly string _bagListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-            string.Format(@"Plugins/MrItemRemover2/Lists/ItemNameBagList.txt"));
+        private const string _name = "MIR DEV";
+        private const string _debug = "MIR DEV DEBUG";
 
         private readonly WaitTimer _checkTimer =
-            new WaitTimer(TimeSpan.FromMinutes(MrItemRemover2Settings.Instance.Time));
+        new WaitTimer(TimeSpan.FromMinutes(MrItemRemover2Settings.Instance.Time));
+
+        private readonly string _bagListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
+            string.Format(@"Plugins/MIRDEV/Lists/ItemNameBagList.txt"));
 
         private readonly string _combineList10Path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-            string.Format(@"Plugins/MrItemRemover2/Lists/ItemNameCombine10List.txt"));
+            string.Format(@"Plugins/MIRDEV/Lists/ItemNameCombine10List.txt"));
 
         private readonly string _combineList3Path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-            string.Format(@"Plugins/MrItemRemover2/Lists/ItemNameCombine3List.txt"));
+            string.Format(@"Plugins/MIRDEV/Lists/ItemNameCombine3List.txt"));
 
         private readonly string _combineList5Path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-            string.Format(@"Plugins/MrItemRemover2/Lists/ItemNameCombine5List.txt"));
+            string.Format(@"Plugins/MIRDEV/Lists/ItemNameCombine5List.txt"));
 
         private readonly string _drinkListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-            string.Format(@"Plugins/MrItemRemover2/Lists/ItemNameDrinkList.txt"));
+            string.Format(@"Plugins/MIRDEV/Lists/ItemNameDrinkList.txt"));
 
         private readonly string _foodListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-            string.Format(@"Plugins/MrItemRemover2/Lists/ItemNameFoodList.txt"));
+            string.Format(@"Plugins/MIRDEV/Lists/ItemNameFoodList.txt"));
 
         private readonly string _keepListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-            string.Format(@"Plugins/MrItemRemover2/Lists/ItemNameKeepList.txt"));
+            string.Format(@"Plugins/MIRDEV/Lists/ItemNameKeepList.txt"));
 
         private readonly string _opnListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-            string.Format(@"Plugins/MrItemRemover2/Lists/ItemNameOpnList.txt"));
+            string.Format(@"Plugins/MIRDEV/Lists/ItemNameOpnList.txt"));
 
         private readonly string _removeListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-            string.Format(@"Plugins/MrItemRemover2/Lists/ItemNameRemoveList.txt"));
+            string.Format(@"Plugins/MIRDEV/Lists/ItemNameRemoveList.txt"));
 
         private readonly string _sellListPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-            string.Format(@"Plugins/MrItemRemover2/Lists/ItemNameSellList.txt"));
+            string.Format(@"Plugins/MIRDEV/Lists/ItemNameSellList.txt"));
 
         public List<string> BagList = new List<string>();
         public List<string> Combine10List = new List<string>();
@@ -99,7 +94,7 @@ namespace MrItemRemover2
 
         public override string ButtonText
         {
-            get { return "MIR2 Settings"; }
+            get { return "MIRDEV Settings"; }
         }
 
         public MrItemRemover2 Controller { get; private set; }
@@ -150,7 +145,7 @@ namespace MrItemRemover2
             Lua.Events.AttachEvent("LOOT_CLOSED", LootEnded);
             Lua.DoString("SetCVar('AutoLootDefault','1')");
 
-            Slog("Initial Loading of Item names.");
+            Slog("THIS IS A MIR2 DEV COPY. USE AT YOUR OWN RISK.");
             InitialMirLoad();
             MrItemRemover2Settings.Instance.Load();
             PrintSettings();
@@ -169,7 +164,7 @@ namespace MrItemRemover2
             IsInitialized = false;
             MirSave();
 
-            Dlog("MrItemRemover2 is now disabled.");
+            Dlog("MIRDEV is now disabled.");
         }
 
         public override void Pulse()
@@ -182,6 +177,7 @@ namespace MrItemRemover2
 
                 Slog("Checking Bags Manually & Reloading Item Lists.");
                 CheckForItems();
+                
             }
 
             else if (MrItemRemover2Settings.Instance.LootCheck == "False")
