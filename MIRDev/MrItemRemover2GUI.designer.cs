@@ -59,7 +59,6 @@ namespace MrItemRemover2
             this.RemoveDropDown = new System.Windows.Forms.ComboBox();
             this.CheckAfterLootDropDown = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -368,7 +367,6 @@ namespace MrItemRemover2
             this.tabPage1.Controls.Add(this.Save);
             this.tabPage1.Controls.Add(this.CheckAfterLootDropDown);
             this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label3);
@@ -395,7 +393,7 @@ namespace MrItemRemover2
             this.OpeningDropDown.Items.AddRange(new object[] {
             "False",
             "True"});
-            this.OpeningDropDown.Location = new System.Drawing.Point(305, 98);
+            this.OpeningDropDown.Location = new System.Drawing.Point(305, 69);
             this.OpeningDropDown.Name = "OpeningDropDown";
             this.OpeningDropDown.Size = new System.Drawing.Size(121, 25);
             this.OpeningDropDown.TabIndex = 59;
@@ -403,16 +401,10 @@ namespace MrItemRemover2
             // 
             // CombineDropDown
             // 
-            this.CombineDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CombineDropDown.FormattingEnabled = true;
-            this.CombineDropDown.Items.AddRange(new object[] {
-            "False",
-            "True"});
-            this.CombineDropDown.Location = new System.Drawing.Point(305, 69);
+            this.CombineDropDown.Location = new System.Drawing.Point(0, 0);
             this.CombineDropDown.Name = "CombineDropDown";
             this.CombineDropDown.Size = new System.Drawing.Size(121, 25);
-            this.CombineDropDown.TabIndex = 58;
-            this.CombineDropDown.SelectedIndexChanged += new System.EventHandler(this.CombineDropDown_SelectedIndexChanged);
+            this.CombineDropDown.TabIndex = 60;
             // 
             // RemoveDropDown
             // 
@@ -434,7 +426,7 @@ namespace MrItemRemover2
             this.CheckAfterLootDropDown.Items.AddRange(new object[] {
             "False",
             "True"});
-            this.CheckAfterLootDropDown.Location = new System.Drawing.Point(305, 127);
+            this.CheckAfterLootDropDown.Location = new System.Drawing.Point(305, 98);
             this.CheckAfterLootDropDown.Name = "CheckAfterLootDropDown";
             this.CheckAfterLootDropDown.Size = new System.Drawing.Size(121, 25);
             this.CheckAfterLootDropDown.TabIndex = 56;
@@ -444,27 +436,17 @@ namespace MrItemRemover2
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(183, 130);
+            this.label8.Location = new System.Drawing.Point(183, 101);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(116, 17);
             this.label8.TabIndex = 55;
             this.label8.Text = "Check After Loot -";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(183, 72);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(122, 17);
-            this.label7.TabIndex = 54;
-            this.label7.Text = "Enable Combining -";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(183, 101);
+            this.label6.Location = new System.Drawing.Point(183, 72);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(109, 17);
             this.label6.TabIndex = 53;
@@ -1161,7 +1143,6 @@ namespace MrItemRemover2
         private System.Windows.Forms.ComboBox RemoveDropDown;
         private System.Windows.Forms.ComboBox CheckAfterLootDropDown;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

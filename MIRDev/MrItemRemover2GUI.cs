@@ -11,23 +11,24 @@ namespace MrItemRemover2
     public partial class MrItemRemover2Gui : Form
     {
         private readonly string _goldImangePathName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                                                                  string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/Gold2.bmp"));
+            string.Format(@"Plugins/MIRDEV/Gold2.bmp"));
 
         private readonly string _refreshImangePathName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                                                                  string.Format(@"Plugins/MrItemRemover2DEV/MrItemRemover2/ref.bmp"));
+            string.Format(@"Plugins/MIRDEV/ref.bmp"));
 
         public MrItemRemover2Gui(MrItemRemover2 controller)
         {
             Controller = controller;
             InitializeComponent();
         }
-        
+
         public MrItemRemover2 Controller { get; private set; }
 
         public static void Slog(string format, params object[] args)
         {
             MrItemRemover2.Slog(format, args);
         }
+
         public static void Dlog(string format, params object[] args)
         {
             MrItemRemover2.Dlog(format, args);
@@ -42,7 +43,6 @@ namespace MrItemRemover2
             MrItemRemover2Settings.Instance.Load();
             SellDropDown.SelectedItem = MrItemRemover2Settings.Instance.EnableSell;
             RemoveDropDown.SelectedItem = MrItemRemover2Settings.Instance.EnableRemove;
-            CombineDropDown.SelectedItem = MrItemRemover2Settings.Instance.CombineItems;
             OpeningDropDown.SelectedItem = MrItemRemover2Settings.Instance.EnableOpen;
             SellGraysDropDown.SelectedItem = MrItemRemover2Settings.Instance.SellGray;
             SellWhitesDropDown.SelectedItem = MrItemRemover2Settings.Instance.SellWhite;
@@ -58,7 +58,7 @@ namespace MrItemRemover2
             RemoveFoodDropDown.SelectedItem = MrItemRemover2Settings.Instance.RemoveFood;
             RemoveDrinksDropDown.SelectedItem = MrItemRemover2Settings.Instance.RemoveDrinks;
             SellSoulboundDropDown.SelectedItem = MrItemRemover2Settings.Instance.SellSoulbound;
-            CheckAfterLootDropDown.SelectedItem = MrItemRemover2Settings.Instance.LootCheck; 
+            CheckAfterLootDropDown.SelectedItem = MrItemRemover2Settings.Instance.LootCheck;
             GoldGrays.Text = MrItemRemover2Settings.Instance.GoldGrays.ToString(CultureInfo.InvariantCulture);
             SilverGrays.Text = MrItemRemover2Settings.Instance.SilverGrays.ToString(CultureInfo.InvariantCulture);
             CopperGrays.Text = MrItemRemover2Settings.Instance.CopperGrays.ToString(CultureInfo.InvariantCulture);
@@ -177,8 +177,8 @@ namespace MrItemRemover2
             Dlog("------------------------------------------");
             foreach (var setting in MrItemRemover2Settings.Instance.GetSettings())
             {
-                var key = setting.Key;
-                var value = setting.Value;
+                string key = setting.Key;
+                object value = setting.Value;
                 Dlog(string.Format("{0} - {1}", key, value));
             }
             Dlog("------------------------------------------");
@@ -220,19 +220,12 @@ namespace MrItemRemover2
 
         private void SellDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             MrItemRemover2Settings.Instance.EnableSell = SellDropDown.SelectedItem.ToString();
         }
 
         private void RemoveDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             MrItemRemover2Settings.Instance.EnableRemove = RemoveDropDown.SelectedItem.ToString();
-        }
-
-        private void CombineDropDown_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            MrItemRemover2Settings.Instance.CombineItems = CombineDropDown.SelectedItem.ToString();
         }
 
         private void OpeningDropDown_SelectedIndexChanged(object sender, EventArgs e)
@@ -328,6 +321,6 @@ namespace MrItemRemover2
         private void RemoveDrinksDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
             MrItemRemover2Settings.Instance.RemoveDrinks = RemoveDrinksDropDown.SelectedItem.ToString();
-        }     
+        }
     }
 }
