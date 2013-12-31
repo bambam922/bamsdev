@@ -366,11 +366,11 @@ namespace MrGearBuyer
         //Logging Class for your conviance
         public static void Slog(string format, params object[] args)
         {
-            Logging.Write("[Mr.GearBuyer]: " + format, args);
+            Logging.Write("[Mr.GearBuyer 3.3]: " + format, args);
         }
         public static void Dlog(string format, params object[] args)
         {
-            Logging.WriteDiagnostic("[Mr.GearBuyer-DEBUG]: " + format, args);
+            Logging.WriteDiagnostic("[MGB 3.3 - DEBUG]: " + format, args);
         }
 
         private static void BuyItemListListChanged(object sender, ListChangedEventArgs e)
