@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Threading;
 using Styx;
+using Styx.CommonBot;
 using Styx.CommonBot.Frames;
 using Styx.Helpers;
 using Styx.WoWInternals;
@@ -163,6 +165,13 @@ namespace MrItemRemover2
             // NB: Since we will be modifying the Me.BagItems list indirectly through WoWclient directives,
             // we can't use it as our iterator--we must make a copy, instead.
             List<WoWItem> itemsToVisit = Me.BagItems.ToList();
+
+            var groups = itemsToVisit.GroupBy(v => v);
+            foreach (var group in groups)
+            {
+                Dlog("Value {0} has {1} items", group.Key, group.Count());
+            }
+
             foreach (WoWItem item in itemsToVisit)
             {
                 if (!item.IsValid)
@@ -177,6 +186,8 @@ namespace MrItemRemover2
                     Slog("{0} is a bag, ignoring.", item.Name);
                     return;
                 }
+
+                
 
                 if (OpnList.Contains(item.Name) && item.IsOpenable &&
                     MrItemRemover2Settings.Instance.EnableOpen == "True")
@@ -193,20 +204,35 @@ namespace MrItemRemover2
 
                 if (Combine3List.Contains(item.Name) && item.StackCount >= 3)
                 {
-                    Slog("{0} can be combined, so we're combining it.", item.Name);
-                    Lua.DoString("UseItemByName(\"" + item.Name + "\")");
+                    uint timesToUse = (uint)(Math.Floor((double)(item.StackCount / 3)));
+                    Slog("{0} can be combined {1} times, so we're combining it.", item.Name, timesToUse);
+                    for (uint timesUsed = 0; timesUsed < timesToUse; timesUsed++)
+                    {
+                        Lua.DoString("UseItemByName(\"" + item.Name + "\")");
+                        Thread.Sleep(SpellManager.GlobalCooldownLeft);
+                    }
                 }
 
                 if (Combine5List.Contains(item.Name) && item.StackCount >= 5)
                 {
-                    Slog("{0} can be combined, so we're combining it.", item.Name);
-                    Lua.DoString("UseItemByName(\"" + item.Name + "\")");
+                    uint timesToUse = (uint)(Math.Floor((double)(item.StackCount / 5)));
+                    Slog("{0} can be combined {1} times, so we're combining it.", item.Name, timesToUse);
+                    for (uint timesUsed = 0; timesUsed < timesToUse; timesUsed++)
+                    {
+                        Lua.DoString("UseItemByName(\"" + item.Name + "\")");
+                        Thread.Sleep(SpellManager.GlobalCooldownLeft);
+                    }
                 }
 
                 if (Combine10List.Contains(item.Name) && item.StackCount >= 10)
                 {
-                    Slog("{0} can be combined, so we're combining it.", item.Name);
-                    Lua.DoString("UseItemByName(\"" + item.Name + "\")");
+                    uint timesToUse = (uint)(Math.Floor((double)(item.StackCount / 10)));
+                    Slog("{0} can be combined {1} times, so we're combining it.", item.Name, timesToUse);
+                    for (uint timesUsed = 0; timesUsed < timesToUse; timesUsed++)
+                    {
+                        Lua.DoString("UseItemByName(\"" + item.Name + "\")");
+                        Thread.Sleep(SpellManager.GlobalCooldownLeft);
+                    }
                 }
 
                 if (MrItemRemover2Settings.Instance.EnableRemove == "True" &&
