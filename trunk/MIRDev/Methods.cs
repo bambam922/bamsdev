@@ -70,7 +70,7 @@ namespace MrItemRemover2
                                 item.UseContainerItem();
                             }
 
-                            StyxWoW.SleepForLagDuration();
+                             
                         }
                     }
 
@@ -123,7 +123,7 @@ namespace MrItemRemover2
                                 item.UseContainerItem();
                             }
 
-                            StyxWoW.SleepForLagDuration();
+                             
 
                         }
                     }
@@ -317,7 +317,7 @@ namespace MrItemRemover2
                     Lua.DoString("DeleteCursorItem()");
                 }
 
-                StyxWoW.SleepForLagDuration();
+                 
             }
         }
 
