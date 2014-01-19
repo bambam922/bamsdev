@@ -56,21 +56,20 @@ namespace MrItemRemover2
                                 Slog("Item Matched List Selling {0}", item.Name);
                                 item.UseContainerItem();
                             }
+
                             if (item.Quality == WoWItemQuality.Common && FoodList.Contains(item.Name) &&
-                                MrItemRemover2Settings.Instance.SellFood == "True")
+                                MrItemRemover2Settings.Instance.SellFood == "True" && item.ItemInfo.RequiredLevel < MrItemRemover2Settings.Instance.ReqRefLvl)
                             {
                                 Slog("Item Matched Selling Food List {0}", item.Name);
                                 item.UseContainerItem();
                             }
 
                             if (item.Quality == WoWItemQuality.Common && DrinkList.Contains(item.Name) &&
-                                MrItemRemover2Settings.Instance.SellDrinks == "True")
+                                MrItemRemover2Settings.Instance.SellDrinks == "True" && item.ItemInfo.RequiredLevel < MrItemRemover2Settings.Instance.ReqRefLvl)
                             {
                                 Slog("Item Matched Selling Food List {0}", item.Name);
                                 item.UseContainerItem();
                             }
-
-                             
                         }
                     }
 
@@ -110,21 +109,18 @@ namespace MrItemRemover2
                             }
 
                             if (item.Quality == WoWItemQuality.Common && FoodList.Contains(item.Name) &&
-                                MrItemRemover2Settings.Instance.SellFood == "True")
+                                MrItemRemover2Settings.Instance.SellFood == "True" && item.ItemInfo.RequiredLevel < MrItemRemover2Settings.Instance.ReqRefLvl)
                             {
                                 Slog("Item Matched Selling Food List {0}", item.Name);
                                 item.UseContainerItem();
                             }
 
                             if (item.Quality == WoWItemQuality.Common && DrinkList.Contains(item.Name) &&
-                                MrItemRemover2Settings.Instance.SellDrinks == "True")
+                                MrItemRemover2Settings.Instance.SellDrinks == "True" && item.ItemInfo.RequiredLevel < MrItemRemover2Settings.Instance.ReqRefLvl)
                             {
                                 Slog("Item Matched Selling Drink List {0}", item.Name);
                                 item.UseContainerItem();
                             }
-
-                             
-
                         }
                     }
                 }

@@ -64,6 +64,7 @@ namespace MrItemRemover2
             this.label2 = new System.Windows.Forms.Label();
             this.SellDropDown = new System.Windows.Forms.ComboBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.SellDrinksDropDown = new System.Windows.Forms.ComboBox();
             this.SellFoodDropDown = new System.Windows.Forms.ComboBox();
@@ -113,6 +114,8 @@ namespace MrItemRemover2
             this.Combine5List = new System.Windows.Forms.ListBox();
             this.Combine3 = new System.Windows.Forms.GroupBox();
             this.Combine3List = new System.Windows.Forms.ListBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.ReqRefreshlvl = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.Time)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resf)).BeginInit();
@@ -131,6 +134,7 @@ namespace MrItemRemover2
             this.Combine10.SuspendLayout();
             this.Combine5.SuspendLayout();
             this.Combine3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ReqRefreshlvl)).BeginInit();
             this.SuspendLayout();
             // 
             // Time
@@ -488,6 +492,9 @@ namespace MrItemRemover2
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.ReqRefreshlvl);
+            this.tabPage2.Controls.Add(this.label23);
+            this.tabPage2.Controls.Add(this.label7);
             this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.SellDrinksDropDown);
             this.tabPage2.Controls.Add(this.SellFoodDropDown);
@@ -507,10 +514,17 @@ namespace MrItemRemover2
             this.tabPage2.Location = new System.Drawing.Point(4, 26);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(475, 282);
+            this.tabPage2.Size = new System.Drawing.Size(475, 307);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Sell";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.Location = new System.Drawing.Point(0, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(100, 23);
+            this.label7.TabIndex = 0;
             // 
             // button1
             // 
@@ -702,7 +716,7 @@ namespace MrItemRemover2
             this.tabPage3.Location = new System.Drawing.Point(4, 26);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(475, 282);
+            this.tabPage3.Size = new System.Drawing.Size(475, 307);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Remove";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -934,7 +948,7 @@ namespace MrItemRemover2
             this.tabPage4.Location = new System.Drawing.Point(4, 26);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(475, 282);
+            this.tabPage4.Size = new System.Drawing.Size(475, 307);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Protected";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -959,7 +973,7 @@ namespace MrItemRemover2
             this.tabPage5.Location = new System.Drawing.Point(4, 26);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(475, 282);
+            this.tabPage5.Size = new System.Drawing.Size(475, 307);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Misc";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1059,6 +1073,24 @@ namespace MrItemRemover2
             this.Combine3List.Size = new System.Drawing.Size(83, 276);
             this.Combine3List.TabIndex = 9;
             // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(196, 229);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(174, 17);
+            this.label23.TabIndex = 77;
+            this.label23.Text = "Food/Drink Required Level - ";
+            // 
+            // ReqRefreshlvl
+            // 
+            this.ReqRefreshlvl.BackColor = System.Drawing.SystemColors.Window;
+            this.ReqRefreshlvl.Location = new System.Drawing.Point(376, 227);
+            this.ReqRefreshlvl.Name = "ReqRefreshlvl";
+            this.ReqRefreshlvl.Size = new System.Drawing.Size(51, 22);
+            this.ReqRefreshlvl.TabIndex = 78;
+            this.ReqRefreshlvl.ValueChanged += new System.EventHandler(this.ReqRefreshlvl_ValueChanged);
+            // 
             // MrItemRemover2Gui
             // 
             this.AcceptButton = this.Save;
@@ -1096,6 +1128,7 @@ namespace MrItemRemover2
             this.Combine10.ResumeLayout(false);
             this.Combine5.ResumeLayout(false);
             this.Combine3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ReqRefreshlvl)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1184,5 +1217,8 @@ namespace MrItemRemover2
         private Button button1;
         private Button button2;
         private Button button3;
+        private Label label7;
+        private NumericUpDown ReqRefreshlvl;
+        private Label label23;
     }
 }
