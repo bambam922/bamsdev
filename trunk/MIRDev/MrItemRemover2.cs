@@ -175,9 +175,8 @@ namespace MrItemRemover2
                 ManualCheckRequested = false;
                 _checkTimer.Reset();
 
-                Slog("Checking Bags Manually & Reloading Item Lists.");
-                CheckForItems();
-                
+                Slog("Checking Bags Manually.");
+                CheckForItems(); 
             }
 
             else if (MrItemRemover2Settings.Instance.LootCheck == "False")
@@ -186,14 +185,18 @@ namespace MrItemRemover2
                 {
                     if (EnableCheck == false)
                     {
-                        EnableCheck = true;
-                        _checkTimer.Reset();
+                        if (!Me.Mounted)
+                        {
+                            EnableCheck = true;
+                            CheckForItems();
+                            _checkTimer.Reset();
 
-                        Slog("Enabling Check at {0}", GetTime(DateTime.Now));
-                        Dlog(
-                            "Checktimer has Finished its Total wait of {0} Minutes, Enabling Item Check for next Opportunity",
-                            MrItemRemover2Settings.Instance.Time.ToString(CultureInfo.InvariantCulture));
-                        Slog("Will Run Next Check At {0}", GetTime(_checkTimer.EndTime));
+                            Slog("Enabling Check at {0}", GetTime(DateTime.Now));
+                            Dlog(
+                                "Checktimer has Finished its Total wait of {0} Minutes. Checking Items and Enabling Item Check for next Opportunity",
+                                MrItemRemover2Settings.Instance.Time.ToString(CultureInfo.InvariantCulture));
+                            Slog("Will Run Next Check At {0}", GetTime(_checkTimer.EndTime));
+                        }
                     }
                 }
             }

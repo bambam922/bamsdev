@@ -322,5 +322,10 @@ namespace MrItemRemover2
         {
             MrItemRemover2Settings.Instance.RemoveDrinks = RemoveDrinksDropDown.SelectedItem.ToString();
         }
+
+        private void ReqRefreshlvl_ValueChanged(object sender, EventArgs e)
+        {
+            MrItemRemover2Settings.Instance.ReqRefLvl = int.Parse(Time.Value.ToString(CultureInfo.InvariantCulture));
+        }
     }
 }
