@@ -5,7 +5,7 @@
 //www.honorbuddy.com
 //this is a free plugin, and should not be sold, or repackaged.
 //Donations Accepted. 
-//Version 3.3
+//Version 3.3.1
 
 
 using System.ComponentModel;
@@ -40,7 +40,7 @@ namespace MrGearBuyer
         //Normal Stuff.
         public override string Name { get { return "Mr.GearBuyer 3.3"; } }
         public override string Author { get { return "CnG & Bambam922"; } }
-        public override Version Version { get { return new Version(3, 3); } }
+        public override Version Version { get { return new Version(3, 3, 1); } }
         public override bool WantButton { get { return true; } }
         public override string ButtonText { get { return "MGB Settings"; } }
         public bool WasInBG;
@@ -143,19 +143,19 @@ namespace MrGearBuyer
             if (LogoutAtCap && WoWCurrency.GetCurrencyByType(WoWCurrencyType.HonorPoints).Amount > 3750 && WoWCurrency.GetCurrencyByType(WoWCurrencyType.JusticePoints).Amount > 3750)
             {
                 Slog("HonorPoints and Justice Points are Capped! Logging out!");
-                InactivityDetector.ForceLogout(true);
+                Lua.DoString("Logout()");
                 return;
             }
             if (LogOutHPCap && WoWCurrency.GetCurrencyByType(WoWCurrencyType.HonorPoints).Amount > 3750)
             {
                 Slog("Honor Points Are Capped. Logging Out!");
-                InactivityDetector.ForceLogout(true);
+                Lua.DoString("Logout()");
                 return;
             }
             if (LogOutJPCap && WoWCurrency.GetCurrencyByType(WoWCurrencyType.JusticePoints).Amount > 3750)
             {
                 Slog("Justice Points are Capped! Logging out!");
-                InactivityDetector.ForceLogout(true);
+                Lua.DoString("Logout()");
                 return;
             }
             // We should avoid overriding any poi set by the core
