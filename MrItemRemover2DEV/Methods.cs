@@ -320,7 +320,6 @@ namespace MrItemRemover2
                 }
             }
 
-            StyxWoW.SleepForLagDuration();
 
         }
 
