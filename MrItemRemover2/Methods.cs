@@ -170,7 +170,6 @@ namespace MrItemRemover2
 
             foreach (WoWItem item in itemsToVisit)
             {
-                StyxWoW.SleepForLagDuration();
 
                 if (!item.IsValid)
                 {
