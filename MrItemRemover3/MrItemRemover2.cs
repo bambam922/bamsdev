@@ -25,8 +25,8 @@ namespace MrItemRemover2
     public partial class MrItemRemover2 : HBPlugin
     {
         // ReSharper disable InconsistentNaming
-        private const string _name = "MIR2";
-        private const string _debug = "MIR2 DEBUG";
+        private const string _name = "MIR3";
+        private const string _debug = "MIR3 DEBUG";
 
         private readonly WaitTimer _checkTimer =
         new WaitTimer(TimeSpan.FromMinutes(MrItemRemover2Settings.Instance.Time));
